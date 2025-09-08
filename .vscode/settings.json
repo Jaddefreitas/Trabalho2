@@ -1,0 +1,8 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/easyaccept.jar"
+    ],
+    "java.project.sourcePaths": [
+        "src"
+    ]
+}
