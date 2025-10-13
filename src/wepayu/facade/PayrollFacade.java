@@ -10,6 +10,86 @@ import java.util.List;
 import java.util.Locale;
 
 public class PayrollFacade {
+    // Sobrecarga para aceitar valor como String (com vírgula)
+    public void lancaTaxaServico(String id, String data, String valorStr) {
+        if (id == null || id.isBlank() || data == null || valorStr == null)
+            throw new InvalidDataException("Identificacao do membro nao pode ser nula.");
+        if (!wepayu.util.DateUtils.isValidDate(data))
+            throw new InvalidDataException("Data invalida.");
+        double valor;
+        try {
+            valor = Double.parseDouble(valorStr.replace(",", "."));
+        } catch (NumberFormatException ex) {
+            throw new InvalidDataException("Valor deve ser numerico.");
+        }
+        if (valor <= 0) throw new InvalidDataException("Valor deve ser positivo.");
+        lancaTaxaServico(id, data, valor);
+    }
+    /**
+     * Retorna o total de taxas de serviço pagas por um empregado sindicalizado em um intervalo de datas.
+     * @param id ID do empregado
+     * @param dataInicial Data inicial (inclusive)
+     * @param dataFinal Data final (exclusive)
+     * @return Total de taxas de serviço (String, formato brasileiro)
+     */
+    public String getTaxasServico(String id, String dataInicial, String dataFinal) {
+        if (id == null || id.isBlank()) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
+        if (!wepayu.util.DateUtils.isValidDate(dataInicial)) throw new InvalidDataException("Data inicial invalida.");
+        if (!wepayu.util.DateUtils.isValidDate(dataFinal)) throw new InvalidDataException("Data final invalida.");
+        if (wepayu.util.DateUtils.compareDates(dataInicial, dataFinal) > 0) throw new InvalidDataException("Data inicial nao pode ser posterior aa data final.");
+        Employee e = PayrollDatabase.getEmployee(id);
+        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+        if (e.getUnionMembership() == null) throw new InvalidDataException("Empregado nao eh sindicalizado.");
+        double total = 0.0;
+        for (ServiceCharge sc : e.getUnionMembership().getServiceCharges()) {
+            if (wepayu.util.DateUtils.isBetweenExclusiveEnd(sc.getDate(), dataInicial, dataFinal)) {
+                String valorStr = String.valueOf(sc.getAmount());
+                double valor;
+                try {
+                    valor = Double.parseDouble(valorStr.replace(",", "."));
+                } catch (NumberFormatException ex) {
+                    valor = sc.getAmount();
+                }
+                total += valor;
+            }
+        }
+        return df.format(total);
+    }
+    /**
+     * Altera o status de sindicalização do empregado, incluindo id do sindicato e taxa sindical.
+     * @param id ID do empregado
+     * @param atributo deve ser "sindicalizado"
+     * @param valor "true" para sindicalizar
+     * @param idSindicato id do sindicato
+     * @param taxaSindical taxa sindical (String, aceita vírgula)
+     */
+    public void alteraEmpregado(String id, String atributo, String valor, String idSindicato, String taxaSindical) {
+        if (id == null || id.isBlank()) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
+        if (atributo == null || !"sindicalizado".equalsIgnoreCase(atributo)) throw new InvalidDataException("Atributo nao existe.");
+        Employee e = PayrollDatabase.getEmployee(id);
+        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+        if (valor != null && valor instanceof String && ((String)valor).equalsIgnoreCase("true")) {
+            if (idSindicato == null || idSindicato.isBlank()) throw new InvalidDataException("Id do sindicato nao pode ser nulo.");
+            if (taxaSindical == null || taxaSindical.isBlank()) throw new InvalidDataException("Taxa sindical nao pode ser nula.");
+            double taxa;
+            try {
+                taxa = Double.parseDouble(taxaSindical.replace(",", "."));
+            } catch (NumberFormatException ex) {
+                throw new InvalidDataException("Taxa sindical deve ser numerica.");
+            }
+            if (taxa < 0) throw new InvalidDataException("Taxa sindical deve ser nao-negativa.");
+            for (Employee emp : PayrollDatabase.getAllEmployees().values()) {
+                if (emp.getUnionMembership() != null && idSindicato.equals(emp.getUnionMembership().getUnionId()) && !emp.getId().equals(id)) {
+                    throw new InvalidDataException("Ha outro empregado com esta identificacao de sindicato");
+                }
+            }
+            e.setUnionMembership(new UnionMembership(idSindicato, taxa));
+        } else if (valor != null && valor instanceof String && ((String)valor).equalsIgnoreCase("false")) {
+            e.setUnionMembership(null);
+        } else {
+            throw new InvalidDataException("Valor de sindicalizado deve ser true ou false.");
+        }
+    }
     /**
      * Retorna o total de vendas realizadas por um empregado comissionado em um intervalo de datas.
      * @param id ID do empregado
@@ -28,7 +108,14 @@ public class PayrollFacade {
         double total = 0.0;
         for (SalesReceipt sr : ((CommissionedEmployee) e).sales) {
             if (wepayu.util.DateUtils.isBetweenExclusiveEnd(sr.getDate(), dataInicial, dataFinal)) {
-                total += sr.getAmount();
+                String valorStr = String.valueOf(sr.getAmount());
+                double valor;
+                try {
+                    valor = Double.parseDouble(valorStr.replace(",", "."));
+                } catch (NumberFormatException ex) {
+                    valor = sr.getAmount();
+                }
+                total += valor;
             }
         }
         return df.format(total);
@@ -56,7 +143,7 @@ public class PayrollFacade {
 
     // formatador para salário/comissão no formato brasileiro (23,32)
     private static final DecimalFormat df = new DecimalFormat("#0.00",
-            new DecimalFormatSymbols(new Locale("pt", "BR")));
+            new DecimalFormatSymbols(Locale.forLanguageTag("pt-BR")));
 
         /**
          * Retorna o total de horas normais trabalhadas por um empregado horista em um intervalo de datas.
@@ -218,13 +305,22 @@ public class PayrollFacade {
     }
 
     public void lancaVenda(String id, String data, double valor) {
-    if (id == null || id.isBlank() || data == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
-    if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
-    if (valor <= 0) throw new InvalidDataException("Valor deve ser positivo.");
-    Employee e = PayrollDatabase.getEmployee(id);
-    if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
-    if (!(e instanceof CommissionedEmployee)) throw new InvalidDataException("Empregado nao eh comissionado.");
-    ((CommissionedEmployee) e).addSalesReceipt(new SalesReceipt(data, valor));
+        if (id == null || id.isBlank() || data == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
+        if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
+        double valorCorrigido = valor;
+        // Trata valores com vírgula vindos como String convertida incorretamente
+        if (String.valueOf(valor).contains(",")) {
+            try {
+                valorCorrigido = Double.parseDouble(String.valueOf(valor).replace(",", "."));
+            } catch (NumberFormatException ex) {
+                throw new InvalidDataException("Valor deve ser numerico.");
+            }
+        }
+        if (valorCorrigido <= 0) throw new InvalidDataException("Valor deve ser positivo.");
+        Employee e = PayrollDatabase.getEmployee(id);
+        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+        if (!(e instanceof CommissionedEmployee)) throw new InvalidDataException("Empregado nao eh comissionado.");
+        ((CommissionedEmployee) e).addSalesReceipt(new SalesReceipt(data, valorCorrigido));
 
     }
     // Sobrecarga para aceitar valor como String (com vírgula)
@@ -238,19 +334,33 @@ public class PayrollFacade {
             throw new InvalidDataException("Valor deve ser numerico.");
         }
         if (valor <= 0) throw new InvalidDataException("Valor deve ser positivo.");
-        Employee e = PayrollDatabase.getEmployee(id);
-        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
-        if (!(e instanceof CommissionedEmployee)) throw new InvalidDataException("Empregado nao eh comissionado.");
-        ((CommissionedEmployee) e).addSalesReceipt(new SalesReceipt(data, valor));
+        lancaVenda(id, data, valor);
     // ...existing code...
     }
 
     public void lancaTaxaServico(String id, String data, double valor) {
-        if (id == null || data == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
-        Employee e = PayrollDatabase.getEmployee(id);
-        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
-        if (e.getUnionMembership() == null) throw new InvalidDataException("Empregado nao eh sindicalizado.");
-        e.getUnionMembership().addServiceCharge(new ServiceCharge(data, valor));
+    // Sobrecarga para aceitar valor como String (com vírgula)
+        if (id == null || id.isBlank()) throw new InvalidDataException("Identificacao do membro nao pode ser nula.");
+        if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
+        double valorCorrigido = valor;
+        // Trata valores com vírgula vindos como String convertida incorretamente
+        if (String.valueOf(valor).contains(",")) {
+            try {
+                valorCorrigido = Double.parseDouble(String.valueOf(valor).replace(",", "."));
+            } catch (NumberFormatException ex) {
+                throw new InvalidDataException("Valor deve ser numerico.");
+            }
+        }
+        if (valorCorrigido <= 0) throw new InvalidDataException("Valor deve ser positivo.");
+        Employee e = null;
+        for (Employee emp : PayrollDatabase.getAllEmployees().values()) {
+            if (emp.getUnionMembership() != null && id.equals(emp.getUnionMembership().getUnionId())) {
+                e = emp;
+                break;
+            }
+        }
+        if (e == null) throw new InvalidDataException("Membro nao existe.");
+        e.getUnionMembership().addServiceCharge(new ServiceCharge(data, valorCorrigido));
     }
 
     // Obter atributos de empregado

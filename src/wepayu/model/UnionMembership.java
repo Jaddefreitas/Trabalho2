@@ -4,6 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UnionMembership {
+    public List<ServiceCharge> getServiceCharges() {
+        return serviceCharges;
+    }
+
+    public String getUnionId() {
+        return unionId;
+    }
     private String unionId;
     private double monthlyFee;
     private List<ServiceCharge> serviceCharges = new ArrayList<>();
