@@ -41,6 +41,23 @@ public class HourlyEmployee extends Employee {
 
     @Override
     public boolean isPayDate(String date) {
-        return util.DateUtils.isFriday(date);
+        return DateUtils.isFriday(date);
     }
+
+    public double getHorasTrabalhadas(String dataInicial, String dataFinal, boolean extras) {
+    double total = 0;
+    for (TimeCard c : timeCards) {
+        // Agora: inclui o dia inicial, mas não o final
+        if (DateUtils.isBetweenExclusiveEnd(c.getDate(), dataInicial, dataFinal)) {
+            if (extras) {
+                if (c.getHours() > 8) total += (c.getHours() - 8);
+            } else {
+                total += Math.min(c.getHours(), 8);
+            }
+        }
+    }
+    return total;
+    }
+
+
 }

@@ -3,6 +3,8 @@ package wepayu.model;
 import java.util.ArrayList;
 import java.util.List;
 import wepayu.util.DateUtils;
+import wepayu.model.CommissionedEmployee;
+
 
 public class CommissionedEmployee extends SalariedEmployee {
     private double commissionRate;
@@ -33,6 +35,6 @@ public class CommissionedEmployee extends SalariedEmployee {
 
     @Override
     public boolean isPayDate(String date) {
-        return util.DateUtils.isBiweeklyFriday(date);
+        return DateUtils.isBiweeklyFriday(date);
     }
 }

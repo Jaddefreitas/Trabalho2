@@ -10,11 +10,50 @@ import java.util.List;
 import java.util.Locale;
 
 public class PayrollFacade {
+    /**
+     * Retorna o total de horas extras trabalhadas por um empregado horista em um intervalo de datas.
+     * O valor retornado é inteiro, conforme esperado pelo teste.
+     * @param id ID do empregado
+     * @param dataInicial Data inicial (inclusive)
+     * @param dataFinal Data final (exclusive)
+     * @return Horas extras trabalhadas (int)
+     */
+    public String getHorasExtrasTrabalhadas(String id, String dataInicial, String dataFinal) {
+        if (id == null || id.isBlank()) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
+        Employee e = PayrollDatabase.getEmployee(id);
+        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+        if (!(e instanceof HourlyEmployee)) throw new InvalidDataException("Tipo nao aplicavel.");
+        double horas = ((HourlyEmployee) e).getHorasTrabalhadas(dataInicial, dataFinal, true);
+        // Formata com vírgula, sem casas decimais desnecessárias
+        String horasStr = String.format(Locale.FRANCE, "%.1f", horas).replace('.', ',');
+        // Remove vírgula zero (ex: 1,0 -> 1)
+        if (horasStr.endsWith(",0")) horasStr = horasStr.substring(0, horasStr.length() - 2);
+        return horasStr;
+    }
 
     // formatador para salário/comissão no formato brasileiro (23,32)
     private static final DecimalFormat df = new DecimalFormat("#0.00",
             new DecimalFormatSymbols(new Locale("pt", "BR")));
 
+        /**
+         * Retorna o total de horas normais trabalhadas por um empregado horista em um intervalo de datas.
+         * O valor retornado é inteiro, conforme esperado pelo teste.
+         * @param id ID do empregado
+         * @param dataInicial Data inicial (inclusive)
+         * @param dataFinal Data final (exclusive)
+         * @return Horas normais trabalhadas (int)
+         */
+        public int getHorasNormaisTrabalhadas(String id, String dataInicial, String dataFinal) {
+            if (id == null || id.isBlank()) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
+            if (!wepayu.util.DateUtils.isValidDate(dataInicial)) throw new InvalidDataException("Data inicial invalida.");
+            if (!wepayu.util.DateUtils.isValidDate(dataFinal)) throw new InvalidDataException("Data final invalida.");
+            if (wepayu.util.DateUtils.compareDates(dataInicial, dataFinal) > 0) throw new InvalidDataException("Data inicial nao pode ser posterior aa data final.");
+            Employee e = PayrollDatabase.getEmployee(id);
+            if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+            if (!(e instanceof HourlyEmployee)) throw new InvalidDataException("Empregado nao eh horista.");
+            double horas = ((HourlyEmployee) e).getHorasTrabalhadas(dataInicial, dataFinal, false);
+            return (int) horas;
+        }
     // Reinicia o sistema
     public void zerarSistema() {
         PayrollDatabase.clear();
@@ -136,11 +175,22 @@ public class PayrollFacade {
     }
 
     // Lançamentos
-    public void lancaCartao(String id, String data, double horas) {
-        if (id == null || data == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
+    public void lancaCartao(String id, String data, String horasStr) {
+        if (id == null || id.isBlank() || data == null || horasStr == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
+        double horas;
+        try {
+            horas = Double.parseDouble(horasStr.replace(",", "."));
+        } catch (NumberFormatException ex) {
+            throw new InvalidDataException("Horas deve ser numerica.");
+        }
+        if (horas <= 0) throw new InvalidDataException("Horas devem ser positivas.");
+        // Validação de data: formato dd/MM/yyyy
+        if (!wepayu.util.DateUtils.isValidDate(data)) {
+            throw new InvalidDataException("Data invalida.");
+        }
         Employee e = PayrollDatabase.getEmployee(id);
         if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
-        if (!(e instanceof HourlyEmployee)) throw new InvalidDataException("Tipo nao aplicavel.");
+        if (!(e instanceof HourlyEmployee)) throw new InvalidDataException("Empregado nao eh horista.");
         ((HourlyEmployee) e).addTimeCard(new TimeCard(data, horas));
     }
 

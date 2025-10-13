@@ -26,7 +26,7 @@ public class SalariedEmployee extends Employee {
 
     @Override
     public boolean isPayDate(String date) {
-        return util.DateUtils.isLastWorkDayOfMonth(date);
+        return DateUtils.isLastWorkDayOfMonth(date);
     }
 }
 
