@@ -8,7 +8,7 @@ import wepayu.model.CommissionedEmployee;
 
 public class CommissionedEmployee extends SalariedEmployee {
     private double commissionRate;
-    private List<SalesReceipt> sales = new ArrayList<>();
+    public List<SalesReceipt> sales = new ArrayList<>();
 
     public CommissionedEmployee(String name, String address, double salary, double commissionRate) {
         super(name, address, salary);

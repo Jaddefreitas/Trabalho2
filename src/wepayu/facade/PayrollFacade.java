@@ -11,6 +11,29 @@ import java.util.Locale;
 
 public class PayrollFacade {
     /**
+     * Retorna o total de vendas realizadas por um empregado comissionado em um intervalo de datas.
+     * @param id ID do empregado
+     * @param dataInicial Data inicial (inclusive)
+     * @param dataFinal Data final (exclusive)
+     * @return Total de vendas realizadas (String, formato brasileiro)
+     */
+    public String getVendasRealizadas(String id, String dataInicial, String dataFinal) {
+        if (id == null || id.isBlank()) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
+        if (!wepayu.util.DateUtils.isValidDate(dataInicial)) throw new InvalidDataException("Data inicial invalida.");
+        if (!wepayu.util.DateUtils.isValidDate(dataFinal)) throw new InvalidDataException("Data final invalida.");
+        if (wepayu.util.DateUtils.compareDates(dataInicial, dataFinal) > 0) throw new InvalidDataException("Data inicial nao pode ser posterior aa data final.");
+        Employee e = PayrollDatabase.getEmployee(id);
+        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+        if (!(e instanceof CommissionedEmployee)) throw new InvalidDataException("Empregado nao eh comissionado.");
+        double total = 0.0;
+        for (SalesReceipt sr : ((CommissionedEmployee) e).sales) {
+            if (wepayu.util.DateUtils.isBetweenExclusiveEnd(sr.getDate(), dataInicial, dataFinal)) {
+                total += sr.getAmount();
+            }
+        }
+        return df.format(total);
+    }
+    /**
      * Retorna o total de horas extras trabalhadas por um empregado horista em um intervalo de datas.
      * O valor retornado é inteiro, conforme esperado pelo teste.
      * @param id ID do empregado
@@ -195,11 +218,31 @@ public class PayrollFacade {
     }
 
     public void lancaVenda(String id, String data, double valor) {
-        if (id == null || data == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
+    if (id == null || id.isBlank() || data == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
+    if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
+    if (valor <= 0) throw new InvalidDataException("Valor deve ser positivo.");
+    Employee e = PayrollDatabase.getEmployee(id);
+    if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+    if (!(e instanceof CommissionedEmployee)) throw new InvalidDataException("Empregado nao eh comissionado.");
+    ((CommissionedEmployee) e).addSalesReceipt(new SalesReceipt(data, valor));
+
+    }
+    // Sobrecarga para aceitar valor como String (com vírgula)
+    public void lancaVenda(String id, String data, String valorStr) {
+        if (id == null || id.isBlank() || data == null || valorStr == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
+        if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
+        double valor;
+        try {
+            valor = Double.parseDouble(valorStr.replace(",", "."));
+        } catch (NumberFormatException ex) {
+            throw new InvalidDataException("Valor deve ser numerico.");
+        }
+        if (valor <= 0) throw new InvalidDataException("Valor deve ser positivo.");
         Employee e = PayrollDatabase.getEmployee(id);
         if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
-        if (!(e instanceof CommissionedEmployee)) throw new InvalidDataException("Tipo nao aplicavel.");
+        if (!(e instanceof CommissionedEmployee)) throw new InvalidDataException("Empregado nao eh comissionado.");
         ((CommissionedEmployee) e).addSalesReceipt(new SalesReceipt(data, valor));
+    // ...existing code...
     }
 
     public void lancaTaxaServico(String id, String data, double valor) {
