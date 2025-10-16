@@ -1,0 +1,3 @@
+Contracheque: Empregado 06e6298d-bd1f-3795-9f75-fc82b7b79598 | Bruto: R$1200.0 | Deducoes: R$146.0 | Liquido: R$1054.0
+Contracheque: Empregado fba35819-dbe7-36a7-b061-71e6ef527b8f | Bruto: R$1000.0 | Deducoes: R$0.0 | Liquido: R$1000.0
+Contracheque: Empregado 99ba82e3-b0c9-3690-a18b-b2f0f10807a9 | Bruto: R$1100.0 | Deducoes: R$1.0 | Liquido: R$1099.0

@@ -1,6 +1,5 @@
 package wepayu.util;
 
-import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeFormatterBuilder;
@@ -27,6 +26,11 @@ public class DateUtils {
                     .appendValue(ChronoField.YEAR, 4)
                     .toFormatter()
                     .withResolverStyle(ResolverStyle.STRICT);
+
+            // Expose a parser for other utilities
+            public static java.time.LocalDate parseLocalDate(String dateStr) {
+                return LocalDate.parse(dateStr.trim(), FLEXIBLE_FORMATTER);
+            }
 
     // ---------------------------------------------------------------
     // Verifica se uma data é válida (aceita 1/1/2005 e 01/01/2005)

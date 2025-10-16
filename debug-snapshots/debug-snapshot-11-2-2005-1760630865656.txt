@@ -1,0 +1,6 @@
+Snapshot for date: 11/2/2005
+__SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5
+__SCHEDULE__::mensal $ | SCHEDULE | mensal $
+5d700a3e-5768-49b5-a0fc-f9034d533238 | Maria | 
+e373a291-4289-4c7b-81d4-62d1434e0137 | Joao da Silva | 
+__SCHEDULE__::semanal 5 | SCHEDULE | semanal 5

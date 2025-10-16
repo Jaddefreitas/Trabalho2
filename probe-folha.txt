@@ -1,0 +1,2 @@
+Contracheque: Empregado e8cdf81e-ebc0-39c5-9dcf-0774fb2265bf | Bruto: R$0.0 | Deducoes: R$0.0 | Liquido: R$0.0
+Contracheque: Empregado 176e51fd-490a-3663-a598-34efd8622172 | Bruto: R$0.0 | Deducoes: R$0.0 | Liquido: R$0.0

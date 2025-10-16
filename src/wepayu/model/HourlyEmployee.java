@@ -22,6 +22,10 @@ public class HourlyEmployee extends Employee {
         return hourlyRate;
     }
 
+    public void setHourlyRate(double hourlyRate) {
+        this.hourlyRate = hourlyRate;
+    }
+
     @Override
     public double calculatePay() {
         double total = 0;

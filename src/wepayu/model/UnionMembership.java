@@ -20,6 +20,10 @@ public class UnionMembership {
         this.monthlyFee = monthlyFee;
     }
 
+    public double getMonthlyFee() {
+        return monthlyFee;
+    }
+
     public void addServiceCharge(ServiceCharge charge) {
         serviceCharges.add(charge);
     }

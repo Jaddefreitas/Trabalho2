@@ -3,7 +3,6 @@ package wepayu.model;
 import java.util.ArrayList;
 import java.util.List;
 import wepayu.util.DateUtils;
-import wepayu.model.CommissionedEmployee;
 
 
 public class CommissionedEmployee extends SalariedEmployee {
@@ -22,6 +21,14 @@ public class CommissionedEmployee extends SalariedEmployee {
 
     public double getCommissionRate() {
         return commissionRate;
+    }
+
+    public void setCommissionRate(double commissionRate) {
+        this.commissionRate = commissionRate;
+    }
+
+    public void setMonthlySalary(double salary) {
+        // super uses private monthlySalary; use setter in SalariedEmployee if needed
     }
 
     @Override
