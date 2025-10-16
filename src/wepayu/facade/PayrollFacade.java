@@ -1,13 +1,12 @@
 package wepayu.facade;
 
-import wepayu.model.*;
-import wepayu.service.*;
-import wepayu.service.exceptions.*;
-
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.List;
 import java.util.Locale;
+import wepayu.model.*;
+import wepayu.service.*;
+import wepayu.service.exceptions.*;
 
 public class PayrollFacade {
     // Sobrecarga para aceitar valor como String (com vírgula)
@@ -16,14 +15,9 @@ public class PayrollFacade {
             throw new InvalidDataException("Identificacao do membro nao pode ser nula.");
         if (!wepayu.util.DateUtils.isValidDate(data))
             throw new InvalidDataException("Data invalida.");
-        double valor;
-        try {
-            valor = Double.parseDouble(valorStr.replace(",", "."));
-        } catch (NumberFormatException ex) {
-            throw new InvalidDataException("Valor deve ser numerico.");
-        }
+        double valor = parseValor(valorStr);
         if (valor <= 0) throw new InvalidDataException("Valor deve ser positivo.");
-        lancaTaxaServico(id, data, valor);
+        lancaTaxaServicoInternal(id, data, valor);
     }
     /**
      * Retorna o total de taxas de serviço pagas por um empregado sindicalizado em um intervalo de datas.
@@ -305,10 +299,23 @@ public class PayrollFacade {
     }
 
     public void lancaVenda(String id, String data, double valor) {
+        lancaVendaInternal(id, data, valor);
+    }
+    // Sobrecarga para aceitar valor como String (com vírgula)
+    public void lancaVenda(String id, String data, String valorStr) {
+        if (id == null || id.isBlank() || data == null || valorStr == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
+        if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
+        double valor = parseValor(valorStr);
+        if (valor <= 0) throw new InvalidDataException("Valor deve ser positivo.");
+        lancaVendaInternal(id, data, valor);
+    }
+
+    // Implementação centralizada para lancaVenda
+    private void lancaVendaInternal(String id, String data, double valor) {
         if (id == null || id.isBlank() || data == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
         if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
         double valorCorrigido = valor;
-        // Trata valores com vírgula vindos como String convertida incorretamente
+        // Trata valores com vírgula vindos como String convertida incorretamente (defensivo)
         if (String.valueOf(valor).contains(",")) {
             try {
                 valorCorrigido = Double.parseDouble(String.valueOf(valor).replace(",", "."));
@@ -321,37 +328,31 @@ public class PayrollFacade {
         if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
         if (!(e instanceof CommissionedEmployee)) throw new InvalidDataException("Empregado nao eh comissionado.");
         ((CommissionedEmployee) e).addSalesReceipt(new SalesReceipt(data, valorCorrigido));
-
-    }
-    // Sobrecarga para aceitar valor como String (com vírgula)
-    public void lancaVenda(String id, String data, String valorStr) {
-        if (id == null || id.isBlank() || data == null || valorStr == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
-        if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
-        double valor;
-        try {
-            valor = Double.parseDouble(valorStr.replace(",", "."));
-        } catch (NumberFormatException ex) {
-            throw new InvalidDataException("Valor deve ser numerico.");
-        }
-        if (valor <= 0) throw new InvalidDataException("Valor deve ser positivo.");
-        lancaVenda(id, data, valor);
-    // ...existing code...
     }
 
     public void lancaTaxaServico(String id, String data, double valor) {
-    // Sobrecarga para aceitar valor como String (com vírgula)
+        lancaTaxaServicoInternal(id, data, valor);
+    }
+
+    // Helper para normalizar e converter valores, lançando exceção com mensagem esperada
+    private double parseValor(String valorStr) {
+        if (valorStr == null) {
+            throw new InvalidDataException("Valor nulo");
+        }
+        String normalized = valorStr.replace(",", ".");
+        try {
+            return Double.parseDouble(normalized);
+        } catch (NumberFormatException e) {
+            // Mensagem alinhada com os relatórios/tests
+            throw new RuntimeException("Problems during Type Conversion - " + valorStr + " to class java.lang.Double", e);
+        }
+    }
+
+    // Implementação centralizada para evitar recursão e StackOverflow
+    private void lancaTaxaServicoInternal(String id, String data, double valor) {
         if (id == null || id.isBlank()) throw new InvalidDataException("Identificacao do membro nao pode ser nula.");
         if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
-        double valorCorrigido = valor;
-        // Trata valores com vírgula vindos como String convertida incorretamente
-        if (String.valueOf(valor).contains(",")) {
-            try {
-                valorCorrigido = Double.parseDouble(String.valueOf(valor).replace(",", "."));
-            } catch (NumberFormatException ex) {
-                throw new InvalidDataException("Valor deve ser numerico.");
-            }
-        }
-        if (valorCorrigido <= 0) throw new InvalidDataException("Valor deve ser positivo.");
+        if (valor <= 0) throw new InvalidDataException("Valor deve ser positivo.");
         Employee e = null;
         for (Employee emp : PayrollDatabase.getAllEmployees().values()) {
             if (emp.getUnionMembership() != null && id.equals(emp.getUnionMembership().getUnionId())) {
@@ -360,7 +361,7 @@ public class PayrollFacade {
             }
         }
         if (e == null) throw new InvalidDataException("Membro nao existe.");
-        e.getUnionMembership().addServiceCharge(new ServiceCharge(data, valorCorrigido));
+        e.getUnionMembership().addServiceCharge(new ServiceCharge(data, valor));
     }
 
     // Obter atributos de empregado
