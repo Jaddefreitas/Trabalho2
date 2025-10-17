@@ -1,0 +1,6 @@
+Snapshot for date: 25/5/2005
+__SCHEDULE__::mensal $ | SCHEDULE | mensal $
+__SCHEDULE__::semanal 5 | SCHEDULE | semanal 5
+__SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5
+EMP-11 | Joao da Silva | semanal 3 3
+__SCHEDULE__::semanal 3 3 | SCHEDULE | semanal 3 3

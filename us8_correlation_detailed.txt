@@ -1,0 +1,6039 @@
+﻿---- ERROR LINE 42 ----
+Line 42, file tests/us8.txt: Expected <2>, but was <1>
+Relevant traces before error:\nTRACE_SNAPSHOT seq=1 size=3
+TRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,2,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 45 ----
+Line 45, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=1 size=3
+TRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,2,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 46 ----
+Line 46, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=1 size=3
+TRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,2,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 50 ----
+Line 50, file tests/us8.txt: Expected <0,00>, but was <800,00>
+Relevant traces before error:\nTRACE_SNAPSHOT seq=1 size=3
+TRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,2,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 52 ----
+Line 52, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=1 size=3
+TRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,2,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 53 ----
+Line 53, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=1 size=3
+TRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,2,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 56 ----
+Line 56, file tests/us8.txt: Expected <2>, but was <1>
+Relevant traces before error:\nTRACE_SNAPSHOT seq=1 size=3
+TRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,2,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 57 ----
+Line 57, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=1 size=3
+TRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,2,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 58 ----
+Line 58, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=1 size=3
+TRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,2,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 59 ----
+Line 59, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=1 size=3
+TRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,2,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 60 ----
+Line 60, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=1 size=3
+TRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,2,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 63 ----
+Line 63, file tests/us8.txt: Expected <2>, but was <0>
+Relevant traces before error:\nTRACE_SNAPSHOT seq=1 size=3
+TRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,2,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 64 ----
+Line 64, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=1 size=3
+TRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,2,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 65 ----
+Line 65, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=2 size=0
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 2,1,3,4,5,6,7,8,9,10,11,12
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 66 ----
+Line 66, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 1,3,4,5,6,7,8,9,10,11,12,2
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+
+---- ERROR LINE 67 ----
+Line 67, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 3,4,5,6,7,8,9,10,11,12,1,2
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+
+---- ERROR LINE 70 ----
+Line 70, file tests/us8.txt: Expected <2>, but was <0>
+Relevant traces before error:\nTRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 3,4,5,6,7,8,9,10,11,12,1,2
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+
+---- ERROR LINE 71 ----
+Line 71, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=3 size=3
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 3,4,5,6,7,8,9,10,11,12,1,2
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+
+---- ERROR LINE 72 ----
+Line 72, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 4,3,5,6,7,8,9,10,11,12,1,2
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+
+---- ERROR LINE 73 ----
+Line 73, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 5,6,7,8,9,10,11,12,3,1,2,4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+
+---- ERROR LINE 74 ----
+Line 74, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=5 size=4
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 5,6,7,8,9,10,11,12,3,1,2,4
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+
+---- ERROR LINE 79 ----
+Line 79, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 6,5,7,8,9,10,11,12,3,1,2,4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+
+---- ERROR LINE 81 ----
+Line 81, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=7 size=5
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 7,8,9,10,11,12,5,3,1,2,4,6
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 83 ----
+Line 83, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 8,7,9,10,11,12,5,3,1,2,4,6
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+
+---- ERROR LINE 85 ----
+Line 85, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 9,10,11,12,7,5,3,1,2,4,6,8
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+
+---- ERROR LINE 87 ----
+Line 87, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=9 size=4
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 9,10,11,12,7,5,3,1,2,4,6,8
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-10-exec.txt
+snapshot-seq=10 size=0
+FOUND: debug-snapshots\snap-10-restore.txt
+restore-seq=10 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+
+---- ERROR LINE 89 ----
+Line 89, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 11,12,9,7,5,3,1,2,4,6,8
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+
+---- ERROR LINE 91 ----
+Line 91, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 11,12,9,7,5,3,1,2,4,6,8
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+
+---- ERROR LINE 96 ----
+Line 96, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 11,12,9,7,5,3,1,2,4,6,8
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+
+---- ERROR LINE 98 ----
+Line 98, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=11 size=5
+TRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 11,12,9,7,5,3,1,2,4,6,8
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+
+---- ERROR LINE 102 ----
+Line 102, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Relevant traces before error:\nTRACE_SNAPSHOT seq=12 size=0
+TRACE_CMD_SEQ pushed seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 12,11,9,7,5,3,1,2,4,6,8
+FOUND: debug-snapshots\snap-12-exec.txt
+snapshot-seq=12 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-9
+FOUND: debug-snapshots\snap-12-restore.txt
+restore-seq=12 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+
+---- ERROR LINE 121 ----
+Line 121, file tests/us8.txt: Expected <0,00>, but was <800,00>
+Relevant traces before error:\nTRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 11,9,7,5,3,1,2,4,6,8
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+
+---- ERROR LINE 123 ----
+Line 123, file tests/us8.txt: Expected <600,00>, but was <1400,00>
+Relevant traces before error:\nTRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 11,9,7,5,3,1,2,4,6,8
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+
+---- ERROR LINE 125 ----
+Line 125, file tests/us8.txt: Expected <600,00>, but was <1400,00>
+Relevant traces before error:\nTRACE_RESTORE seq=11 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 11,9,7,5,3,1,2,4,6,8
+FOUND: debug-snapshots\snap-11-exec.txt
+snapshot-seq=11 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-11-restore.txt
+restore-seq=11 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+EMP-6
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+
+---- ERROR LINE 127 ----
+Line 127, file tests/us8.txt: Expected <0,00>, but was <1400,00>
+Relevant traces before error:\nTRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_RESTORE seq=2 restoreSize=0
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+Referenced seqs: 9,7,5,3,1,2,4,6,8
+FOUND: debug-snapshots\snap-9-exec.txt
+snapshot-seq=9 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+__SCHEDULE__::mensal 1
+FOUND: debug-snapshots\snap-9-restore.txt
+restore-seq=9 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+FOUND: debug-snapshots\snap-7-exec.txt
+snapshot-seq=7 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-7-restore.txt
+restore-seq=7 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-5-exec.txt
+snapshot-seq=5 size=6
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+__SCHEDULE__::mensal 1
+__SCHEDULE__::semanal 2
+FOUND: debug-snapshots\snap-5-restore.txt
+restore-seq=5 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-3-exec.txt
+snapshot-seq=3 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-3-restore.txt
+restore-seq=3 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-exec.txt
+snapshot-seq=1 size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-1-restore.txt
+restore-seq=1 restore-size=3
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+FOUND: debug-snapshots\snap-2-exec.txt
+snapshot-seq=2 size=0
+FOUND: debug-snapshots\snap-2-restore.txt
+restore-seq=2 restore-size=0
+FOUND: debug-snapshots\snap-4-exec.txt
+snapshot-seq=4 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-4-restore.txt
+restore-seq=4 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+FOUND: debug-snapshots\snap-6-exec.txt
+snapshot-seq=6 size=0
+FOUND: debug-snapshots\snap-6-restore.txt
+restore-seq=6 restore-size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-4
+EMP-5
+FOUND: debug-snapshots\snap-8-exec.txt
+snapshot-seq=8 size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-7
+FOUND: debug-snapshots\snap-8-restore.txt
+restore-seq=8 restore-size=4
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-5
+
+

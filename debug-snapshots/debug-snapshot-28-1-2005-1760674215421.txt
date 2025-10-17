@@ -1,0 +1,16 @@
+Snapshot for date: 28/1/2005
+__SCHEDULE__::mensal $ | SCHEDULE | mensal $
+__SCHEDULE__::semanal 5 | SCHEDULE | semanal 5
+__SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5
+EMP-4 | Fernanda Montenegro | 
+EMP-5 | Paloma Duarte | 
+EMP-6 | Lavinia Vlasak | 
+EMP-7 | Claudia Abreu | 
+EMP-8 | Claudia Raia | 
+EMP-9 | Natalia do Valle | 
+EMP-10 | Regina Duarte | 
+EMP-11 | Flavia Alessandra | 
+EMP-12 | Deborah Secco | 
+EMP-13 | Ana Paula Arosio | 
+EMP-14 | Suzana Vieira | 
+EMP-15 | Maite Proenca | 

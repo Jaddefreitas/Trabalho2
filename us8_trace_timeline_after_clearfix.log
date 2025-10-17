@@ -1,0 +1,368 @@
+﻿
+TRACE_GET_EMP 
+id=__SCHEDULE__::mensal $ 
+-> MISSING (current 
+count=0)
+TRACE_GET_EMP 
+id=__SCHEDULE__::semanal 5 
+-> MISSING (current 
+count=1)
+TRACE_GET_EMP 
+id=__SCHEDULE__::semanal 2 
+5 -> MISSING (current 
+count=2)
+TRACE_EXEC_CMD execute 
+ClearSystemCommand
+TRACE_CLEAR_DATABASE: 
+removing all employees 
+(keeping schedule 
+placeholders will be 
+re-added)
+TRACE_CMD_SEQ pushed seq=1 
+cmd=ClearSystemCommand
+TRACE_STACKS after 
+execute: undoSize=1 
+topUndo=ClearSystemCommand 
+redoSize=0 topRedo=-
+TRACE_GET_EMP 
+id=__SCHEDULE__::mensal $ 
+-> MISSING (current 
+count=0)
+TRACE_GET_EMP 
+id=__SCHEDULE__::semanal 5 
+-> MISSING (current 
+count=1)
+TRACE_GET_EMP 
+id=__SCHEDULE__::semanal 2 
+5 -> MISSING (current 
+count=2)
+TRACE_EXEC_CMD execute 
+AddEmployeeCommand
+TRACE_ADD_EMP id=EMP-4 
+name=Joao da Silva 
+type=HourlyEmployee
+TRACE_CMD_SEQ pushed seq=2 
+cmd=AddEmployeeCommand
+TRACE_STACKS after 
+execute: undoSize=2 
+topUndo=AddEmployeeCommand 
+redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute 
+AddEmployeeCommand
+TRACE_ADD_EMP id=EMP-5 
+name=Gaiato Vendedor 
+type=CommissionedEmployee
+TRACE_CMD_SEQ pushed seq=3 
+cmd=AddEmployeeCommand
+TRACE_STACKS after 
+execute: undoSize=3 
+topUndo=AddEmployeeCommand 
+redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> 
+FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute 
+RemoveEmployeeCommand
+TRACE_GET_EMP id=EMP-4 -> 
+FOUND name=Joao da Silva
+TRACE_REMOVE_EMP id=EMP-4 
+present=true
+TRACE_CMD_SEQ pushed seq=4 
+cmd=RemoveEmployeeCommand
+TRACE_STACKS after 
+execute: undoSize=4 topUndo
+=RemoveEmployeeCommand 
+redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute 
+AddEmployeeCommand
+TRACE_ADD_EMP id=EMP-6 
+name=Joaozinho da Silva 
+type=HourlyEmployee
+TRACE_CMD_SEQ pushed seq=5 
+cmd=AddEmployeeCommand
+TRACE_STACKS after 
+execute: undoSize=5 
+topUndo=AddEmployeeCommand 
+redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-6 -> 
+FOUND name=Joaozinho da 
+Silva
+TRACE_GET_EMP id=EMP-6 -> 
+FOUND name=Joaozinho da 
+Silva
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-6 -> 
+FOUND name=Joaozinho da 
+Silva
+TRACE_GET_EMP id=EMP-6 -> 
+FOUND name=Joaozinho da 
+Silva
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_EXEC_CMD execute 
+ClearSystemCommand
+TRACE_CLEAR_DATABASE: 
+removing all employees 
+(keeping schedule 
+placeholders will be 
+re-added)
+TRACE_CMD_SEQ pushed seq=6 
+cmd=ClearSystemCommand
+TRACE_STACKS after 
+execute: undoSize=6 
+topUndo=ClearSystemCommand 
+redoSize=0 topRedo=-
+TRACE_GET_EMP 
+id=__SCHEDULE__::mensal $ 
+-> MISSING (current 
+count=0)
+TRACE_GET_EMP 
+id=__SCHEDULE__::semanal 5 
+-> MISSING (current 
+count=1)
+TRACE_GET_EMP 
+id=__SCHEDULE__::semanal 2 
+5 -> MISSING (current 
+count=2)
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo 
+ClearSystemCommand
+TRACE_CMD_SEQ undo 
+pushed-to-redo seq=6 
+cmd=ClearSystemCommand
+TRACE_STACKS after undo: 
+undoSize=5 
+topUndo=AddEmployeeCommand 
+redoSize=1 
+topRedo=ClearSystemCommand
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-6 -> 
+FOUND name=Joaozinho da 
+Silva
+TRACE_GET_EMP id=EMP-6 -> 
+FOUND name=Joaozinho da 
+Silva
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo 
+AddEmployeeCommand
+TRACE_CMD_SEQ undo 
+pushed-to-redo seq=5 
+cmd=AddEmployeeCommand
+TRACE_STACKS after undo: 
+undoSize=4 topUndo=RemoveEm
+ployeeCommand redoSize=2 
+topRedo=AddEmployeeCommand
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-6 -> 
+MISSING (current count=4)
+TRACE_GET_EMP id=EMP-6 -> 
+MISSING (current count=4)
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo 
+RemoveEmployeeCommand
+TRACE_CMD_SEQ undo 
+pushed-to-redo seq=4 
+cmd=RemoveEmployeeCommand
+TRACE_STACKS after undo: 
+undoSize=3 
+topUndo=AddEmployeeCommand 
+redoSize=3 topRedo=RemoveEm
+ployeeCommand
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-6 -> 
+MISSING (current count=5)
+TRACE_GET_EMP id=EMP-6 -> 
+MISSING (current count=5)
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo 
+AddEmployeeCommand
+TRACE_CMD_SEQ undo 
+pushed-to-redo seq=3 
+cmd=AddEmployeeCommand
+TRACE_STACKS after undo: 
+undoSize=2 
+topUndo=AddEmployeeCommand 
+redoSize=4 
+topRedo=AddEmployeeCommand
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=4)
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=4)
+TRACE_GET_EMP id=EMP-6 -> 
+MISSING (current count=4)
+TRACE_GET_EMP id=EMP-6 -> 
+MISSING (current count=4)
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo 
+AddEmployeeCommand
+TRACE_CMD_SEQ undo 
+pushed-to-redo seq=2 
+cmd=AddEmployeeCommand
+TRACE_STACKS after undo: 
+undoSize=1 
+topUndo=ClearSystemCommand 
+redoSize=5 
+topRedo=AddEmployeeCommand
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=3)
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=3)
+TRACE_GET_EMP id=EMP-6 -> 
+MISSING (current count=3)
+TRACE_GET_EMP id=EMP-6 -> 
+MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo 
+ClearSystemCommand
+TRACE_CMD_SEQ undo 
+pushed-to-redo seq=1 
+cmd=ClearSystemCommand
+TRACE_STACKS after undo: 
+undoSize=0 topUndo=- 
+redoSize=6 
+topRedo=ClearSystemCommand
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=3)
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=3)
+TRACE_GET_EMP id=EMP-6 -> 
+MISSING (current count=3)
+TRACE_GET_EMP id=EMP-6 -> 
+MISSING (current count=3)
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=3)
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=3)
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=3)
+TRACE_GET_EMP id=EMP-6 -> 
+MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-6 -> 
+MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-4 -> 
+MISSING (current count=3)
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-5 -> 
+MISSING (current count=3)
+TRACE_GET_EMP id=EMP-4 -> 
+MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-4 -> 
+MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD redo called
+TRACE_EXEC_CMD redo 
+ClearSystemCommand
+TRACE_CMD_SEQ redo 
+pushed-to-undo seq=1 
+cmd=ClearSystemCommand
+TRACE_STACKS after redo: 
+undoSize=1 
+topUndo=ClearSystemCommand 
+redoSize=5 
+topRedo=AddEmployeeCommand
+TRACE_EXEC_CMD redo called
+TRACE_EXEC_CMD redo 
+AddEmployeeCommand
+TRACE_CMD_SEQ redo 
+pushed-to-undo seq=2 
+cmd=AddEmployeeCommand
+TRACE_STACKS after redo: 
+undoSize=2 
+topUndo=AddEmployeeCommand 
+redoSize=4 
+topRedo=AddEmployeeCommand
+TRACE_EXEC_CMD redo called
+TRACE_EXEC_CMD redo 
+AddEmployeeCommand
+TRACE_CMD_SEQ redo 
+pushed-to-undo seq=3 
+cmd=AddEmployeeCommand
+TRACE_STACKS after redo: 
+undoSize=3 
+topUndo=AddEmployeeCommand 
+redoSize=3 topRedo=RemoveEm
+ployeeCommand
+TRACE_EXEC_CMD redo called
+TRACE_EXEC_CMD redo 
+RemoveEmployeeCommand
+TRACE_CMD_SEQ redo 
+pushed-to-undo seq=4 
+cmd=RemoveEmployeeCommand
+TRACE_STACKS after redo: 
+undoSize=4 topUndo=RemoveEm
+ployeeCommand redoSize=2 
+topRedo=AddEmployeeCommand
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo 
+RemoveEmployeeCommand
+TRACE_CMD_SEQ undo 
+pushed-to-redo seq=4 
+cmd=RemoveEmployeeCommand
+TRACE_STACKS after undo: 
+undoSize=3 
+topUndo=AddEmployeeCommand 
+redoSize=3 topRedo=RemoveEm
+ployeeCommand
+TRACE_GET_EMP id=EMP-5 -> 
+FOUND name=Gaiato Vendedor
+TRACE_CLEAR_DATABASE: 
+removing all employees 
+(keeping schedule 
+placeholders will be 
+re-added)
+TRACE_GET_EMP 
+id=__SCHEDULE__::mensal $ 
+-> MISSING (current 
+count=0)
+TRACE_GET_EMP 
+id=__SCHEDULE__::semanal 5 
+-> MISSING (current 
+count=1)
+TRACE_GET_EMP 
+id=__SCHEDULE__::semanal 2 
+5 -> MISSING (current 
+count=2)
+
+

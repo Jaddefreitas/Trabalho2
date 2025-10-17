@@ -1,0 +1,134 @@
+﻿
+Line 42, file 
+tests/us8.txt: Expected 
+<2>, but was <1>
+Line 45, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 46, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 50, file 
+tests/us8.txt: Expected 
+<0,00>, but was <800,00>
+Line 52, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 53, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 56, file 
+tests/us8.txt: Expected 
+<2>, but was <1>
+Line 57, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 58, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 59, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 60, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 63, file 
+tests/us8.txt: Expected 
+<2>, but was <0>
+Line 64, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 65, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 66, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 67, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 70, file 
+tests/us8.txt: Expected 
+<2>, but was <0>
+Line 71, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 72, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 73, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 74, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 79, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 81, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 83, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 85, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 87, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 89, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 91, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 96, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 98, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 102, file 
+tests/us8.txt: Unexpected 
+error: Empregado nao 
+existe.
+Line 121, file 
+tests/us8.txt: Expected 
+<0,00>, but was <800,00>
+Line 123, file 
+tests/us8.txt: Expected 
+<600,00>, but was <1400,00>
+Line 125, file 
+tests/us8.txt: Expected 
+<600,00>, but was <1400,00>
+Line 127, file 
+tests/us8.txt: Expected 
+<0,00>, but was <1400,00>
+
+

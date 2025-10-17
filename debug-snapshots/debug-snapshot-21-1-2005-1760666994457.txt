@@ -1,0 +1,5 @@
+Snapshot for date: 21/1/2005
+__SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5
+__SCHEDULE__::mensal $ | SCHEDULE | mensal $
+eab6a871-fa1f-3d83-ae56-9ab6b8aa2d15 | Alfa Um Horista | mensal $
+__SCHEDULE__::semanal 5 | SCHEDULE | semanal 5

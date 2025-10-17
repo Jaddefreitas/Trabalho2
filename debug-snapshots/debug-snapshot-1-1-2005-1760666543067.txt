@@ -1,0 +1,6 @@
+Snapshot for date: 1/1/2005
+__SCHEDULE__::semanal 2 | SCHEDULE | semanal 2
+__SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5
+__SCHEDULE__::mensal $ | SCHEDULE | mensal $
+4fc1c057-d8d0-313c-9f7b-f9ac64ea8def | Joao da Silva | semanal 2
+__SCHEDULE__::semanal 5 | SCHEDULE | semanal 5

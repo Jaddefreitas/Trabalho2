@@ -1,0 +1,16 @@
+Snapshot for date: 17/1/2005
+f7dc524f-c2bb-3f6c-ad05-bf330e278665 | Ana Paula Arosio | 
+__SCHEDULE__::mensal $ | SCHEDULE | mensal $
+fe541abd-e14a-3b24-86d0-a96f223474de | Claudia Abreu | 
+55ce7684-e985-3fe2-ba38-097c425ab2ad | Natalia do Valle | 
+176e51fd-490a-3663-a598-34efd8622172 | Paloma Duarte | 
+b43671e3-8a74-37ef-94f5-ffda7db7ffcd | Suzana Vieira | 
+c91d7d8a-efff-3213-b493-e052dcf8309a | Deborah Secco | 
+__SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5
+7aa30ff9-b8d8-3a6c-b80b-ca33f8d81850 | Lavinia Vlasak | 
+e7ae76a9-cdea-3368-99bb-3f34a02b2f36 | Flavia Alessandra | 
+e24e98b6-5f92-3f4c-bde3-221e8e32dca8 | Claudia Raia | 
+4fc1c057-d8d0-313c-9f7b-f9ac64ea8def | Maite Proenca | 
+e8cdf81e-ebc0-39c5-9dcf-0774fb2265bf | Fernanda Montenegro | 
+eab6a871-fa1f-3d83-ae56-9ab6b8aa2d15 | Regina Duarte | 
+__SCHEDULE__::semanal 5 | SCHEDULE | semanal 5

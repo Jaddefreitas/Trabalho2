@@ -1,0 +1,5 @@
+Snapshot for date: 31/1/2005
+__SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5
+__SCHEDULE__::mensal $ | SCHEDULE | mensal $
+1677667f-a0af-3508-8ce2-a05bb554b854 | Beta Dois Assalariado | semanal 5
+__SCHEDULE__::semanal 5 | SCHEDULE | semanal 5

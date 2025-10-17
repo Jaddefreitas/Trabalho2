@@ -1,5 +1,5 @@
-Contracheque: Empregado 9beb493f-8521-3cef-a5f5-c7a83394b464 | Bruto: R$593.0 | Deducoes: R$1.0 | Liquido: R$592.0
-Contracheque: Empregado bda5b06a-d931-338f-bcdc-31b897122bae | Bruto: R$378.8 | Deducoes: R$161.2 | Liquido: R$217.60000000000002
-Contracheque: Empregado 76b2b3f1-4dcb-3817-becb-4c9d6d4e9fb8 | Bruto: R$0.0 | Deducoes: R$0.0 | Liquido: R$0.0
-Contracheque: Empregado 032201c6-347a-36ef-aa97-102bd8fb58e4 | Bruto: R$605.34 | Deducoes: R$0.0 | Liquido: R$605.34
-Contracheque: Empregado 483b6609-7a93-3c14-84a0-8adf05b789cb | Bruto: R$506.25 | Deducoes: R$0.0 | Liquido: R$506.25
+Contracheque: Empregado 0ac48206-5526-4584-8ef7-103a28794e4d | Bruto: R$506.25 | Deducoes: R$0.0 | Liquido: R$506.25
+Contracheque: Empregado cec9785c-c28e-4c47-bdc7-357215439c9a | Bruto: R$0.0 | Deducoes: R$0.0 | Liquido: R$0.0
+Contracheque: Empregado d63eac72-4dc2-4142-8b54-01c3c4ee0b57 | Bruto: R$593.0 | Deducoes: R$1.0 | Liquido: R$592.0
+Contracheque: Empregado bb8afe9c-c5e1-4887-8ba1-7fe85ecbb3fe | Bruto: R$605.3400000000001 | Deducoes: R$0.0 | Liquido: R$605.3400000000001
+Contracheque: Empregado a8892c14-a89a-454e-b346-abbeb376af33 | Bruto: R$378.8 | Deducoes: R$161.2 | Liquido: R$217.60000000000002

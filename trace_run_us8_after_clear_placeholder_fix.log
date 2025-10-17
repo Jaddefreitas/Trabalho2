@@ -1,0 +1,1200 @@
+﻿
+=== Running group: tests/us1.txt,tests/us1_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=0 topUndo=- redoSize=0 topRedo=-
+TRACE_GET_EMP id=abc -> MISSING (current count=3)
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_ADD_EMP id=EMP-4 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=2 size=4
+TRACE_CMD_SEQ pushed seq=1 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=1 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=4
+TRACE_ADD_EMP id=EMP-5 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=4 size=5
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=5
+TRACE_ADD_EMP id=EMP-6 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=6 size=6
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=6
+TRACE_ADD_EMP id=EMP-7 name=Mariazinha type=SalariedEmployee
+TRACE_SNAPSHOT seq=8 size=7
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Mariazinha
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=7
+TRACE_ADD_EMP id=EMP-8 name=Gaiato Vendedor type=CommissionedEmployee
+TRACE_SNAPSHOT seq=10 size=8
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=5 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=abc -> MISSING (current count=8)
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+Test file tests/us1.txt: 51 tests OK
+Line 89, file tests/us1.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us1.txt,tests/us1_1.txt
+
+=== Running group: tests/us2.txt,tests/us2_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=0 topUndo=- redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_ADD_EMP id=EMP-4 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=2 size=4
+TRACE_CMD_SEQ pushed seq=1 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=1 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=4
+TRACE_ADD_EMP id=EMP-5 name=Maria type=HourlyEmployee
+TRACE_SNAPSHOT seq=4 size=5
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=5
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_REMOVE_EMP id=EMP-4 present=true
+TRACE_SNAPSHOT seq=6 size=4
+TRACE_CMD_SEQ pushed seq=5 cmd=RemoveEmployeeCommand
+TRACE_STACKS after execute: undoSize=3 topUndo=RemoveEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-4 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Maria
+TRACE_GET_EMP id=abc -> MISSING (current count=4)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+Test file tests/us2.txt: 21 tests OK
+Line 37, file tests/us2.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us2.txt,tests/us2_1.txt
+
+=== Running group: tests/us3.txt,tests/us3_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=0 topUndo=- redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_ADD_EMP id=EMP-4 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=2 size=4
+TRACE_CMD_SEQ pushed seq=1 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=1 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=4
+TRACE_ADD_EMP id=EMP-5 name=Mariazinha type=HourlyEmployee
+TRACE_SNAPSHOT seq=4 size=5
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=5
+TRACE_ADD_EMP id=EMP-6 name=Gaiato Vendedor type=CommissionedEmployee
+TRACE_SNAPSHOT seq=6 size=6
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=6
+TRACE_ADD_EMP id=EMP-7 name=Gorete type=SalariedEmployee
+TRACE_SNAPSHOT seq=8 size=7
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=abc -> MISSING (current count=7)
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Gorete
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Gorete
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+Test file tests/us3.txt: 35 tests OK
+Line 56, file tests/us3.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us3.txt,tests/us3_1.txt
+
+=== Running group: tests/us4.txt,tests/us4_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=0 topUndo=- redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_ADD_EMP id=EMP-4 name=Joao da Silva type=CommissionedEmployee
+TRACE_SNAPSHOT seq=2 size=4
+TRACE_CMD_SEQ pushed seq=1 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=1 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=4
+TRACE_ADD_EMP id=EMP-5 name=Mariazinha type=CommissionedEmployee
+TRACE_SNAPSHOT seq=4 size=5
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=5
+TRACE_ADD_EMP id=EMP-6 name=Gaiato Vendedor type=HourlyEmployee
+TRACE_SNAPSHOT seq=6 size=6
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=6
+TRACE_ADD_EMP id=EMP-7 name=Gorete type=SalariedEmployee
+TRACE_SNAPSHOT seq=8 size=7
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=abc -> MISSING (current count=7)
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Gorete
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Gorete
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+Test file tests/us4.txt: 29 tests OK
+Line 50, file tests/us4.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us4.txt,tests/us4_1.txt
+
+=== Running group: tests/us5.txt,tests/us5_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=0 topUndo=- redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_ADD_EMP id=EMP-4 name=Joao da Silva type=CommissionedEmployee
+TRACE_SNAPSHOT seq=2 size=4
+TRACE_CMD_SEQ pushed seq=1 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=1 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=4
+TRACE_ADD_EMP id=EMP-5 name=Mariazinha type=SalariedEmployee
+TRACE_SNAPSHOT seq=4 size=5
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Mariazinha
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=5
+TRACE_ADD_EMP id=EMP-6 name=Gaiato Vendedor type=HourlyEmployee
+TRACE_SNAPSHOT seq=6 size=6
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Gaiato Vendedor
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=6
+TRACE_ADD_EMP id=EMP-7 name=Gorete type=HourlyEmployee
+TRACE_SNAPSHOT seq=8 size=7
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Gorete
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Gorete
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Gorete
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+Test file tests/us5.txt: 31 tests OK
+Line 52, file tests/us5.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us5.txt,tests/us5_1.txt
+
+=== Running group: tests/us6.txt,tests/us6_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=0 topUndo=- redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_ADD_EMP id=EMP-4 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=2 size=4
+TRACE_CMD_SEQ pushed seq=1 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=1 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=abc -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+Test file tests/us6.txt: 91 tests OK
+Line 124, file tests/us6.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us6.txt,tests/us6_1.txt
+
+=== Running group: tests/us7.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=0 topUndo=- redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_ADD_EMP id=EMP-4 name=Fernanda Montenegro type=HourlyEmployee
+TRACE_SNAPSHOT seq=2 size=4
+TRACE_CMD_SEQ pushed seq=1 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=1 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Fernanda Montenegro
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=4
+TRACE_ADD_EMP id=EMP-5 name=Paloma Duarte type=HourlyEmployee
+TRACE_SNAPSHOT seq=4 size=5
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Paloma Duarte
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=5
+TRACE_ADD_EMP id=EMP-6 name=Lavinia Vlasak type=HourlyEmployee
+TRACE_SNAPSHOT seq=6 size=6
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Lavinia Vlasak
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=6
+TRACE_ADD_EMP id=EMP-7 name=Claudia Abreu type=HourlyEmployee
+TRACE_SNAPSHOT seq=8 size=7
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Claudia Abreu
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=7
+TRACE_ADD_EMP id=EMP-8 name=Claudia Raia type=HourlyEmployee
+TRACE_SNAPSHOT seq=10 size=8
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=5 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Claudia Raia
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=8
+TRACE_ADD_EMP id=EMP-9 name=Natalia do Valle type=SalariedEmployee
+TRACE_SNAPSHOT seq=12 size=9
+TRACE_CMD_SEQ pushed seq=11 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=6 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Natalia do Valle
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Natalia do Valle
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=13 size=9
+TRACE_ADD_EMP id=EMP-10 name=Regina Duarte type=SalariedEmployee
+TRACE_SNAPSHOT seq=14 size=10
+TRACE_CMD_SEQ pushed seq=13 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=7 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Regina Duarte
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Regina Duarte
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=15 size=10
+TRACE_ADD_EMP id=EMP-11 name=Flavia Alessandra type=SalariedEmployee
+TRACE_SNAPSHOT seq=16 size=11
+TRACE_CMD_SEQ pushed seq=15 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=8 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Flavia Alessandra
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Flavia Alessandra
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=17 size=11
+TRACE_ADD_EMP id=EMP-12 name=Deborah Secco type=CommissionedEmployee
+TRACE_SNAPSHOT seq=18 size=12
+TRACE_CMD_SEQ pushed seq=17 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=9 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Deborah Secco
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=19 size=12
+TRACE_ADD_EMP id=EMP-13 name=Ana Paula Arosio type=CommissionedEmployee
+TRACE_SNAPSHOT seq=20 size=13
+TRACE_CMD_SEQ pushed seq=19 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=10 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-13 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-13 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-13 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-13 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-13 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-13 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-13 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-13 -> FOUND name=Ana Paula Arosio
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=21 size=13
+TRACE_ADD_EMP id=EMP-14 name=Suzana Vieira type=CommissionedEmployee
+TRACE_SNAPSHOT seq=22 size=14
+TRACE_CMD_SEQ pushed seq=21 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=11 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-14 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-14 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-14 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-14 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-14 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-14 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-14 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-14 -> FOUND name=Suzana Vieira
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=23 size=14
+TRACE_ADD_EMP id=EMP-15 name=Maite Proenca type=CommissionedEmployee
+TRACE_SNAPSHOT seq=24 size=15
+TRACE_CMD_SEQ pushed seq=23 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=12 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-15 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-15 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-15 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-15 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-15 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-15 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-15 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-15 -> FOUND name=Maite Proenca
+Test file tests/us7.txt: 10 errors:
+Line 158, file tests/us7.txt: Expected <748,53>, but was <8489,35>
+Command producing error: <expect 748,53 totalFolha data=7/1/2005>
+Line 167, file tests/us7.txt: Expected <2803,04>, but was <1921,19>
+Command producing error: <expect 2803,04 totalFolha data=14/1/2005>
+Line 176, file tests/us7.txt: Expected <0,00>, but was <8489,35>
+Command producing error: <expect 0,00 totalFolha data=21/1/2005>
+Line 185, file tests/us7.txt: Expected <2676,91>, but was <1921,19>
+Command producing error: <expect 2676,91 totalFolha data=28/1/2005>
+Line 190, file tests/us7.txt: Expected <3300,00>, but was <3153,00>
+Command producing error: <expect 3300,00 totalFolha data=31/1/2005>
+Line 196, file tests/us7.txt: Expected <651,90>, but was <8489,35>
+Command producing error: <expect 651,90 totalFolha data=4/2/2005>
+Line 205, file tests/us7.txt: Expected <2919,91>, but was <1921,19>
+Command producing error: <expect 2919,91 totalFolha data=11/2/2005>
+Line 214, file tests/us7.txt: Expected <0,00>, but was <8489,35>
+Command producing error: <expect 0,00 totalFolha data=18/2/2005>
+Line 223, file tests/us7.txt: Expected <2676,91>, but was <1921,19>
+Command producing error: <expect 2676,91 totalFolha data=25/2/2005>
+Line 228, file tests/us7.txt: Expected <3300,00>, but was <3153,00>
+Command producing error: <expect 3300,00 totalFolha data=28/2/2005>
+
+Process exit code: 1 for group: tests/us7.txt
+
+=== Running group: tests/us8.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=0 topUndo=- redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_ADD_EMP id=EMP-4 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=2 size=4
+TRACE_CMD_SEQ pushed seq=1 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=1 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=4
+TRACE_ADD_EMP id=EMP-5 name=Gaiato Vendedor type=CommissionedEmployee
+TRACE_SNAPSHOT seq=4 size=5
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=5
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_REMOVE_EMP id=EMP-4 present=true
+TRACE_SNAPSHOT seq=6 size=4
+TRACE_CMD_SEQ pushed seq=5 cmd=RemoveEmployeeCommand
+TRACE_STACKS after execute: undoSize=3 topUndo=RemoveEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=4
+TRACE_ADD_EMP id=EMP-6 name=Joaozinho da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=8 size=5
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo AddEmployeeCommand
+TRACE_RESTORE seq=7 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=AddEmployeeCommand
+TRACE_STACKS after undo: undoSize=3 topUndo=RemoveEmployeeCommand redoSize=1 topRedo=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=4)
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo RemoveEmployeeCommand
+TRACE_RESTORE seq=5 restoreSize=5
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=RemoveEmployeeCommand
+TRACE_STACKS after undo: undoSize=2 topUndo=AddEmployeeCommand redoSize=2 topRedo=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-4, EMP-5]
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=5)
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=5)
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo AddEmployeeCommand
+TRACE_RESTORE seq=3 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_STACKS after undo: undoSize=1 topUndo=AddEmployeeCommand redoSize=3 topRedo=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-4]
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=4)
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo AddEmployeeCommand
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=AddEmployeeCommand
+TRACE_STACKS after undo: undoSize=0 topUndo=- redoSize=4 topRedo=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-6 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-4 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-5 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-4 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+TRACE_GET_EMP id=EMP-4 -> MISSING (current count=3)
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD redo called
+TRACE_EXEC_CMD redo AddEmployeeCommand
+TRACE_RESTORE seq=2 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=AddEmployeeCommand
+TRACE_STACKS after redo: undoSize=1 topUndo=AddEmployeeCommand redoSize=3 topRedo=AddEmployeeCommand
+TRACE_EXEC_CMD redo called
+TRACE_EXEC_CMD redo AddEmployeeCommand
+TRACE_RESTORE seq=4 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_STACKS after redo: undoSize=2 topUndo=AddEmployeeCommand redoSize=2 topRedo=RemoveEmployeeCommand
+TRACE_EXEC_CMD redo called
+TRACE_EXEC_CMD redo RemoveEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=4
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=RemoveEmployeeCommand
+TRACE_STACKS after redo: undoSize=3 topUndo=RemoveEmployeeCommand redoSize=1 topRedo=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-5]
+TRACE_EXEC_CMD redo called
+TRACE_EXEC_CMD redo AddEmployeeCommand
+TRACE_RESTORE seq=8 restoreSize=5
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=AddEmployeeCommand
+TRACE_STACKS after redo: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_NUM_EMP count=2 ids=[EMP-5, EMP-6]
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_EXEC_CMD undo called
+TRACE_EXEC_CMD undo AddEmployeeCommand
+TRACE_RESTORE seq=7 restoreSize=4
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=AddEmployeeCommand
+TRACE_STACKS after undo: undoSize=3 topUndo=RemoveEmployeeCommand redoSize=1 topRedo=AddEmployeeCommand
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+Test file tests/us8.txt: 51 errors:
+Line 35, file tests/us8.txt: Expected <2>, but was <1>
+Command producing error: <expect 2 getNumeroDeEmpregados>
+Line 38, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 16 getHorasNormaisTrabalhadas emp=EMP-6 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 39, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 2 getHorasExtrasTrabalhadas emp=EMP-6 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 45, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 16 getHorasNormaisTrabalhadas emp=EMP-6 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 46, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 2 getHorasExtrasTrabalhadas emp=EMP-6 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 49, file tests/us8.txt: Expected <2>, but was <1>
+Command producing error: <expect 2 getNumeroDeEmpregados>
+Line 50, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0,00 getVendasRealizadas emp=EMP-5 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 51, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 80,00 getTaxasServico emp=EMP-5 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 52, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 16 getHorasNormaisTrabalhadas emp=EMP-6 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 53, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 2 getHorasExtrasTrabalhadas emp=EMP-6 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 56, file tests/us8.txt: Expected <2>, but was <0>
+Command producing error: <expect 2 getNumeroDeEmpregados>
+Line 57, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0,00 getVendasRealizadas emp=EMP-5 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 58, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0,00 getTaxasServico emp=EMP-5 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 59, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 16 getHorasNormaisTrabalhadas emp=EMP-6 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 60, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 2 getHorasExtrasTrabalhadas emp=EMP-6 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Line 63, file tests/us8.txt: Expected <2>, but was <0>
+Command producing error: <expect 2 getNumeroDeEmpregados>
+Line 64, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0,00 getVendasRealizadas emp=EMP-5 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 65, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0,00 getTaxasServico emp=EMP-5 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 66, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 8 getHorasNormaisTrabalhadas emp=EMP-6 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 67, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0 getHorasExtrasTrabalhadas emp=EMP-6 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Line 70, file tests/us8.txt: Expected <2>, but was <0>
+Command producing error: <expect 2 getNumeroDeEmpregados>
+Line 71, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0,00 getVendasRealizadas emp=EMP-5 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 72, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0,00 getTaxasServico emp=EMP-5 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 73, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0 getHorasNormaisTrabalhadas emp=EMP-6 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 74, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0 getHorasExtrasTrabalhadas emp=EMP-6 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 79, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect banco getAtributoEmpregado emp=EMP-5 atributo=metodoPagamento>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Line 81, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect correios getAtributoEmpregado emp=EMP-5 atributo=metodoPagamento>
+Line 83, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect true getAtributoEmpregado emp=EMP-5 atributo=sindicalizado>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Line 85, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect false getAtributoEmpregado emp=EMP-5 atributo=sindicalizado>
+Line 87, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect correios getAtributoEmpregado emp=EMP-5 atributo=metodoPagamento>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Line 89, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect emMaos getAtributoEmpregado emp=EMP-5 atributo=metodoPagamento>
+Line 91, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect "Joaozinho da Silva" getAtributoEmpregado emp=EMP-6 atributo=nome>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Line 96, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect "Joao da Silva" getAtributoEmpregado emp=EMP-4 atributo=nome>
+Line 98, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect "Gaiato Vendedor" getAtributoEmpregado emp=EMP-5 atributo=nome>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Line 102, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect "Joao da Silva" getAtributoEmpregado emp=EMP-4 atributo=nome>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Line 115, file tests/us8.txt: Expected <2>, but was <1>
+Command producing error: <expect 2 getNumeroDeEmpregados>
+Line 117, file tests/us8.txt: Expected <1>, but was <2>
+Command producing error: <expect 1 getNumeroDeEmpregados>
+Line 121, file tests/us8.txt: Expected <0,00>, but was <800,00>
+Command producing error: <expect 0,00 getVendasRealizadas emp=EMP-5 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 123, file tests/us8.txt: Expected <600,00>, but was <1400,00>
+Command producing error: <expect 600,00 getVendasRealizadas emp=EMP-5 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 125, file tests/us8.txt: Expected <600,00>, but was <1400,00>
+Command producing error: <expect 600,00 getVendasRealizadas emp=EMP-5 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 127, file tests/us8.txt: Expected <0,00>, but was <1400,00>
+Command producing error: <expect 0,00 getVendasRealizadas emp=EMP-5 dataInicial=1/1/2005 dataFinal=1/12/2005>
+
+Process exit code: 1 for group: tests/us8.txt
+
+=== Running group: tests/us9.txt,tests/us9_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=0 topUndo=- redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_ADD_EMP id=EMP-4 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=2 size=4
+TRACE_CMD_SEQ pushed seq=1 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=1 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=4
+TRACE_ADD_EMP id=EMP-5 name=Mariazinha type=SalariedEmployee
+TRACE_SNAPSHOT seq=4 size=5
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Mariazinha
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=5
+TRACE_ADD_EMP id=EMP-6 name=Gaiato Vendedor type=CommissionedEmployee
+TRACE_SNAPSHOT seq=6 size=6
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=3
+TRACE_ADD_EMP id=EMP-7 name=Alfa Um Horista type=HourlyEmployee
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Alfa Um Horista
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=3
+TRACE_ADD_EMP id=EMP-8 name=Alfa Um Horista type=HourlyEmployee
+TRACE_SNAPSHOT seq=10 size=4
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=5 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Alfa Um Horista
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=5 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=3
+TRACE_ADD_EMP id=EMP-9 name=Beta Dois Assalariado type=SalariedEmployee
+TRACE_SNAPSHOT seq=12 size=4
+TRACE_CMD_SEQ pushed seq=11 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=6 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Beta Dois Assalariado
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=6 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=13 size=3
+TRACE_ADD_EMP id=EMP-10 name=Beta Dois Assalariado type=SalariedEmployee
+TRACE_SNAPSHOT seq=14 size=4
+TRACE_CMD_SEQ pushed seq=13 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=7 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Beta Dois Assalariado
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=7 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=15 size=3
+TRACE_ADD_EMP id=EMP-11 name=Gama Tres Comissionado type=CommissionedEmployee
+TRACE_SNAPSHOT seq=16 size=4
+TRACE_CMD_SEQ pushed seq=15 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=8 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Gama Tres Comissionado
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=8 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=17 size=3
+TRACE_ADD_EMP id=EMP-12 name=Gama Tres Comissionado type=CommissionedEmployee
+TRACE_SNAPSHOT seq=18 size=4
+TRACE_CMD_SEQ pushed seq=17 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=9 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Gama Tres Comissionado
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=19 size=4
+TRACE_ADD_EMP id=EMP-13 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=20 size=5
+TRACE_CMD_SEQ pushed seq=19 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=10 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=21 size=5
+TRACE_ADD_EMP id=EMP-14 name=Mariazinha type=SalariedEmployee
+TRACE_SNAPSHOT seq=22 size=6
+TRACE_CMD_SEQ pushed seq=21 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=11 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=23 size=6
+TRACE_ADD_EMP id=EMP-15 name=Gaiato Vendedor type=CommissionedEmployee
+TRACE_SNAPSHOT seq=24 size=7
+TRACE_CMD_SEQ pushed seq=23 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=12 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-13 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-14 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-15 -> FOUND name=Gaiato Vendedor
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+Test file tests/us9.txt: 98 tests OK
+Line 147, file tests/us9.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us9.txt,tests/us9_1.txt
+
+=== Running group: tests/us10.txt,tests/us10_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=0 topUndo=- redoSize=0 topRedo=-
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> FOUND name=SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> FOUND name=SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> FOUND name=SCHEDULE
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_ADD_EMP id=EMP-4 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=2 size=4
+TRACE_CMD_SEQ pushed seq=1 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=1 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=__SCHEDULE__::mensal 1 -> MISSING (current count=4)
+TRACE_GET_EMP id=__SCHEDULE__::mensal 1 -> FOUND name=SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 -> MISSING (current count=5)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 -> FOUND name=SCHEDULE
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=1 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_ADD_EMP id=EMP-7 name=Joao da Silva type=SalariedEmployee
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=__SCHEDULE__::mensal 1 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=3
+TRACE_ADD_EMP id=EMP-9 name=Joao da Silva type=SalariedEmployee
+TRACE_SNAPSHOT seq=6 size=4
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=3
+TRACE_ADD_EMP id=EMP-11 name=Joao da Silva type=SalariedEmployee
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=__SCHEDULE__::semanal 3 3 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=3
+TRACE_ADD_EMP id=EMP-13 name=Joao da Silva type=SalariedEmployee
+TRACE_SNAPSHOT seq=10 size=4
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=5 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=__SCHEDULE__::semanal 52 1 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-13 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_CMD_SEQ executed non-undoable cmd=ClearSystemCommand
+TRACE_STACKS after execute: undoSize=5 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=3
+TRACE_ADD_EMP id=EMP-15 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=12 size=4
+TRACE_CMD_SEQ pushed seq=11 cmd=AddEmployeeCommand
+TRACE_STACKS after execute: undoSize=6 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=__SCHEDULE__::mensal 1 -> MISSING (current count=4)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 -> MISSING (current count=5)
+TRACE_GET_EMP id=EMP-15 -> FOUND name=Joao da Silva
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+Test file tests/us10.txt: 4 errors:
+Line 85, file tests/us10.txt: Expected <1938,46>, but was <1938,45>
+Command producing error: <expect 1938,46 totalFolha data=19/1/2005>
+Line 90, file tests/us10.txt: Expected <1938,46>, but was <1938,45>
+Command producing error: <expect 1938,46 totalFolha data=9/2/2005>
+Line 91, file tests/us10.txt: Expected <1938,46>, but was <1938,45>
+Command producing error: <expect 1938,46 totalFolha data=25/5/2005>
+Line 109, file tests/us10.txt: Expected <33600,00>, but was <33599,80>
+Command producing error: <expect 33600,00 totalFolha data=26/12/2005>
+
+Line 120, file tests/us10.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us10.txt,tests/us10_1.txt

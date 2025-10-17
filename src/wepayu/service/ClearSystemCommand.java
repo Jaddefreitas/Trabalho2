@@ -1,42 +1,32 @@
 package wepayu.service;
 
-import java.util.HashMap;
-import java.util.Map;
 import wepayu.model.Employee;
+import wepayu.facade.PlaceholderCache;
 
 /**
  * Command that clears the system but is undoable by keeping a shallow backup of employees.
  */
 public class ClearSystemCommand implements Command {
-    private Map<String, Employee> backup;
-
     @Override
     public void execute() {
-        // take a shallow copy of current employees
-        backup = new HashMap<>(PayrollDatabase.getAllEmployees());
-        // diagnostic
-        try {
-            java.io.File d = new java.io.File("debug-snapshots"); if (!d.exists()) d.mkdirs();
-            java.io.File f = new java.io.File(d, "clear-exec-" + System.currentTimeMillis() + ".txt");
-            try (java.io.BufferedWriter w = new java.io.BufferedWriter(new java.io.FileWriter(f))) {
-                w.write("execute: backup-size=" + (backup == null ? 0 : backup.size())); w.newLine();
-            }
-        } catch (Exception ex) { }
+        // Clear the database; snapshot/restore is handled by CommandManager
+        // clear all non-placeholder employees and then re-add schedule placeholders
+        System.out.println("TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)");
         PayrollDatabase.clear();
+        // re-add default schedule placeholders here so the command's after-snapshot
+        // will include them (ensures undo/redo restore consistent state)
+        String[] defaults = new String[]{"mensal $", "semanal 5", "semanal 2 5"};
+        for (String d : defaults) {
+            String key = "__SCHEDULE__::" + d.toLowerCase();
+            if (PayrollDatabase.getEmployee(key) == null) {
+                Employee placeholder = PlaceholderCache.getPlaceholder(key, d);
+                PayrollDatabase.addEmployee(placeholder);
+            }
+        }
     }
 
     @Override
     public void undo() {
-        PayrollDatabase.clear();
-        if (backup != null) {
-            for (Employee e : backup.values()) PayrollDatabase.addEmployee(e);
-        }
-        try {
-            java.io.File d = new java.io.File("debug-snapshots"); if (!d.exists()) d.mkdirs();
-            java.io.File f = new java.io.File(d, "clear-undo-" + System.currentTimeMillis() + ".txt");
-            try (java.io.BufferedWriter w = new java.io.BufferedWriter(new java.io.FileWriter(f))) {
-                w.write("undo: restored-size=" + (backup == null ? 0 : backup.size())); w.newLine();
-            }
-        } catch (Exception ex) { }
+        // No-op: CommandManager will restore the database snapshot on undo
     }
 }

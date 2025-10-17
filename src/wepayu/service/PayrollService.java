@@ -14,6 +14,8 @@ import wepayu.model.*;
 public class PayrollService {
 
     private static final BigDecimal WEEKS_IN_MONTH = new BigDecimal("4.333333333333333");
+    // Set to true to enable detailed payroll debug output. Keep false during automated tracing.
+    private static final boolean ENABLE_PAYROLL_DEBUG = false;
 
     private static BigDecimal roundMoney(BigDecimal v) {
         return v.setScale(2, RoundingMode.HALF_UP);
@@ -42,6 +44,13 @@ public class PayrollService {
                 payDate = e.isPayDate(date);
             }
             if (payDate) {
+                // debug: report why this employee is considered payable on this date
+                String scheduleDesc = e.getPaymentScheduleDescription();
+                String sched = scheduleDesc == null ? (e.getPaymentSchedule() == null ? "<none>" : e.getPaymentSchedule().name()) : scheduleDesc;
+        if (ENABLE_PAYROLL_DEBUG) {
+            System.out.println(String.format("DEBUG_PAYDATE id=%s name=%s schedule=%s payDate=%s period=%s",
+                e.getId(), e.getName(), sched, String.valueOf(payDate), (period == null ? "<all>" : String.valueOf(period.multiplier))));
+        }
                 // compute gross and deductions for the pay period (if available) or whole history if not
                 BigDecimal gross = BigDecimal.ZERO;
                 BigDecimal deductions = BigDecimal.ZERO;
@@ -57,7 +66,8 @@ public class PayrollService {
                     if (period != null) {
                         String desc = e.getPaymentScheduleDescription() == null ? "" : e.getPaymentScheduleDescription().toLowerCase();
                         String[] descParts = desc.split("\\s+");
-                        if (descParts.length == 2 && descParts[0].equals("semanal")) {
+                        if (descParts.length >= 2 && descParts[0].equals("semanal")) {
+                            // compute as weekly rounded amount multiplied by number of weeks in this period
                             double weeksDouble = period.multiplier * 4.333333333333333;
                             int weeks = (int) Math.round(weeksDouble);
                             BigDecimal weekly = monthly.divide(WEEKS_IN_MONTH, 10, RoundingMode.HALF_UP);
@@ -76,7 +86,7 @@ public class PayrollService {
                     if (period != null) {
                         String desc = e.getPaymentScheduleDescription() == null ? "" : e.getPaymentScheduleDescription().toLowerCase();
                         String[] descParts = desc.split("\\s+");
-                        if (descParts.length == 2 && descParts[0].equals("semanal")) {
+                        if (descParts.length >= 2 && descParts[0].equals("semanal")) {
                             double weeksDouble = period.multiplier * 4.333333333333333;
                             int weeks = (int) Math.round(weeksDouble);
                             BigDecimal weekly = base.divide(WEEKS_IN_MONTH, 10, RoundingMode.HALF_UP);
@@ -123,7 +133,7 @@ public class PayrollService {
                         double monthlyFee = e.getUnionMembership().getMonthlyFee();
                         String desc = e.getPaymentScheduleDescription() == null ? "" : e.getPaymentScheduleDescription().toLowerCase();
                         String[] descParts = desc.split("\\s+");
-                        if (descParts.length == 2 && descParts[0].equals("semanal")) {
+                        if (descParts.length >= 2 && descParts[0].equals("semanal")) {
                             double weeksDouble = period.multiplier * 4.333333333333333;
                             int weeks = (int) Math.round(weeksDouble);
                             BigDecimal weeklyFee = BigDecimal.valueOf(monthlyFee).divide(WEEKS_IN_MONTH, 10, RoundingMode.HALF_UP);
@@ -143,8 +153,17 @@ public class PayrollService {
                     }
                 }
 
-                Paycheck pc = new Paycheck(e.getId(), roundMoney(gross).doubleValue(), roundMoney(deductions).doubleValue());
-                checks.add(pc);
+        // prepare rounded values and print a debug line so we can compare computed triples
+        // Do NOT round here: create paycheck with precise BigDecimal values.
+        BigDecimal netUnrounded = gross.subtract(deductions);
+        if (ENABLE_PAYROLL_DEBUG) {
+            System.out.println(String.format("DEBUG_PAYROLL %s | %s | period=%s | start=%s | end=%s | grossRaw=%s | dedRaw=%s | netUnrounded=%s",
+                e.getId(), e.getClass().getSimpleName(), (period == null ? "<all>" : String.valueOf(period.multiplier)), startStr, endStr,
+                gross.toPlainString(), deductions.toPlainString(), netUnrounded.toPlainString()));
+        }
+
+        Paycheck pc = new Paycheck(e.getId(), gross, deductions);
+        checks.add(pc);
             }
         }
         return checks;

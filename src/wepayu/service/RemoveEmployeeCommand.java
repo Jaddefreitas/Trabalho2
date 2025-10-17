@@ -14,12 +14,12 @@ public class RemoveEmployeeCommand implements Command {
     public void execute() {
         backup = PayrollDatabase.getEmployee(employeeId);
         PayrollDatabase.removeEmployee(employeeId);
+        System.out.println(String.format("TRACE_REMOVE_EMP id=%s present=%s", employeeId, (backup != null)));
     }
 
     @Override
     public void undo() {
-        if (backup != null) {
-            PayrollDatabase.addEmployee(backup);
-        }
+        // No-op: rely on CommandManager's snapshot/restore to revert removals.
+        System.out.println(String.format("TRACE_REMOVE_UNDO no-op id=%s", employeeId));
     }
 }

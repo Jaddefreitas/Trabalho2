@@ -1,0 +1,5 @@
+Snapshot for date: 31/1/2005
+__SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5
+__SCHEDULE__::mensal $ | SCHEDULE | mensal $
+4ca2ed91-cf1f-39c1-b2f5-482ff1cb655a | Gama Tres Comissionado | mensal $
+__SCHEDULE__::semanal 5 | SCHEDULE | semanal 5

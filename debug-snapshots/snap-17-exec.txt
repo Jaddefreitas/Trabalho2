@@ -1,0 +1,6 @@
+snapshot-seq=17 size=5
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-8
+__SCHEDULE__::semanal 3 3

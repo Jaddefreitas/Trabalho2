@@ -1,6 +1,5 @@
 package wepayu.model;
 
-import java.util.UUID;
 import java.util.concurrent.atomic.AtomicLong;
 
 public abstract class Employee {
@@ -13,12 +12,21 @@ public abstract class Employee {
     protected UnionMembership unionMembership;
 
     public Employee(String name, String address) {
-        // deterministic id for reproducible runs: name-based UUID over an incrementing counter
-        long seq = ID_COUNTER.getAndIncrement();
-        this.id = UUID.nameUUIDFromBytes(("EMP#" + seq).getBytes()).toString();
+    // deterministic id for reproducible runs: simple sequential id EMP-1, EMP-2, ...
+    long seq = ID_COUNTER.getAndIncrement();
+    this.id = "EMP-" + seq;
         this.name = name;
         this.address = address;
         this.paymentMethod = PaymentMethod.CHEQUE_MAOS; // padrão
+    }
+
+    /**
+     * Decrement the internal ID counter by one.
+     * This is used to "reclaim" an increment consumed by transient placeholder objects
+     * so they don't shift the EMP-N sequence used by tests.
+     */
+    public static void decrementIdCounter() {
+        ID_COUNTER.decrementAndGet();
     }
 
     public String getId() {

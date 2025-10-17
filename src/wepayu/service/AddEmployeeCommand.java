@@ -12,10 +12,13 @@ public class AddEmployeeCommand implements Command {
     @Override
     public void execute() {
         PayrollDatabase.addEmployee(employee);
+        // lightweight trace for debugging test scripts (will be noisy; removed later)
+        System.out.println(String.format("TRACE_ADD_EMP id=%s name=%s type=%s", employee.getId(), employee.getName(), employee.getClass().getSimpleName()));
     }
 
     @Override
     public void undo() {
-        PayrollDatabase.removeEmployee(employee.getId());
+        // No-op: rely on CommandManager's snapshot/restore to revert adds.
+        System.out.println(String.format("TRACE_ADD_UNDO no-op id=%s", employee.getId()));
     }
 }

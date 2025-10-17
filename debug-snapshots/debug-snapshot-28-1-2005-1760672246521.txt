@@ -1,0 +1,5 @@
+Snapshot for date: 28/1/2005
+__SCHEDULE__::mensal $ | SCHEDULE | mensal $
+__SCHEDULE__::semanal 5 | SCHEDULE | semanal 5
+__SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5
+EMP-17 | Alfa Um Horista | semanal 2 5
