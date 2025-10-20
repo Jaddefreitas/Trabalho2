@@ -1,0 +1,4 @@
+STACK_DUMP undoSize=1 redoSize=0
+UNDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:

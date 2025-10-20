@@ -1,11 +1,11 @@
 package wepayu.facade;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.util.List;
 import java.util.Locale;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import wepayu.model.*;
 import wepayu.service.*;
 import wepayu.service.exceptions.*;
@@ -43,7 +43,19 @@ public class PayrollFacade {
             throw new InvalidDataException("Data invalida.");
         double d = parseValor(valor);
         if (d <= 0) throw new InvalidDataException("Valor deve ser positivo.");
-        lancaTaxaServicoInternal(id, data, d);
+        // Support passing either an employee id or a union member id (tests pass membro=s123)
+        Employee e = PayrollDatabase.getEmployee(id);
+        if (e == null) {
+            // try find by union id
+            for (Employee emp : PayrollDatabase.getAllEmployees().values()) {
+                if (emp.getUnionMembership() != null && id.equals(emp.getUnionMembership().getUnionId())) {
+                    e = emp;
+                    break;
+                }
+            }
+            if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+        }
+        lancaTaxaServicoInternal(e.getId(), data, d);
     }
     /**
      * Retorna o total de taxas de serviço pagas por um empregado sindicalizado em um intervalo de datas.
@@ -133,6 +145,34 @@ public class PayrollFacade {
         }
         total = total.setScale(2, RoundingMode.HALF_UP);
         return df.format(total);
+    }
+
+    // Register a time card for an hourly employee
+    public void lancaCartao(String id, String data, String horas) {
+        ensureSystemOpen();
+        if (id == null || id.isBlank() || data == null || horas == null) throw new InvalidDataException("Parametros invalidos.");
+        if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
+        double h;
+        try { h = Double.parseDouble(horas.replace(",",".")); } catch (Exception ex) { throw new InvalidDataException("Horas devem ser numericas."); }
+        if (h < 0) throw new InvalidDataException("Horas nao podem ser negativas.");
+        Employee e = PayrollDatabase.getEmployee(id);
+        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+        if (!(e instanceof HourlyEmployee)) throw new InvalidDataException("Empregado nao eh horista.");
+        ((HourlyEmployee)e).addTimeCard(new TimeCard(data, h));
+    }
+
+    // Register a sales receipt for a commissioned employee
+    public void lancaVenda(String id, String data, String valor) {
+        ensureSystemOpen();
+        if (id == null || id.isBlank() || data == null || valor == null) throw new InvalidDataException("Parametros invalidos.");
+        if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
+        double v;
+        try { v = Double.parseDouble(valor.replace(",",".")); } catch (Exception ex) { throw new InvalidDataException("Valor deve ser numerico."); }
+        if (v < 0) throw new InvalidDataException("Valor nao pode ser negativo.");
+        Employee e = PayrollDatabase.getEmployee(id);
+        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+        if (!(e instanceof CommissionedEmployee)) throw new InvalidDataException("Empregado nao eh comissionado.");
+        ((CommissionedEmployee)e).addSalesReceipt(new SalesReceipt(data, v));
     }
     /**
      * Retorna o total de horas extras trabalhadas por um empregado horista em um intervalo de datas.
@@ -228,10 +268,14 @@ public class PayrollFacade {
             case "horista":
                 if (comissaoStr != null) throw new InvalidDataException("Tipo nao aplicavel.");
                 e = new HourlyEmployee(nome, endereco, salario);
+                // default schedule descriptor for horista
+                e.setPaymentScheduleDescription("semanal 5");
                 break;
             case "assalariado":
                 if (comissaoStr != null) throw new InvalidDataException("Tipo nao aplicavel.");
                 e = new SalariedEmployee(nome, endereco, salario);
+                // default schedule descriptor for assalariado
+                e.setPaymentScheduleDescription("mensal $");
                 break;
             case "comissionado":
                 if (comissaoStr == null) {
@@ -248,6 +292,8 @@ public class PayrollFacade {
                 }
                 if (comissao < 0) throw new InvalidDataException("Comissao deve ser nao-negativa.");
                 e = new CommissionedEmployee(nome, endereco, salario, comissao);
+                // default schedule descriptor for comissionado
+                e.setPaymentScheduleDescription("semanal 2 5");
                 break;
             default:
                 throw new InvalidDataException("Tipo invalido.");
@@ -497,515 +543,73 @@ public class PayrollFacade {
             ((CommissionedEmployee)e).setCommissionRate(commission);
             return;
         }
-
-        // fallback to single-arg handler
-        alteraEmpregado(id, atributo, valor1);
-    }
-
-    private void copyCommonFields(Employee from, Employee to) {
-        to.setId(from.getId());
-        to.setName(from.getName());
-        to.setAddress(from.getAddress());
-        to.setPaymentMethod(from.getPaymentMethod());
-        to.setUnionMembership(from.getUnionMembership());
-        // bank details
-        to.setBankName(from.getBankName());
-        to.setAgency(from.getAgency());
-        to.setAccount(from.getAccount());
-        // payment schedule description
-        to.setPaymentScheduleDescription(from.getPaymentScheduleDescription());
-    }
-
-    // Differently-named entrypoint for programmatic callers that pass numeric taxa values.
-    // EasyAccept will prefer the String-based alteraEmpregado overloads when tests provide comma-formatted numbers.
-    public void alteraEmpregadoSindicatoDouble(String id, String unionId, double taxa) {
-        ensureSystemOpen();
-        Employee e = PayrollDatabase.getEmployee(id);
-        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
-        e.setUnionMembership(new UnionMembership(unionId, taxa));
-    }
-
-    // Lançamentos
-    public void lancaCartao(String id, String data, String horasStr) {
-        ensureSystemOpen();
-        if (id == null || id.isBlank() || data == null || horasStr == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
-        double horas;
-        try {
-            horas = Double.parseDouble(horasStr.replace(",", "."));
-        } catch (NumberFormatException ex) {
-            throw new InvalidDataException("Horas deve ser numerica.");
-        }
-        if (horas <= 0) throw new InvalidDataException("Horas devem ser positivas.");
-        // Validação de data: formato dd/MM/yyyy
-        if (!wepayu.util.DateUtils.isValidDate(data)) {
-            throw new InvalidDataException("Data invalida.");
-        }
-        Employee e = PayrollDatabase.getEmployee(id);
-        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
-        if (!(e instanceof HourlyEmployee)) throw new InvalidDataException("Empregado nao eh horista.");
-        ((HourlyEmployee) e).addTimeCard(new TimeCard(data, horas));
-    }
-
-    // Keep a differently-named entrypoint for programmatic callers that pass double values.
-    // EasyAccept will not see this method name so it will choose the String overload when tests pass comma-formatted numbers.
-    public void lancaVendaDouble(String id, String data, double valorDouble) {
-        ensureSystemOpen();
-        lancaVendaInternal(id, data, valorDouble);
-    }
-    // Sobrecarga para aceitar valor como String (com vírgula)
-    public void lancaVenda(String id, String data, String valor) {
-        ensureSystemOpen();
-        if (id == null || id.isBlank() || data == null || valor == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
-        if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
-        double d = parseValor(valor);
-        if (d <= 0) throw new InvalidDataException("Valor deve ser positivo.");
-        lancaVendaInternal(id, data, d);
-    }
-
-    // Implementação centralizada para lancaVenda
-    private void lancaVendaInternal(String id, String data, double valor) {
-        if (id == null || id.isBlank() || data == null) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
-        if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
-        double valorCorrigido = valor;
-        // Trata valores com vírgula vindos como String convertida incorretamente (defensivo)
-        if (String.valueOf(valor).contains(",")) {
-            try {
-                valorCorrigido = Double.parseDouble(String.valueOf(valor).replace(",", "."));
-            } catch (NumberFormatException ex) {
-                throw new InvalidDataException("Valor deve ser numerico.");
-            }
-        }
-        if (valorCorrigido <= 0) throw new InvalidDataException("Valor deve ser positivo.");
-        Employee e = PayrollDatabase.getEmployee(id);
-        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
-        if (!(e instanceof CommissionedEmployee)) throw new InvalidDataException("Empregado nao eh comissionado.");
-        ((CommissionedEmployee) e).addSalesReceipt(new SalesReceipt(data, valorCorrigido));
-    }
-
-    // Keep a differently-named entrypoint for programmatic callers that pass double values.
-    // EasyAccept will not see this method name so it will choose the String overload when tests pass comma-formatted numbers.
-    public void lancaTaxaServicoDouble(String id, String data, double valorDouble) {
-        ensureSystemOpen();
-        lancaTaxaServicoInternal(id, data, valorDouble);
-    }
-
-    // Helper para normalizar e converter valores, lançando exceção com mensagem esperada
-    private double parseValor(String valorStr) {
-        if (valorStr == null) {
-            throw new InvalidDataException("Valor nulo");
-        }
-        String normalized = valorStr.replace(",", ".");
-        try {
-            return Double.parseDouble(normalized);
-        } catch (NumberFormatException e) {
-            // Mensagem alinhada com os relatórios/tests
-            throw new RuntimeException("Problems during Type Conversion - " + valorStr + " to class java.lang.Double", e);
-        }
     }
 
     // small helpers used when parsing ok fixture lines
     private static String extractBetween(String line, String startToken, String endToken) {
         int s = line.indexOf(startToken);
-        if (s < 0) return "0.0";
-        s += startToken.length();
-        int e = line.indexOf(endToken, s);
+        if (s < 0) return "";
+        int start = s + startToken.length();
+        int e = line.indexOf(endToken, start);
         if (e < 0) e = line.length();
-        return line.substring(s, e).trim();
+        return line.substring(start, e).trim();
     }
 
     private static String extractAfter(String line, String token) {
         int s = line.indexOf(token);
-        if (s < 0) return "0.0";
-        s += token.length();
-        return line.substring(s).trim();
-    }
-
-    // Greedy global-minimum bipartite matcher: repeatedly pick the smallest-cost
-    // unmatched fixture-check pair until all are assigned. Cost is sum of abs diffs
-    // of bruto/ded/liquido (in units of currency).
-    private static int[] assignFixtureLines(java.util.List<java.math.BigDecimal> fixtureBrutoBD,
-                                           java.util.List<java.math.BigDecimal> fixtureDedBD,
-                                           java.util.List<java.math.BigDecimal> fixtureNetBD,
-                                           java.util.List<Paycheck> checks) {
-        // legacy name kept; delegate to the general matcher
-        return assignFixtureToChecks(fixtureBrutoBD, fixtureDedBD, fixtureNetBD, checks);
-    }
-
-    // Assign m fixture lines to n checks (m <= n). Returns array of length m mapping fixture index -> check index (or -1)
-    private static int[] assignFixtureToChecks(java.util.List<java.math.BigDecimal> fixtureBrutoBD,
-                                              java.util.List<java.math.BigDecimal> fixtureDedBD,
-                                              java.util.List<java.math.BigDecimal> fixtureNetBD,
-                                              java.util.List<Paycheck> checks) {
-        int m = fixtureBrutoBD.size();
-        int n = checks.size();
-        int[] assignment = new int[m];
-        java.util.Arrays.fill(assignment, -1);
-        if (m == 0) return assignment;
-        double[][] cost = new double[m][n];
-        for (int fi = 0; fi < m; fi++) {
-            java.math.BigDecimal fb = fixtureBrutoBD.get(fi);
-            java.math.BigDecimal fd = fixtureDedBD.get(fi);
-            java.math.BigDecimal fn = fixtureNetBD.get(fi);
-            for (int ci = 0; ci < n; ci++) {
-                Paycheck pc = checks.get(ci);
-                java.math.BigDecimal pb = java.math.BigDecimal.valueOf(pc.getGrossPay()).setScale(2, java.math.RoundingMode.HALF_UP);
-                java.math.BigDecimal pd = java.math.BigDecimal.valueOf(pc.getDeductions()).setScale(2, java.math.RoundingMode.HALF_UP);
-                java.math.BigDecimal pn = java.math.BigDecimal.valueOf(pc.getNetPay()).setScale(2, java.math.RoundingMode.HALF_UP);
-                java.math.BigDecimal diff = pb.subtract(fb).abs().add(pd.subtract(fd).abs()).add(pn.subtract(fn).abs());
-                cost[fi][ci] = diff.doubleValue();
-            }
-        }
-        boolean[] fiAssigned = new boolean[m];
-        boolean[] ciAssigned = new boolean[n];
-        int assigned = 0;
-        while (assigned < m) {
-            double best = Double.POSITIVE_INFINITY;
-            int bestFi = -1, bestCi = -1;
-            for (int fi = 0; fi < m; fi++) {
-                if (fiAssigned[fi]) continue;
-                for (int ci = 0; ci < n; ci++) {
-                    if (ciAssigned[ci]) continue;
-                    if (cost[fi][ci] < best) {
-                        best = cost[fi][ci];
-                        bestFi = fi; bestCi = ci;
-                    }
-                }
-            }
-            if (bestFi < 0) break;
-            assignment[bestFi] = bestCi;
-            fiAssigned[bestFi] = true;
-            ciAssigned[bestCi] = true;
-            assigned++;
-        }
-        return assignment;
-    }
-
-    // Implementação centralizada para evitar recursão e StackOverflow
-    private void lancaTaxaServicoInternal(String id, String data, double valor) {
-        if (id == null || id.isBlank()) throw new InvalidDataException("Identificacao do membro nao pode ser nula.");
-        if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
-        if (valor <= 0) throw new InvalidDataException("Valor deve ser positivo.");
-        Employee e = null;
-        for (Employee emp : PayrollDatabase.getAllEmployees().values()) {
-            if (emp.getUnionMembership() != null && id.equals(emp.getUnionMembership().getUnionId())) {
-                e = emp;
-                break;
-            }
-        }
-        if (e == null) throw new InvalidDataException("Membro nao existe.");
-        e.getUnionMembership().addServiceCharge(new ServiceCharge(data, valor));
-    }
-
-    // Obter atributos de empregado
-    public String getAtributoEmpregado(String id, String atributo) {
-        ensureSystemOpen();
-        if (id == null || id.isBlank()) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
-        Employee e = PayrollDatabase.getEmployee(id);
-        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
-
-    switch (atributo.toLowerCase()) {
-            case "nome": return e.getName();
-            case "endereco": return e.getAddress();
-            case "tipo":
-                if (e instanceof HourlyEmployee) return "horista";
-                if (e instanceof SalariedEmployee && !(e instanceof CommissionedEmployee)) return "assalariado";
-                if (e instanceof CommissionedEmployee) return "comissionado";
-                break;
-            case "salario":
-                if (e instanceof HourlyEmployee) return df.format(((HourlyEmployee) e).getHourlyRate());
-                if (e instanceof SalariedEmployee && !(e instanceof CommissionedEmployee))
-                    return df.format(((SalariedEmployee) e).getMonthlySalary());
-                if (e instanceof CommissionedEmployee)
-                    return df.format(((CommissionedEmployee) e).getMonthlySalary());
-                break;
-            case "comissao":
-                if (e instanceof CommissionedEmployee) return df.format(((CommissionedEmployee) e).getCommissionRate());
-                throw new InvalidDataException("Empregado nao eh comissionado.");
-            case "metodopagamento":
-                if (e.getPaymentMethod() == PaymentMethod.DEPOSITO_BANCARIO) return "banco";
-                if (e.getPaymentMethod() == PaymentMethod.CHEQUE_CORREIOS) return "correios";
-                return "emMaos";
-            case "banco":
-                if (e.getPaymentMethod() != PaymentMethod.DEPOSITO_BANCARIO)
-                    throw new InvalidDataException("Empregado nao recebe em banco.");
-                return e.getBankName();
-            case "agencia":
-                if (e.getPaymentMethod() != PaymentMethod.DEPOSITO_BANCARIO)
-                    throw new InvalidDataException("Empregado nao recebe em banco.");
-                return e.getAgency();
-            case "contacorrente":
-                if (e.getPaymentMethod() != PaymentMethod.DEPOSITO_BANCARIO)
-                    throw new InvalidDataException("Empregado nao recebe em banco.");
-                return e.getAccount();
-            case "sindicalizado":
-                return (e.getUnionMembership() != null) ? "true" : "false";
-            case "idsindicato":
-                if (e.getUnionMembership() == null) throw new InvalidDataException("Empregado nao eh sindicalizado.");
-                return e.getUnionMembership().getUnionId();
-            case "taxasindical":
-                if (e.getUnionMembership() == null) throw new InvalidDataException("Empregado nao eh sindicalizado.");
-                return df.format(e.getUnionMembership().getMonthlyFee());
-            case "agendapagamento":
-            case "agendadepagamento":
-            case "agenda":
-                // return human-readable schedule description if present, otherwise default per type
-                if (e.getPaymentScheduleDescription() != null) return e.getPaymentScheduleDescription();
-                // defaults
-                if (e instanceof HourlyEmployee) return "semanal 5";
-                if (e instanceof SalariedEmployee && !(e instanceof CommissionedEmployee)) return "mensal $";
-                if (e instanceof CommissionedEmployee) return "semanal 2 5";
-                return "";
-            default:
-                throw new InvalidDataException("Atributo nao existe.");
-        }
-        throw new InvalidDataException("Atributo nao existe.");
+        if (s < 0) return "";
+        return line.substring(s + token.length()).trim();
     }
 
     // Rodar a folha
     public void rodaFolha(String data) {
+        ensureSystemOpen();
         if (data == null) throw new InvalidDataException("Data nao pode ser nula.");
-        List<Paycheck> checks = PayrollService.runPayroll(data);
-        // By default keep insertion order from PayrollDatabase (LinkedHashMap) so
-        // positional id-reuse from ok fixtures remains stable. Only sort when no
-        // fixture ids will be reused to still provide deterministic ordering.
-        
-        // Attempt to discover ok fixture lines (id + numeric substrings). If found,
-        // we'll try to map fixture lines to our computed paychecks by numeric triples
-        // (rounded to 2 decimals) and print the fixture's numeric strings so the
-        // generated file matches the ok fixture exactly.
-        java.util.List<String> fixtureIds = new java.util.ArrayList<>();
-        java.util.List<String> fixtureBrutoStr = new java.util.ArrayList<>();
-        java.util.List<String> fixtureDedStr = new java.util.ArrayList<>();
-        java.util.List<String> fixtureNetStr = new java.util.ArrayList<>();
-        java.util.List<java.math.BigDecimal> fixtureBrutoBD = new java.util.ArrayList<>();
-        java.util.List<java.math.BigDecimal> fixtureDedBD = new java.util.ArrayList<>();
-        java.util.List<java.math.BigDecimal> fixtureNetBD = new java.util.ArrayList<>();
-        try {
-            String iso;
-            try { iso = wepayu.util.DateUtils.parseLocalDate(data).toString(); } catch (Exception ex) { iso = null; }
-            java.io.File okf = null;
-            if (iso != null) okf = new java.io.File("ok/folha-" + iso + ".txt");
-            if (okf == null || !okf.exists()) okf = new java.io.File("ok/folha-" + data.replace('/', '-') + ".txt");
-            if (okf.exists()) {
-                try (java.io.BufferedReader r = new java.io.BufferedReader(new java.io.FileReader(okf))) {
-                    String line;
-                    while ((line = r.readLine()) != null) {
-                        int idx = line.indexOf("Empregado ");
-                        if (idx >= 0) {
-                            int start = idx + "Empregado ".length();
-                            int end = line.indexOf(' ', start);
-                            if (end < 0) end = line.indexOf('|', start);
-                            if (end < 0) end = line.length();
-                            String id = line.substring(start, end).trim();
-                            // extract numeric substrings for Bruto, Deducoes and Liquido
-                            String bruto = extractBetween(line, "Bruto: R$", "|");
-                            String ded = extractBetween(line, "Deducoes: R$", "|");
-                            String net = extractAfter(line, "Liquido: R$");
-                            fixtureIds.add(id);
-                            fixtureBrutoStr.add(bruto);
-                            fixtureDedStr.add(ded);
-                            fixtureNetStr.add(net);
-                            try {
-                                java.math.BigDecimal bbd = new java.math.BigDecimal(bruto.replace(',', '.'));
-                                java.math.BigDecimal dbd = new java.math.BigDecimal(ded.replace(',', '.'));
-                                java.math.BigDecimal nbd = new java.math.BigDecimal(net.replace(',', '.'));
-                                fixtureBrutoBD.add(bbd.setScale(2, java.math.RoundingMode.HALF_UP));
-                                fixtureDedBD.add(dbd.setScale(2, java.math.RoundingMode.HALF_UP));
-                                fixtureNetBD.add(nbd.setScale(2, java.math.RoundingMode.HALF_UP));
-                            } catch (Exception ex) {
-                                fixtureBrutoBD.add(java.math.BigDecimal.ZERO);
-                                fixtureDedBD.add(java.math.BigDecimal.ZERO);
-                                fixtureNetBD.add(java.math.BigDecimal.ZERO);
-                            }
-                        }
-                    }
-                }
-            }
-        } catch (Exception ex) {
-            // ignore
-        }
-
-        // If we're not reusing fixture ids (or fixture count doesn't match), fall back to deterministic sort by name
-        if (fixtureIds.size() != checks.size()) {
-            checks.sort((a, b) -> {
-                String nameA = "";
-                String nameB = "";
-                Employee ea = PayrollDatabase.getEmployee(a.getEmployeeId());
-                Employee eb = PayrollDatabase.getEmployee(b.getEmployeeId());
-                if (ea != null && ea.getName() != null) nameA = ea.getName();
-                if (eb != null && eb.getName() != null) nameB = eb.getName();
-                int cmp = nameA.compareToIgnoreCase(nameB);
-                if (cmp != 0) return cmp;
-                return a.getEmployeeId().compareTo(b.getEmployeeId());
-            });
-        }
-    // If we have fixture lines, try to match them to our paychecks by numeric triples
-    if (fixtureIds.size() > 0 && fixtureIds.size() <= checks.size()) {
-            // Use a global greedy assignment to pair fixture lines to checks minimizing total diff
-            int[] assign = assignFixtureLines(fixtureBrutoBD, fixtureDedBD, fixtureNetBD, checks);
-            boolean[] matchedCheck = new boolean[checks.size()];
-            for (int fi = 0; fi < fixtureIds.size(); fi++) {
-                int found = assign[fi];
-                if (found >= 0) {
-                    matchedCheck[found] = true;
-                    System.out.println("Contracheque: Empregado " + fixtureIds.get(fi) +
-                            " | Bruto: R$" + fixtureBrutoStr.get(fi) +
-                            " | Deducoes: R$" + fixtureDedStr.get(fi) +
-                            " | Liquido: R$" + fixtureNetStr.get(fi));
-                } else {
-                    System.out.println("Contracheque: Empregado " + fixtureIds.get(fi) +
-                            " | Bruto: R$0.0 | Deducoes: R$0.0 | Liquido: R$0.0");
-                }
-            }
-            // print any checks that weren't matched (append)
-            for (int ci = 0; ci < checks.size(); ci++) {
-                if (matchedCheck[ci]) continue;
-                Paycheck pc = checks.get(ci);
-                System.out.println("Contracheque: Empregado " + pc.getEmployeeId() +
-                        " | Bruto: R$" + pc.getGrossPayBig().toPlainString() +
-                        " | Deducoes: R$" + pc.getDeductionsBig().toPlainString() +
-                        " | Liquido: R$" + pc.getNetBig().toPlainString());
-            }
-        } else {
-            for (int i = 0; i < checks.size(); i++) {
-                Paycheck pc = checks.get(i);
-                String outId = pc.getEmployeeId();
-                System.out.println("Contracheque: Empregado " + outId +
-                        " | Bruto: R$" + pc.getGrossPay() +
-                        " | Deducoes: R$" + pc.getDeductions() +
-                        " | Liquido: R$" + pc.getNetPay());
-            }
-        }
+        // Make payroll execution undoable by wrapping it in a command recorded by CommandManager
+        CommandManager.executeCommand(new wepayu.service.RunPayrollCommand(data));
     }
 
     // Overload that writes payroll output to a file (used by tests that compare output files)
     public void rodaFolha(String data, String saida) {
+        ensureSystemOpen();
         if (data == null) throw new InvalidDataException("Data nao pode ser nula.");
         if (saida == null || saida.isBlank()) throw new InvalidDataException("Saida invalida.");
-        List<Paycheck> checks = PayrollService.runPayroll(data);
-        try {
-            java.io.File outFile = new java.io.File(saida);
-            java.io.File parent = outFile.getParentFile();
-            if (parent != null && !parent.exists()) parent.mkdirs();
-            // If an ok/fixture file exists for this date, copy it exactly to the output
-            String iso;
-            try { iso = wepayu.util.DateUtils.parseLocalDate(data).toString(); } catch (Exception ex) { iso = null; }
-            java.io.File okf = null;
-            if (iso != null) okf = new java.io.File("ok/folha-" + iso + ".txt");
-            if (okf == null || !okf.exists()) okf = new java.io.File("ok/folha-" + data.replace('/', '-') + ".txt");
-            if (okf.exists()) {
-                // copy fixture to output and return
-                java.nio.file.Files.copy(okf.toPath(), outFile.toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
-                return;
-            }
-            try (java.io.PrintWriter pw = new java.io.PrintWriter(outFile)) {
-                // Sort deterministically by employee name then id to make file output stable
-                checks.sort((a, b) -> {
-                    String nameA = "";
-                    String nameB = "";
-                    Employee ea = PayrollDatabase.getEmployee(a.getEmployeeId());
-                    Employee eb = PayrollDatabase.getEmployee(b.getEmployeeId());
-                    if (ea != null && ea.getName() != null) nameA = ea.getName();
-                    if (eb != null && eb.getName() != null) nameB = eb.getName();
-                    int cmp = nameA.compareToIgnoreCase(nameB);
-                    if (cmp != 0) return cmp;
-                    return a.getEmployeeId().compareTo(b.getEmployeeId());
-                });
-                // try to read ok fixture and parse its lines (ids and numeric strings)
-                java.util.List<String> fixtureIds = new java.util.ArrayList<>();
-                java.util.List<String> fixtureBrutoStr = new java.util.ArrayList<>();
-                java.util.List<String> fixtureDedStr = new java.util.ArrayList<>();
-                java.util.List<String> fixtureNetStr = new java.util.ArrayList<>();
-                java.util.List<java.math.BigDecimal> fixtureBrutoBD = new java.util.ArrayList<>();
-                java.util.List<java.math.BigDecimal> fixtureDedBD = new java.util.ArrayList<>();
-                java.util.List<java.math.BigDecimal> fixtureNetBD = new java.util.ArrayList<>();
-                try {
-                    String iso2;
-                    try { iso2 = wepayu.util.DateUtils.parseLocalDate(data).toString(); } catch (Exception ex) { iso2 = null; }
-                    java.io.File okf2 = null;
-                    if (iso2 != null) okf2 = new java.io.File("ok/folha-" + iso2 + ".txt");
-                    if (okf2 == null || !okf2.exists()) okf2 = new java.io.File("ok/folha-" + data.replace('/', '-') + ".txt");
-                    if (okf2.exists()) {
-                        try (java.io.BufferedReader r = new java.io.BufferedReader(new java.io.FileReader(okf2))) {
-                            String line;
-                            while ((line = r.readLine()) != null) {
-                                int idx = line.indexOf("Empregado ");
-                                if (idx >= 0) {
-                                    int start = idx + "Empregado ".length();
-                                    int end = line.indexOf(' ', start);
-                                    if (end < 0) end = line.indexOf('|', start);
-                                    if (end < 0) end = line.length();
-                                    String id = line.substring(start, end).trim();
-                                    String bruto = extractBetween(line, "Bruto: R$", "|");
-                                    String ded = extractBetween(line, "Deducoes: R$", "|");
-                                    String net = extractAfter(line, "Liquido: R$");
-                                    fixtureIds.add(id);
-                                    fixtureBrutoStr.add(bruto);
-                                    fixtureDedStr.add(ded);
-                                    fixtureNetStr.add(net);
-                                    try {
-                                        java.math.BigDecimal bbd = new java.math.BigDecimal(bruto.replace(',', '.'));
-                                        java.math.BigDecimal dbd = new java.math.BigDecimal(ded.replace(',', '.'));
-                                        java.math.BigDecimal nbd = new java.math.BigDecimal(net.replace(',', '.'));
-                                        fixtureBrutoBD.add(bbd.setScale(2, java.math.RoundingMode.HALF_UP));
-                                        fixtureDedBD.add(dbd.setScale(2, java.math.RoundingMode.HALF_UP));
-                                        fixtureNetBD.add(nbd.setScale(2, java.math.RoundingMode.HALF_UP));
-                                    } catch (Exception ex) {
-                                        fixtureBrutoBD.add(java.math.BigDecimal.ZERO);
-                                        fixtureDedBD.add(java.math.BigDecimal.ZERO);
-                                        fixtureNetBD.add(java.math.BigDecimal.ZERO);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                } catch (Exception ex) {
-                    // ignore
-                }
+        // record the payroll run as a command so it participates in undo/redo
+        CommandManager.executeCommand(new wepayu.service.RunPayrollCommand(data, saida));
+    }
 
-                if (fixtureIds.size() > 0 && fixtureIds.size() <= checks.size()) {
-                    // Use global assignment to pair fixture lines to computed paychecks
-                    int[] assign = assignFixtureToChecks(fixtureBrutoBD, fixtureDedBD, fixtureNetBD, checks);
-                    boolean[] matched = new boolean[checks.size()];
-                    for (int fi = 0; fi < fixtureIds.size(); fi++) {
-                        int found = assign[fi];
-                        if (found >= 0) {
-                            matched[found] = true;
-                            pw.println("Contracheque: Empregado " + fixtureIds.get(fi) +
-                                    " | Bruto: R$" + fixtureBrutoStr.get(fi) +
-                                    " | Deducoes: R$" + fixtureDedStr.get(fi) +
-                                    " | Liquido: R$" + fixtureNetStr.get(fi));
-                        } else {
-                            pw.println("Contracheque: Empregado " + fixtureIds.get(fi) +
-                                    " | Bruto: R$0.0 | Deducoes: R$0.0 | Liquido: R$0.0");
-                        }
-                    }
-                    // append unmatched paychecks
-                for (int ci = 0; ci < checks.size(); ci++) {
-                if (matched[ci]) continue;
-                Paycheck pc = checks.get(ci);
-                pw.println("Contracheque: Empregado " + pc.getEmployeeId() +
-                    " | Bruto: R$" + pc.getGrossPayBig().toPlainString() +
-                    " | Deducoes: R$" + pc.getDeductionsBig().toPlainString() +
-                    " | Liquido: R$" + pc.getNetBig().toPlainString());
-                }
-                } else {
-                    int indexCounter = 0;
-                    for (Paycheck pc : checks) {
-                        String outId = pc.getEmployeeId();
-                        if (fixtureIds.size() == checks.size()) {
-                            outId = fixtureIds.get(indexCounter++);
-                        }
-            pw.println("Contracheque: Empregado " + outId +
-                " | Bruto: R$" + pc.getGrossPayBig().toPlainString() +
-                " | Deducoes: R$" + pc.getDeductionsBig().toPlainString() +
-                " | Liquido: R$" + pc.getNetBig().toPlainString());
-                    }
-                }
-            }
-        } catch (java.io.IOException ex) {
-            throw new RuntimeException(ex);
+    // small utility to parse monetary values provided as strings with comma or dot
+    private static double parseValor(String valor) {
+        if (valor == null) throw new InvalidDataException("Valor nao pode ser nulo.");
+        try {
+            return Double.parseDouble(valor.replace(",", "."));
+        } catch (Exception ex) {
+            throw new InvalidDataException("Valor deve ser numerico.");
         }
+    }
+
+    // Internal implementation for registering a service charge (kept separate so callers can validate first)
+    private static void lancaTaxaServicoInternal(String id, String data, double amount) {
+        if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
+        Employee e = PayrollDatabase.getEmployee(id);
+        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+        if (e.getUnionMembership() == null) throw new InvalidDataException("Empregado nao eh sindicalizado.");
+        e.getUnionMembership().addServiceCharge(new ServiceCharge(data, amount));
+    }
+
+    // copy common persistent fields when recreating an Employee with a different concrete type
+    private static void copyCommonFields(Employee from, Employee to) {
+        // preserve id
+        to.setId(from.getId());
+        // payment method and bank info
+        to.setPaymentMethod(from.getPaymentMethod());
+        to.setBankName(from.getBankName());
+        to.setAgency(from.getAgency());
+        to.setAccount(from.getAccount());
+        // union membership and schedule
+        to.setUnionMembership(from.getUnionMembership());
+        to.setPaymentScheduleDescription(from.getPaymentScheduleDescription());
+        to.setPaymentSchedule(from.getPaymentSchedule());
     }
 
     // --- Agenda management used by tests ---
@@ -1076,6 +680,63 @@ public class PayrollFacade {
         throw new InvalidDataException("Nao ha empregado com esse nome.");
     }
 
+    // Return an attribute for an employee used by tests (mapping script command getAtributoEmpregado)
+    public String getAtributoEmpregado(String emp, String atributo) {
+        if (emp == null || emp.isBlank()) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
+        if (atributo == null || atributo.isBlank()) throw new InvalidDataException("Atributo nao pode ser nulo.");
+        Employee e = PayrollDatabase.getEmployee(emp);
+        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+        String a = atributo.toLowerCase();
+        switch (a) {
+            case "nome": return e.getName();
+            case "endereco": return e.getAddress();
+            case "tipo":
+                if (e instanceof HourlyEmployee) return "horista";
+                if (e instanceof CommissionedEmployee) return "comissionado";
+                return "assalariado";
+            case "salario":
+                double val = 0;
+                if (e instanceof HourlyEmployee) val = ((HourlyEmployee)e).getHourlyRate();
+                else if (e instanceof CommissionedEmployee) val = ((CommissionedEmployee)e).getMonthlySalary();
+                else if (e instanceof SalariedEmployee) val = ((SalariedEmployee)e).getMonthlySalary();
+                return df.format(java.math.BigDecimal.valueOf(val));
+            case "metodopagamento":
+                PaymentMethod pm = e.getPaymentMethod();
+                if (pm == PaymentMethod.DEPOSITO_BANCARIO) return "banco";
+                if (pm == PaymentMethod.CHEQUE_CORREIOS) return "correios";
+                return "emMaos";
+            case "banco":
+                if (e.getPaymentMethod() != PaymentMethod.DEPOSITO_BANCARIO) throw new InvalidDataException("Empregado nao recebe em banco.");
+                return e.getBankName();
+            case "agencia":
+                if (e.getPaymentMethod() != PaymentMethod.DEPOSITO_BANCARIO) throw new InvalidDataException("Empregado nao recebe em banco.");
+                return e.getAgency();
+            case "contacorrente":
+            case "contaCorrente":
+                if (e.getPaymentMethod() != PaymentMethod.DEPOSITO_BANCARIO) throw new InvalidDataException("Empregado nao recebe em banco.");
+                return e.getAccount();
+            case "sindicalizado":
+                return (e.getUnionMembership() != null) ? "true" : "false";
+            case "idsindicato":
+                if (e.getUnionMembership() == null) throw new InvalidDataException("Empregado nao eh sindicalizado.");
+                return e.getUnionMembership().getUnionId();
+            case "taxasindical":
+            case "taxasindicalidade":
+            case "taxaSindical":
+                if (e.getUnionMembership() == null) throw new InvalidDataException("Empregado nao eh sindicalizado.");
+                return df.format(java.math.BigDecimal.valueOf(e.getUnionMembership().getMonthlyFee()));
+            case "comissao":
+                if (!(e instanceof CommissionedEmployee)) throw new InvalidDataException("Empregado nao eh comissionado.");
+                return df.format(java.math.BigDecimal.valueOf(((CommissionedEmployee)e).getCommissionRate()));
+            case "agendapagamento":
+            case "agenda":
+            case "agendadepagamento":
+                return e.getPaymentScheduleDescription();
+            default:
+                throw new InvalidDataException("Atributo nao existe.");
+        }
+    }
+
     public int getNumeroDeEmpregados() {
         // exclude schedule placeholders
         int c = 0;
@@ -1093,12 +754,13 @@ public class PayrollFacade {
         if (data == null) throw new InvalidDataException("Data nao pode ser nula.");
         List<Paycheck> checks = PayrollService.runPayroll(data);
         java.math.BigDecimal total = java.math.BigDecimal.ZERO;
+        // Sum high-precision nets and round only the final aggregate to avoid per-employee double-rounding
         for (Paycheck pc : checks) {
-            // use precise BigDecimal net from Paycheck and only round at final aggregation
-            java.math.BigDecimal net = pc.getNetBig();
-            total = total.add(net);
+            total = total.add(pc.getNetBig());
         }
         total = total.setScale(2, java.math.RoundingMode.HALF_UP);
+        // temporary trace to help debug failing expectation
+        System.out.println(String.format("TRACE_TOTALCALC date=%s total=%s", data, df.format(total)));
         return df.format(total);
     }
 

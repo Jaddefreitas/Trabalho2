@@ -1,0 +1,10 @@
+missing-id=EMP-3
+timestamp=1760976087581
+mapIdentityHash=874088044
+mapSize=5
+keys:
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5
+EMP-1
+EMP-2

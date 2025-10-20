@@ -22,4 +22,10 @@ public class RemoveEmployeeCommand implements Command {
         // No-op: rely on CommandManager's snapshot/restore to revert removals.
         System.out.println(String.format("TRACE_REMOVE_UNDO no-op id=%s", employeeId));
     }
+
+    @Override
+    public boolean isUndoable() {
+        // Make removals non-undoable so undos don't reintroduce previously removed employees
+        return false;
+    }
 }

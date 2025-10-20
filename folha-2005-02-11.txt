@@ -1,1 +1,2 @@
-Contracheque: Empregado 9d350a64-6e51-46b4-8274-83735669ca01 | Bruto: R$437.0 | Deducoes: R$0.0 | Liquido: R$437.0
+Contracheque: Empregado EMP-2 | Bruto: R$1061,54 | Deducoes: R$13,85 | Liquido: R$1047,69
+Contracheque: Empregado EMP-3 | Bruto: R$0,00 | Deducoes: R$0,00 | Liquido: R$0,00

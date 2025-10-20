@@ -15,7 +15,7 @@ public class PayrollService {
 
     private static final BigDecimal WEEKS_IN_MONTH = new BigDecimal("4.333333333333333");
     // Set to true to enable detailed payroll debug output. Keep false during automated tracing.
-    private static final boolean ENABLE_PAYROLL_DEBUG = false;
+    private static final boolean ENABLE_PAYROLL_DEBUG = true;
 
     private static BigDecimal roundMoney(BigDecimal v) {
         return v.setScale(2, RoundingMode.HALF_UP);
@@ -67,18 +67,15 @@ public class PayrollService {
                         String desc = e.getPaymentScheduleDescription() == null ? "" : e.getPaymentScheduleDescription().toLowerCase();
                         String[] descParts = desc.split("\\s+");
                         if (descParts.length >= 2 && descParts[0].equals("semanal")) {
-                            // compute as weekly rounded amount multiplied by number of weeks in this period
-                            double weeksDouble = period.multiplier * 4.333333333333333;
-                            int weeks = (int) Math.round(weeksDouble);
-                            BigDecimal weekly = monthly.divide(WEEKS_IN_MONTH, 10, RoundingMode.HALF_UP);
-                            BigDecimal weeklyRounded = roundMoney(weekly);
-                            gross = gross.add(weeklyRounded.multiply(BigDecimal.valueOf(weeks)));
+                            // compute prorated monthly amount for the period (no per-week rounding)
+                            BigDecimal raw = monthly.multiply(BigDecimal.valueOf(period.multiplier));
+                            gross = gross.add(raw);
                         } else {
                             BigDecimal raw = monthly.multiply(BigDecimal.valueOf(period.multiplier));
-                            gross = gross.add(roundMoney(raw));
+                            gross = gross.add(raw);
                         }
                     } else {
-                        gross = gross.add(roundMoney(monthly));
+                        gross = gross.add(monthly);
                     }
                 } else if (e instanceof wepayu.model.CommissionedEmployee) {
                     // Commissioned: base monthly prorated + commissions
@@ -87,19 +84,17 @@ public class PayrollService {
                         String desc = e.getPaymentScheduleDescription() == null ? "" : e.getPaymentScheduleDescription().toLowerCase();
                         String[] descParts = desc.split("\\s+");
                         if (descParts.length >= 2 && descParts[0].equals("semanal")) {
-                            double weeksDouble = period.multiplier * 4.333333333333333;
-                            int weeks = (int) Math.round(weeksDouble);
-                            BigDecimal weekly = base.divide(WEEKS_IN_MONTH, 10, RoundingMode.HALF_UP);
-                            BigDecimal weeklyRounded = roundMoney(weekly);
-                            gross = gross.add(weeklyRounded.multiply(BigDecimal.valueOf(weeks)));
+                            // prorate base monthly salary by period multiplier (no per-week rounding)
+                            BigDecimal raw = base.multiply(BigDecimal.valueOf(period.multiplier));
+                            gross = gross.add(raw);
                         } else {
                             BigDecimal raw = base.multiply(BigDecimal.valueOf(period.multiplier));
-                            gross = gross.add(roundMoney(raw));
+                            gross = gross.add(raw);
                         }
                     } else {
-                        gross = gross.add(roundMoney(base));
+                        gross = gross.add(base);
                     }
-                    // commissions: sum sales within period
+                    // commissions: sum sales within period (high precision, do not round yet)
                     BigDecimal commissions = BigDecimal.ZERO;
                     double commissionRate = ((wepayu.model.CommissionedEmployee) e).getCommissionRate();
                     for (wepayu.model.SalesReceipt sr : ((wepayu.model.CommissionedEmployee) e).sales) {
@@ -108,7 +103,7 @@ public class PayrollService {
                             commissions = commissions.add(amt.multiply(BigDecimal.valueOf(commissionRate)));
                         }
                     }
-                    gross = gross.add(roundMoney(commissions));
+                    gross = gross.add(commissions);
                 } else if (e instanceof wepayu.model.HourlyEmployee) {
                     // Hourly: compute hours in period
                     BigDecimal total = BigDecimal.ZERO;
@@ -119,10 +114,9 @@ public class PayrollService {
                         BigDecimal normal = BigDecimal.valueOf(normalHours).multiply(rate);
                         BigDecimal extra = BigDecimal.valueOf(extraHours).multiply(rate).multiply(BigDecimal.valueOf(1.5d));
                         total = total.add(normal).add(extra);
-                        total = roundMoney(total);
                     } else {
                         double calc = ((wepayu.model.HourlyEmployee) e).calculatePay();
-                        total = roundMoney(BigDecimal.valueOf(calc));
+                        total = BigDecimal.valueOf(calc);
                     }
                     gross = gross.add(total);
                 }
@@ -134,14 +128,12 @@ public class PayrollService {
                         String desc = e.getPaymentScheduleDescription() == null ? "" : e.getPaymentScheduleDescription().toLowerCase();
                         String[] descParts = desc.split("\\s+");
                         if (descParts.length >= 2 && descParts[0].equals("semanal")) {
-                            double weeksDouble = period.multiplier * 4.333333333333333;
-                            int weeks = (int) Math.round(weeksDouble);
-                            BigDecimal weeklyFee = BigDecimal.valueOf(monthlyFee).divide(WEEKS_IN_MONTH, 10, RoundingMode.HALF_UP);
-                            BigDecimal weeklyFeeRounded = roundMoney(weeklyFee);
-                            deductions = deductions.add(weeklyFeeRounded.multiply(BigDecimal.valueOf(weeks)));
+                            // prorate monthly fee by period multiplier (no per-week rounding)
+                            BigDecimal rawFee = BigDecimal.valueOf(monthlyFee).multiply(BigDecimal.valueOf(period.multiplier));
+                            deductions = deductions.add(rawFee);
                         } else {
                             BigDecimal rawFee = BigDecimal.valueOf(monthlyFee).multiply(BigDecimal.valueOf(period.multiplier));
-                            deductions = deductions.add(roundMoney(rawFee));
+                            deductions = deductions.add(rawFee);
                         }
                         for (wepayu.model.ServiceCharge sc : e.getUnionMembership().getServiceCharges()) {
                             if (wepayu.util.DateUtils.isBetweenExclusiveEnd(sc.getDate(), startStr, endStr)) {
@@ -162,7 +154,10 @@ public class PayrollService {
                 gross.toPlainString(), deductions.toPlainString(), netUnrounded.toPlainString()));
         }
 
-        Paycheck pc = new Paycheck(e.getId(), gross, deductions);
+    // Do NOT round gross/deductions here; keep precise values in the Paycheck.
+    // Final per-employee net rounding (HALF_UP) is performed by callers when needed
+    // (for display or aggregation). This avoids double-rounding differences.
+    Paycheck pc = new Paycheck(e.getId(), gross, deductions);
         checks.add(pc);
             }
         }

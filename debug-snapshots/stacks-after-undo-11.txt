@@ -1,0 +1,9 @@
+STACK_DUMP undoSize=5 redoSize=1
+UNDO_STACK:
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+  seq(before=11,after=12) cmd=ClearSystemCommand

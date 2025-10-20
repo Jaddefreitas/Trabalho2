@@ -1,0 +1,3455 @@
+
+=== Running group: tests/us1.txt,tests/us1_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=2 size=3
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+STACK_DUMP undoSize=1 redoSize=0
+UNDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=1 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=abc -> MISSING (current count=3)
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_ADD_EMP: EMP-1 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-1 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=2 redoSize=0
+UNDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_ADD_EMP: EMP-2 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-2 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=3 redoSize=0
+UNDO_STACK:
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_ADD_EMP: EMP-3 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-3 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=8 size=6
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=4 redoSize=0
+UNDO_STACK:
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=6
+TRACE_ADD_EMP: EMP-4 -> Mariazinha
+TRACE_ADD_EMP id=EMP-4 name=Mariazinha type=SalariedEmployee
+TRACE_SNAPSHOT seq=10 size=7
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=5 redoSize=0
+UNDO_STACK:
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=5 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Mariazinha
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=7
+TRACE_ADD_EMP: EMP-5 -> Gaiato Vendedor
+TRACE_ADD_EMP id=EMP-5 name=Gaiato Vendedor type=CommissionedEmployee
+TRACE_SNAPSHOT seq=12 size=8
+TRACE_CMD_SEQ pushed seq=11 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=6 redoSize=0
+UNDO_STACK:
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=6 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=abc -> MISSING (current count=8)
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+Test file tests/us1.txt: 51 tests OK
+Line 89, file tests/us1.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us1.txt,tests/us1_1.txt
+
+=== Running group: tests/us2.txt,tests/us2_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=2 size=3
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+STACK_DUMP undoSize=1 redoSize=0
+UNDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=1 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_ADD_EMP: EMP-1 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-1 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=2 redoSize=0
+UNDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_ADD_EMP: EMP-2 -> Maria
+TRACE_ADD_EMP id=EMP-2 name=Maria type=HourlyEmployee
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=3 redoSize=0
+UNDO_STACK:
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_REMOVE_EMP id=EMP-1 present=true
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+STACK_DUMP undoSize=4 redoSize=0
+UNDO_STACK:
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=4 topUndo=RemoveEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-1 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-1 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Maria
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Maria
+TRACE_GET_EMP id=abc -> MISSING (current count=4)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+Test file tests/us2.txt: 21 tests OK
+Line 37, file tests/us2.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us2.txt,tests/us2_1.txt
+
+=== Running group: tests/us3.txt,tests/us3_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=2 size=3
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+STACK_DUMP undoSize=1 redoSize=0
+UNDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=1 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_ADD_EMP: EMP-1 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-1 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=2 redoSize=0
+UNDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_ADD_EMP: EMP-2 -> Mariazinha
+TRACE_ADD_EMP id=EMP-2 name=Mariazinha type=HourlyEmployee
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=3 redoSize=0
+UNDO_STACK:
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_ADD_EMP: EMP-3 -> Gaiato Vendedor
+TRACE_ADD_EMP id=EMP-3 name=Gaiato Vendedor type=CommissionedEmployee
+TRACE_SNAPSHOT seq=8 size=6
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=4 redoSize=0
+UNDO_STACK:
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=6
+TRACE_ADD_EMP: EMP-4 -> Gorete
+TRACE_ADD_EMP id=EMP-4 name=Gorete type=SalariedEmployee
+TRACE_SNAPSHOT seq=10 size=7
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=5 redoSize=0
+UNDO_STACK:
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=5 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=abc -> MISSING (current count=7)
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Gorete
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Gorete
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+Test file tests/us3.txt: 3 errors:
+Line 41, file tests/us3.txt: Expected the error message <Identificacao do empregado nao pode ser nula.>, but the error message was <Parametros invalidos.>
+Command producing error: <expectError "Identificacao do empregado nao pode ser nula." lancaCartao emp= data=1/1/2005 horas=8>
+Line 46, file tests/us3.txt: Expected <Horas devem ser positivas.>, but no error occurred.
+Command producing error: <expectError "Horas devem ser positivas." lancaCartao emp=EMP-1 data=1/12/2005 horas=0>
+Line 47, file tests/us3.txt: Expected the error message <Horas devem ser positivas.>, but the error message was <Horas nao podem ser negativas.>
+Command producing error: <expectError "Horas devem ser positivas." lancaCartao emp=EMP-1 data=1/12/2005 horas=-1>
+
+Line 56, file tests/us3.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us3.txt,tests/us3_1.txt
+
+=== Running group: tests/us4.txt,tests/us4_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=2 size=3
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+STACK_DUMP undoSize=1 redoSize=0
+UNDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=1 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_ADD_EMP: EMP-1 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-1 name=Joao da Silva type=CommissionedEmployee
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=2 redoSize=0
+UNDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_ADD_EMP: EMP-2 -> Mariazinha
+TRACE_ADD_EMP id=EMP-2 name=Mariazinha type=CommissionedEmployee
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=3 redoSize=0
+UNDO_STACK:
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_ADD_EMP: EMP-3 -> Gaiato Vendedor
+TRACE_ADD_EMP id=EMP-3 name=Gaiato Vendedor type=HourlyEmployee
+TRACE_SNAPSHOT seq=8 size=6
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=4 redoSize=0
+UNDO_STACK:
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=6
+TRACE_ADD_EMP: EMP-4 -> Gorete
+TRACE_ADD_EMP id=EMP-4 name=Gorete type=SalariedEmployee
+TRACE_SNAPSHOT seq=10 size=7
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=5 redoSize=0
+UNDO_STACK:
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=5 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=abc -> MISSING (current count=7)
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Gorete
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Gorete
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+Test file tests/us4.txt: 3 errors:
+Line 35, file tests/us4.txt: Expected the error message <Identificacao do empregado nao pode ser nula.>, but the error message was <Parametros invalidos.>
+Command producing error: <expectError "Identificacao do empregado nao pode ser nula." lancaVenda emp= data=1/1/2005 valor=800>
+Line 40, file tests/us4.txt: Expected <Valor deve ser positivo.>, but no error occurred.
+Command producing error: <expectError "Valor deve ser positivo." lancaVenda emp=EMP-1 data=1/12/2005 valor=0>
+Line 41, file tests/us4.txt: Expected the error message <Valor deve ser positivo.>, but the error message was <Valor nao pode ser negativo.>
+Command producing error: <expectError "Valor deve ser positivo." lancaVenda emp=EMP-1 data=1/12/2005 valor=-1>
+
+Line 50, file tests/us4.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us4.txt,tests/us4_1.txt
+
+=== Running group: tests/us5.txt,tests/us5_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=2 size=3
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+STACK_DUMP undoSize=1 redoSize=0
+UNDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=1 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_ADD_EMP: EMP-1 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-1 name=Joao da Silva type=CommissionedEmployee
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=2 redoSize=0
+UNDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_ADD_EMP: EMP-2 -> Mariazinha
+TRACE_ADD_EMP id=EMP-2 name=Mariazinha type=SalariedEmployee
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=3 redoSize=0
+UNDO_STACK:
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Mariazinha
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_ADD_EMP: EMP-3 -> Gaiato Vendedor
+TRACE_ADD_EMP id=EMP-3 name=Gaiato Vendedor type=HourlyEmployee
+TRACE_SNAPSHOT seq=8 size=6
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=4 redoSize=0
+UNDO_STACK:
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Gaiato Vendedor
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=6
+TRACE_ADD_EMP: EMP-4 -> Gorete
+TRACE_ADD_EMP id=EMP-4 name=Gorete type=HourlyEmployee
+TRACE_SNAPSHOT seq=10 size=7
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=5 redoSize=0
+UNDO_STACK:
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=5 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Gorete
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=s128 -> MISSING (current count=7)
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=s128 -> MISSING (current count=7)
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=s128 -> MISSING (current count=7)
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=s128 -> MISSING (current count=7)
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=s129 -> MISSING (current count=7)
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=abc -> MISSING (current count=7)
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Gorete
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Gorete
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+Test file tests/us5.txt: 1 errors:
+Line 39, file tests/us5.txt: Expected the error message <Membro nao existe.>, but the error message was <Empregado nao existe.>
+Command producing error: <expectError "Membro nao existe." lancaTaxaServico membro=abc data=1/1/2005 valor=80>
+
+Line 52, file tests/us5.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us5.txt,tests/us5_1.txt
+
+=== Running group: tests/us6.txt,tests/us6_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=2 size=3
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+STACK_DUMP undoSize=1 redoSize=0
+UNDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=1 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_ADD_EMP: EMP-1 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-1 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=2 redoSize=0
+UNDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_ADD_EMP: EMP-1 -> Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_ADD_EMP: EMP-1 -> Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_ADD_EMP: EMP-1 -> Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_ADD_EMP: EMP-1 -> Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=abc -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_ADD_EMP: EMP-1 -> Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+Test file tests/us6.txt: 91 tests OK
+Line 124, file tests/us6.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us6.txt,tests/us6_1.txt
+
+=== Running group: tests/us7.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=2 size=3
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+STACK_DUMP undoSize=1 redoSize=0
+UNDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=1 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_ADD_EMP: EMP-1 -> Fernanda Montenegro
+TRACE_ADD_EMP id=EMP-1 name=Fernanda Montenegro type=HourlyEmployee
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=2 redoSize=0
+UNDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_ADD_EMP: EMP-2 -> Paloma Duarte
+TRACE_ADD_EMP id=EMP-2 name=Paloma Duarte type=HourlyEmployee
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=3 redoSize=0
+UNDO_STACK:
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_ADD_EMP: EMP-3 -> Lavinia Vlasak
+TRACE_ADD_EMP id=EMP-3 name=Lavinia Vlasak type=HourlyEmployee
+TRACE_SNAPSHOT seq=8 size=6
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=4 redoSize=0
+UNDO_STACK:
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=6
+TRACE_ADD_EMP: EMP-4 -> Claudia Abreu
+TRACE_ADD_EMP id=EMP-4 name=Claudia Abreu type=HourlyEmployee
+TRACE_SNAPSHOT seq=10 size=7
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=5 redoSize=0
+UNDO_STACK:
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=5 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=7
+TRACE_ADD_EMP: EMP-5 -> Claudia Raia
+TRACE_ADD_EMP id=EMP-5 name=Claudia Raia type=HourlyEmployee
+TRACE_SNAPSHOT seq=12 size=8
+TRACE_CMD_SEQ pushed seq=11 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=6 redoSize=0
+UNDO_STACK:
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=6 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=s124 -> MISSING (current count=8)
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=s124 -> MISSING (current count=8)
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=13 size=8
+TRACE_ADD_EMP: EMP-6 -> Natalia do Valle
+TRACE_ADD_EMP id=EMP-6 name=Natalia do Valle type=SalariedEmployee
+TRACE_SNAPSHOT seq=14 size=9
+TRACE_CMD_SEQ pushed seq=13 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=7 redoSize=0
+UNDO_STACK:
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=7 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Natalia do Valle
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Natalia do Valle
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=15 size=9
+TRACE_ADD_EMP: EMP-7 -> Regina Duarte
+TRACE_ADD_EMP id=EMP-7 name=Regina Duarte type=SalariedEmployee
+TRACE_SNAPSHOT seq=16 size=10
+TRACE_CMD_SEQ pushed seq=15 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=8 redoSize=0
+UNDO_STACK:
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=8 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Regina Duarte
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Regina Duarte
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=17 size=10
+TRACE_ADD_EMP: EMP-8 -> Flavia Alessandra
+TRACE_ADD_EMP id=EMP-8 name=Flavia Alessandra type=SalariedEmployee
+TRACE_SNAPSHOT seq=18 size=11
+TRACE_CMD_SEQ pushed seq=17 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=9 redoSize=0
+UNDO_STACK:
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=9 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Flavia Alessandra
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Flavia Alessandra
+TRACE_GET_EMP id=s126 -> MISSING (current count=11)
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Flavia Alessandra
+TRACE_GET_EMP id=s126 -> MISSING (current count=11)
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Flavia Alessandra
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=19 size=11
+TRACE_ADD_EMP: EMP-9 -> Deborah Secco
+TRACE_ADD_EMP id=EMP-9 name=Deborah Secco type=CommissionedEmployee
+TRACE_SNAPSHOT seq=20 size=12
+TRACE_CMD_SEQ pushed seq=19 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=10 redoSize=0
+UNDO_STACK:
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=10 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=21 size=12
+TRACE_ADD_EMP: EMP-10 -> Ana Paula Arosio
+TRACE_ADD_EMP id=EMP-10 name=Ana Paula Arosio type=CommissionedEmployee
+TRACE_SNAPSHOT seq=22 size=13
+TRACE_CMD_SEQ pushed seq=21 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=11 redoSize=0
+UNDO_STACK:
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=11 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=23 size=13
+TRACE_ADD_EMP: EMP-11 -> Suzana Vieira
+TRACE_ADD_EMP id=EMP-11 name=Suzana Vieira type=CommissionedEmployee
+TRACE_SNAPSHOT seq=24 size=14
+TRACE_CMD_SEQ pushed seq=23 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=12 redoSize=0
+UNDO_STACK:
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=12 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=25 size=14
+TRACE_ADD_EMP: EMP-12 -> Maite Proenca
+TRACE_ADD_EMP id=EMP-12 name=Maite Proenca type=CommissionedEmployee
+TRACE_SNAPSHOT seq=26 size=15
+TRACE_CMD_SEQ pushed seq=25 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=13 redoSize=0
+UNDO_STACK:
+  seq(before=25,after=26) cmd=AddEmployeeCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=13 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=s128 -> MISSING (current count=15)
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=s128 -> MISSING (current count=15)
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=1/1/2005 | end=8/1/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=1/1/2005 | end=8/1/2005 | grossRaw=168.7500 | dedRaw=0 | netUnrounded=168.7500
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=1/1/2005 | end=8/1/2005 | grossRaw=201.7800 | dedRaw=0 | netUnrounded=201.7800
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=1/1/2005 | end=8/1/2005 | grossRaw=198.000 | dedRaw=0.230769230769230780 | netUnrounded=197.769230769230769220
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=1/1/2005 | end=8/1/2005 | grossRaw=180.000 | dedRaw=80.276923076923076936 | netUnrounded=99.723076923076923064
+DEBUG_TOTAL id=EMP-1 netUnrounded=0.000 netRounded=0.00
+DEBUG_TOTAL id=EMP-2 netUnrounded=168.7500 netRounded=168.75
+DEBUG_TOTAL id=EMP-3 netUnrounded=201.7800 netRounded=201.78
+DEBUG_TOTAL id=EMP-4 netUnrounded=197.769230769230769220 netRounded=197.77
+DEBUG_TOTAL id=EMP-5 netUnrounded=99.723076923076923064 netRounded=99.72
+TRACE_EXEC_CMD execute RunPayrollCommand
+TRACE_SNAPSHOT seq=27 size=15
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=1/1/2005 | end=8/1/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=1/1/2005 | end=8/1/2005 | grossRaw=168.7500 | dedRaw=0 | netUnrounded=168.7500
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=1/1/2005 | end=8/1/2005 | grossRaw=201.7800 | dedRaw=0 | netUnrounded=201.7800
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=1/1/2005 | end=8/1/2005 | grossRaw=198.000 | dedRaw=0.230769230769230780 | netUnrounded=197.769230769230769220
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=1/1/2005 | end=8/1/2005 | grossRaw=180.000 | dedRaw=80.276923076923076936 | netUnrounded=99.723076923076923064
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_SNAPSHOT seq=28 size=15
+TRACE_CMD_SEQ pushed seq=27 cmd=RunPayrollCommand
+STACK_DUMP undoSize=14 redoSize=0
+UNDO_STACK:
+  seq(before=27,after=28) cmd=RunPayrollCommand
+  seq(before=25,after=26) cmd=AddEmployeeCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=14 topUndo=RunPayrollCommand redoSize=0 topRedo=-
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=8/1/2005 | end=15/1/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=8/1/2005 | end=15/1/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=8/1/2005 | end=15/1/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=8/1/2005 | end=15/1/2005 | grossRaw=0.000 | dedRaw=0.230769230769230780 | netUnrounded=-0.230769230769230780
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=8/1/2005 | end=15/1/2005 | grossRaw=0.000 | dedRaw=0.276923076923076936 | netUnrounded=-0.276923076923076936
+DEBUG_PAYDATE id=EMP-9 name=Deborah Secco schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-9 | CommissionedEmployee | period=0.46153846153846156 | start=1/1/2005 | end=15/1/2005 | grossRaw=600.000000000000028000 | dedRaw=0 | netUnrounded=600.000000000000028000
+DEBUG_PAYDATE id=EMP-10 name=Ana Paula Arosio schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-10 | CommissionedEmployee | period=0.46153846153846156 | start=1/1/2005 | end=15/1/2005 | grossRaw=684.967846153846184000 | dedRaw=0 | netUnrounded=684.967846153846184000
+DEBUG_PAYDATE id=EMP-11 name=Suzana Vieira schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-11 | CommissionedEmployee | period=0.46153846153846156 | start=1/1/2005 | end=15/1/2005 | grossRaw=734.356192307692340000 | dedRaw=0.461538461538461560 | netUnrounded=733.894653846153878440
+DEBUG_PAYDATE id=EMP-12 name=Maite Proenca schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-12 | CommissionedEmployee | period=0.46153846153846156 | start=1/1/2005 | end=15/1/2005 | grossRaw=783.744538461538496000 | dedRaw=70.461538461538461560 | netUnrounded=713.283000000000034440
+DEBUG_TOTAL id=EMP-1 netUnrounded=0.000 netRounded=0.00
+DEBUG_TOTAL id=EMP-2 netUnrounded=0.0000 netRounded=0.00
+DEBUG_TOTAL id=EMP-3 netUnrounded=0.0000 netRounded=0.00
+DEBUG_TOTAL id=EMP-4 netUnrounded=-0.230769230769230780 netRounded=-0.23
+DEBUG_TOTAL id=EMP-5 netUnrounded=-0.276923076923076936 netRounded=-0.28
+DEBUG_TOTAL id=EMP-9 netUnrounded=600.000000000000028000 netRounded=600.00
+DEBUG_TOTAL id=EMP-10 netUnrounded=684.967846153846184000 netRounded=684.97
+DEBUG_TOTAL id=EMP-11 netUnrounded=733.894653846153878440 netRounded=733.89
+DEBUG_TOTAL id=EMP-12 netUnrounded=713.283000000000034440 netRounded=713.28
+TRACE_EXEC_CMD execute RunPayrollCommand
+TRACE_SNAPSHOT seq=29 size=15
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=8/1/2005 | end=15/1/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=8/1/2005 | end=15/1/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=8/1/2005 | end=15/1/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=8/1/2005 | end=15/1/2005 | grossRaw=0.000 | dedRaw=0.230769230769230780 | netUnrounded=-0.230769230769230780
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=8/1/2005 | end=15/1/2005 | grossRaw=0.000 | dedRaw=0.276923076923076936 | netUnrounded=-0.276923076923076936
+DEBUG_PAYDATE id=EMP-9 name=Deborah Secco schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-9 | CommissionedEmployee | period=0.46153846153846156 | start=1/1/2005 | end=15/1/2005 | grossRaw=600.000000000000028000 | dedRaw=0 | netUnrounded=600.000000000000028000
+DEBUG_PAYDATE id=EMP-10 name=Ana Paula Arosio schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-10 | CommissionedEmployee | period=0.46153846153846156 | start=1/1/2005 | end=15/1/2005 | grossRaw=684.967846153846184000 | dedRaw=0 | netUnrounded=684.967846153846184000
+DEBUG_PAYDATE id=EMP-11 name=Suzana Vieira schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-11 | CommissionedEmployee | period=0.46153846153846156 | start=1/1/2005 | end=15/1/2005 | grossRaw=734.356192307692340000 | dedRaw=0.461538461538461560 | netUnrounded=733.894653846153878440
+DEBUG_PAYDATE id=EMP-12 name=Maite Proenca schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-12 | CommissionedEmployee | period=0.46153846153846156 | start=1/1/2005 | end=15/1/2005 | grossRaw=783.744538461538496000 | dedRaw=70.461538461538461560 | netUnrounded=713.283000000000034440
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_SNAPSHOT seq=30 size=15
+TRACE_CMD_SEQ pushed seq=29 cmd=RunPayrollCommand
+STACK_DUMP undoSize=15 redoSize=0
+UNDO_STACK:
+  seq(before=29,after=30) cmd=RunPayrollCommand
+  seq(before=27,after=28) cmd=RunPayrollCommand
+  seq(before=25,after=26) cmd=AddEmployeeCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=15 topUndo=RunPayrollCommand redoSize=0 topRedo=-
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=15/1/2005 | end=22/1/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=15/1/2005 | end=22/1/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=15/1/2005 | end=22/1/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=15/1/2005 | end=22/1/2005 | grossRaw=0.000 | dedRaw=0.230769230769230780 | netUnrounded=-0.230769230769230780
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=15/1/2005 | end=22/1/2005 | grossRaw=0.000 | dedRaw=0.276923076923076936 | netUnrounded=-0.276923076923076936
+DEBUG_TOTAL id=EMP-1 netUnrounded=0.000 netRounded=0.00
+DEBUG_TOTAL id=EMP-2 netUnrounded=0.0000 netRounded=0.00
+DEBUG_TOTAL id=EMP-3 netUnrounded=0.0000 netRounded=0.00
+DEBUG_TOTAL id=EMP-4 netUnrounded=-0.230769230769230780 netRounded=-0.23
+DEBUG_TOTAL id=EMP-5 netUnrounded=-0.276923076923076936 netRounded=-0.28
+TRACE_EXEC_CMD execute RunPayrollCommand
+TRACE_SNAPSHOT seq=31 size=15
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=15/1/2005 | end=22/1/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=15/1/2005 | end=22/1/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=15/1/2005 | end=22/1/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=15/1/2005 | end=22/1/2005 | grossRaw=0.000 | dedRaw=0.230769230769230780 | netUnrounded=-0.230769230769230780
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=15/1/2005 | end=22/1/2005 | grossRaw=0.000 | dedRaw=0.276923076923076936 | netUnrounded=-0.276923076923076936
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_SNAPSHOT seq=32 size=15
+TRACE_CMD_SEQ pushed seq=31 cmd=RunPayrollCommand
+STACK_DUMP undoSize=16 redoSize=0
+UNDO_STACK:
+  seq(before=31,after=32) cmd=RunPayrollCommand
+  seq(before=29,after=30) cmd=RunPayrollCommand
+  seq(before=27,after=28) cmd=RunPayrollCommand
+  seq(before=25,after=26) cmd=AddEmployeeCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=16 topUndo=RunPayrollCommand redoSize=0 topRedo=-
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=22/1/2005 | end=29/1/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=22/1/2005 | end=29/1/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=22/1/2005 | end=29/1/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=22/1/2005 | end=29/1/2005 | grossRaw=0.000 | dedRaw=0.230769230769230780 | netUnrounded=-0.230769230769230780
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=22/1/2005 | end=29/1/2005 | grossRaw=0.000 | dedRaw=0.276923076923076936 | netUnrounded=-0.276923076923076936
+DEBUG_PAYDATE id=EMP-9 name=Deborah Secco schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-9 | CommissionedEmployee | period=0.46153846153846156 | start=15/1/2005 | end=29/1/2005 | grossRaw=600.000000000000028000 | dedRaw=0 | netUnrounded=600.000000000000028000
+DEBUG_PAYDATE id=EMP-10 name=Ana Paula Arosio schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-10 | CommissionedEmployee | period=0.46153846153846156 | start=15/1/2005 | end=29/1/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_PAYDATE id=EMP-11 name=Suzana Vieira schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-11 | CommissionedEmployee | period=0.46153846153846156 | start=15/1/2005 | end=29/1/2005 | grossRaw=692.307692307692340000 | dedRaw=0.461538461538461560 | netUnrounded=691.846153846153878440
+DEBUG_PAYDATE id=EMP-12 name=Maite Proenca schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-12 | CommissionedEmployee | period=0.46153846153846156 | start=15/1/2005 | end=29/1/2005 | grossRaw=738.461538461538496000 | dedRaw=0.461538461538461560 | netUnrounded=738.000000000000034440
+DEBUG_TOTAL id=EMP-1 netUnrounded=0.000 netRounded=0.00
+DEBUG_TOTAL id=EMP-2 netUnrounded=0.0000 netRounded=0.00
+DEBUG_TOTAL id=EMP-3 netUnrounded=0.0000 netRounded=0.00
+DEBUG_TOTAL id=EMP-4 netUnrounded=-0.230769230769230780 netRounded=-0.23
+DEBUG_TOTAL id=EMP-5 netUnrounded=-0.276923076923076936 netRounded=-0.28
+DEBUG_TOTAL id=EMP-9 netUnrounded=600.000000000000028000 netRounded=600.00
+DEBUG_TOTAL id=EMP-10 netUnrounded=646.153846153846184000 netRounded=646.15
+DEBUG_TOTAL id=EMP-11 netUnrounded=691.846153846153878440 netRounded=691.85
+DEBUG_TOTAL id=EMP-12 netUnrounded=738.000000000000034440 netRounded=738.00
+TRACE_EXEC_CMD execute RunPayrollCommand
+TRACE_SNAPSHOT seq=33 size=15
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=22/1/2005 | end=29/1/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=22/1/2005 | end=29/1/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=22/1/2005 | end=29/1/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=22/1/2005 | end=29/1/2005 | grossRaw=0.000 | dedRaw=0.230769230769230780 | netUnrounded=-0.230769230769230780
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=22/1/2005 | end=29/1/2005 | grossRaw=0.000 | dedRaw=0.276923076923076936 | netUnrounded=-0.276923076923076936
+DEBUG_PAYDATE id=EMP-9 name=Deborah Secco schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-9 | CommissionedEmployee | period=0.46153846153846156 | start=15/1/2005 | end=29/1/2005 | grossRaw=600.000000000000028000 | dedRaw=0 | netUnrounded=600.000000000000028000
+DEBUG_PAYDATE id=EMP-10 name=Ana Paula Arosio schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-10 | CommissionedEmployee | period=0.46153846153846156 | start=15/1/2005 | end=29/1/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_PAYDATE id=EMP-11 name=Suzana Vieira schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-11 | CommissionedEmployee | period=0.46153846153846156 | start=15/1/2005 | end=29/1/2005 | grossRaw=692.307692307692340000 | dedRaw=0.461538461538461560 | netUnrounded=691.846153846153878440
+DEBUG_PAYDATE id=EMP-12 name=Maite Proenca schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-12 | CommissionedEmployee | period=0.46153846153846156 | start=15/1/2005 | end=29/1/2005 | grossRaw=738.461538461538496000 | dedRaw=0.461538461538461560 | netUnrounded=738.000000000000034440
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_SNAPSHOT seq=34 size=15
+TRACE_CMD_SEQ pushed seq=33 cmd=RunPayrollCommand
+STACK_DUMP undoSize=17 redoSize=0
+UNDO_STACK:
+  seq(before=33,after=34) cmd=RunPayrollCommand
+  seq(before=31,after=32) cmd=RunPayrollCommand
+  seq(before=29,after=30) cmd=RunPayrollCommand
+  seq(before=27,after=28) cmd=RunPayrollCommand
+  seq(before=25,after=26) cmd=AddEmployeeCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=17 topUndo=RunPayrollCommand redoSize=0 topRedo=-
+DEBUG_PAYDATE id=EMP-6 name=Natalia do Valle schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=1.0 | start=1/1/2005 | end=1/2/2005 | grossRaw=1000.00 | dedRaw=0 | netUnrounded=1000.00
+DEBUG_PAYDATE id=EMP-7 name=Regina Duarte schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-7 | SalariedEmployee | period=1.0 | start=1/1/2005 | end=1/2/2005 | grossRaw=1100.00 | dedRaw=1.00 | netUnrounded=1099.00
+DEBUG_PAYDATE id=EMP-8 name=Flavia Alessandra schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-8 | SalariedEmployee | period=1.0 | start=1/1/2005 | end=1/2/2005 | grossRaw=1200.00 | dedRaw=71.00 | netUnrounded=1129.00
+DEBUG_TOTAL id=EMP-6 netUnrounded=1000.00 netRounded=1000.00
+DEBUG_TOTAL id=EMP-7 netUnrounded=1099.00 netRounded=1099.00
+DEBUG_TOTAL id=EMP-8 netUnrounded=1129.00 netRounded=1129.00
+TRACE_EXEC_CMD execute RunPayrollCommand
+TRACE_SNAPSHOT seq=35 size=15
+DEBUG_PAYDATE id=EMP-6 name=Natalia do Valle schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=1.0 | start=1/1/2005 | end=1/2/2005 | grossRaw=1000.00 | dedRaw=0 | netUnrounded=1000.00
+DEBUG_PAYDATE id=EMP-7 name=Regina Duarte schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-7 | SalariedEmployee | period=1.0 | start=1/1/2005 | end=1/2/2005 | grossRaw=1100.00 | dedRaw=1.00 | netUnrounded=1099.00
+DEBUG_PAYDATE id=EMP-8 name=Flavia Alessandra schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-8 | SalariedEmployee | period=1.0 | start=1/1/2005 | end=1/2/2005 | grossRaw=1200.00 | dedRaw=71.00 | netUnrounded=1129.00
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Regina Duarte
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Natalia do Valle
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Flavia Alessandra
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Regina Duarte
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Flavia Alessandra
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Regina Duarte
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Flavia Alessandra
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Natalia do Valle
+TRACE_SNAPSHOT seq=36 size=15
+TRACE_CMD_SEQ pushed seq=35 cmd=RunPayrollCommand
+STACK_DUMP undoSize=18 redoSize=0
+UNDO_STACK:
+  seq(before=35,after=36) cmd=RunPayrollCommand
+  seq(before=33,after=34) cmd=RunPayrollCommand
+  seq(before=31,after=32) cmd=RunPayrollCommand
+  seq(before=29,after=30) cmd=RunPayrollCommand
+  seq(before=27,after=28) cmd=RunPayrollCommand
+  seq(before=25,after=26) cmd=AddEmployeeCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=18 topUndo=RunPayrollCommand redoSize=0 topRedo=-
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=29/1/2005 | end=5/2/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=29/1/2005 | end=5/2/2005 | grossRaw=168.7500 | dedRaw=0 | netUnrounded=168.7500
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=29/1/2005 | end=5/2/2005 | grossRaw=168.1500 | dedRaw=0 | netUnrounded=168.1500
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=29/1/2005 | end=5/2/2005 | grossRaw=165.000 | dedRaw=0.230769230769230780 | netUnrounded=164.769230769230769220
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=29/1/2005 | end=5/2/2005 | grossRaw=150.000 | dedRaw=0.276923076923076936 | netUnrounded=149.723076923076923064
+DEBUG_TOTAL id=EMP-1 netUnrounded=0.000 netRounded=0.00
+DEBUG_TOTAL id=EMP-2 netUnrounded=168.7500 netRounded=168.75
+DEBUG_TOTAL id=EMP-3 netUnrounded=168.1500 netRounded=168.15
+DEBUG_TOTAL id=EMP-4 netUnrounded=164.769230769230769220 netRounded=164.77
+DEBUG_TOTAL id=EMP-5 netUnrounded=149.723076923076923064 netRounded=149.72
+TRACE_EXEC_CMD execute RunPayrollCommand
+TRACE_SNAPSHOT seq=37 size=15
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=29/1/2005 | end=5/2/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=29/1/2005 | end=5/2/2005 | grossRaw=168.7500 | dedRaw=0 | netUnrounded=168.7500
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=29/1/2005 | end=5/2/2005 | grossRaw=168.1500 | dedRaw=0 | netUnrounded=168.1500
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=29/1/2005 | end=5/2/2005 | grossRaw=165.000 | dedRaw=0.230769230769230780 | netUnrounded=164.769230769230769220
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=29/1/2005 | end=5/2/2005 | grossRaw=150.000 | dedRaw=0.276923076923076936 | netUnrounded=149.723076923076923064
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_SNAPSHOT seq=38 size=15
+TRACE_CMD_SEQ pushed seq=37 cmd=RunPayrollCommand
+STACK_DUMP undoSize=19 redoSize=0
+UNDO_STACK:
+  seq(before=37,after=38) cmd=RunPayrollCommand
+  seq(before=35,after=36) cmd=RunPayrollCommand
+  seq(before=33,after=34) cmd=RunPayrollCommand
+  seq(before=31,after=32) cmd=RunPayrollCommand
+  seq(before=29,after=30) cmd=RunPayrollCommand
+  seq(before=27,after=28) cmd=RunPayrollCommand
+  seq(before=25,after=26) cmd=AddEmployeeCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=19 topUndo=RunPayrollCommand redoSize=0 topRedo=-
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=5/2/2005 | end=12/2/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=5/2/2005 | end=12/2/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=5/2/2005 | end=12/2/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=5/2/2005 | end=12/2/2005 | grossRaw=0.000 | dedRaw=0.230769230769230780 | netUnrounded=-0.230769230769230780
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=5/2/2005 | end=12/2/2005 | grossRaw=0.000 | dedRaw=0.276923076923076936 | netUnrounded=-0.276923076923076936
+DEBUG_PAYDATE id=EMP-9 name=Deborah Secco schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-9 | CommissionedEmployee | period=0.46153846153846156 | start=29/1/2005 | end=12/2/2005 | grossRaw=600.000000000000028000 | dedRaw=0 | netUnrounded=600.000000000000028000
+DEBUG_PAYDATE id=EMP-10 name=Ana Paula Arosio schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-10 | CommissionedEmployee | period=0.46153846153846156 | start=29/1/2005 | end=12/2/2005 | grossRaw=720.925846153846184000 | dedRaw=0 | netUnrounded=720.925846153846184000
+DEBUG_PAYDATE id=EMP-11 name=Suzana Vieira schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-11 | CommissionedEmployee | period=0.46153846153846156 | start=29/1/2005 | end=12/2/2005 | grossRaw=773.310692307692340000 | dedRaw=0.461538461538461560 | netUnrounded=772.849153846153878440
+DEBUG_PAYDATE id=EMP-12 name=Maite Proenca schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-12 | CommissionedEmployee | period=0.46153846153846156 | start=29/1/2005 | end=12/2/2005 | grossRaw=825.695538461538496000 | dedRaw=0.461538461538461560 | netUnrounded=825.234000000000034440
+DEBUG_TOTAL id=EMP-1 netUnrounded=0.000 netRounded=0.00
+DEBUG_TOTAL id=EMP-2 netUnrounded=0.0000 netRounded=0.00
+DEBUG_TOTAL id=EMP-3 netUnrounded=0.0000 netRounded=0.00
+DEBUG_TOTAL id=EMP-4 netUnrounded=-0.230769230769230780 netRounded=-0.23
+DEBUG_TOTAL id=EMP-5 netUnrounded=-0.276923076923076936 netRounded=-0.28
+DEBUG_TOTAL id=EMP-9 netUnrounded=600.000000000000028000 netRounded=600.00
+DEBUG_TOTAL id=EMP-10 netUnrounded=720.925846153846184000 netRounded=720.93
+DEBUG_TOTAL id=EMP-11 netUnrounded=772.849153846153878440 netRounded=772.85
+DEBUG_TOTAL id=EMP-12 netUnrounded=825.234000000000034440 netRounded=825.23
+TRACE_EXEC_CMD execute RunPayrollCommand
+TRACE_SNAPSHOT seq=39 size=15
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=5/2/2005 | end=12/2/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=5/2/2005 | end=12/2/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=5/2/2005 | end=12/2/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=5/2/2005 | end=12/2/2005 | grossRaw=0.000 | dedRaw=0.230769230769230780 | netUnrounded=-0.230769230769230780
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=5/2/2005 | end=12/2/2005 | grossRaw=0.000 | dedRaw=0.276923076923076936 | netUnrounded=-0.276923076923076936
+DEBUG_PAYDATE id=EMP-9 name=Deborah Secco schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-9 | CommissionedEmployee | period=0.46153846153846156 | start=29/1/2005 | end=12/2/2005 | grossRaw=600.000000000000028000 | dedRaw=0 | netUnrounded=600.000000000000028000
+DEBUG_PAYDATE id=EMP-10 name=Ana Paula Arosio schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-10 | CommissionedEmployee | period=0.46153846153846156 | start=29/1/2005 | end=12/2/2005 | grossRaw=720.925846153846184000 | dedRaw=0 | netUnrounded=720.925846153846184000
+DEBUG_PAYDATE id=EMP-11 name=Suzana Vieira schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-11 | CommissionedEmployee | period=0.46153846153846156 | start=29/1/2005 | end=12/2/2005 | grossRaw=773.310692307692340000 | dedRaw=0.461538461538461560 | netUnrounded=772.849153846153878440
+DEBUG_PAYDATE id=EMP-12 name=Maite Proenca schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-12 | CommissionedEmployee | period=0.46153846153846156 | start=29/1/2005 | end=12/2/2005 | grossRaw=825.695538461538496000 | dedRaw=0.461538461538461560 | netUnrounded=825.234000000000034440
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_SNAPSHOT seq=40 size=15
+TRACE_CMD_SEQ pushed seq=39 cmd=RunPayrollCommand
+STACK_DUMP undoSize=20 redoSize=0
+UNDO_STACK:
+  seq(before=39,after=40) cmd=RunPayrollCommand
+  seq(before=37,after=38) cmd=RunPayrollCommand
+  seq(before=35,after=36) cmd=RunPayrollCommand
+  seq(before=33,after=34) cmd=RunPayrollCommand
+  seq(before=31,after=32) cmd=RunPayrollCommand
+  seq(before=29,after=30) cmd=RunPayrollCommand
+  seq(before=27,after=28) cmd=RunPayrollCommand
+  seq(before=25,after=26) cmd=AddEmployeeCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=20 topUndo=RunPayrollCommand redoSize=0 topRedo=-
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=12/2/2005 | end=19/2/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=12/2/2005 | end=19/2/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=12/2/2005 | end=19/2/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=12/2/2005 | end=19/2/2005 | grossRaw=0.000 | dedRaw=0.230769230769230780 | netUnrounded=-0.230769230769230780
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=12/2/2005 | end=19/2/2005 | grossRaw=0.000 | dedRaw=0.276923076923076936 | netUnrounded=-0.276923076923076936
+DEBUG_TOTAL id=EMP-1 netUnrounded=0.000 netRounded=0.00
+DEBUG_TOTAL id=EMP-2 netUnrounded=0.0000 netRounded=0.00
+DEBUG_TOTAL id=EMP-3 netUnrounded=0.0000 netRounded=0.00
+DEBUG_TOTAL id=EMP-4 netUnrounded=-0.230769230769230780 netRounded=-0.23
+DEBUG_TOTAL id=EMP-5 netUnrounded=-0.276923076923076936 netRounded=-0.28
+TRACE_EXEC_CMD execute RunPayrollCommand
+TRACE_SNAPSHOT seq=41 size=15
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=12/2/2005 | end=19/2/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=12/2/2005 | end=19/2/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=12/2/2005 | end=19/2/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=12/2/2005 | end=19/2/2005 | grossRaw=0.000 | dedRaw=0.230769230769230780 | netUnrounded=-0.230769230769230780
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=12/2/2005 | end=19/2/2005 | grossRaw=0.000 | dedRaw=0.276923076923076936 | netUnrounded=-0.276923076923076936
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_SNAPSHOT seq=42 size=15
+TRACE_CMD_SEQ pushed seq=41 cmd=RunPayrollCommand
+STACK_DUMP undoSize=21 redoSize=0
+UNDO_STACK:
+  seq(before=41,after=42) cmd=RunPayrollCommand
+  seq(before=39,after=40) cmd=RunPayrollCommand
+  seq(before=37,after=38) cmd=RunPayrollCommand
+  seq(before=35,after=36) cmd=RunPayrollCommand
+  seq(before=33,after=34) cmd=RunPayrollCommand
+  seq(before=31,after=32) cmd=RunPayrollCommand
+  seq(before=29,after=30) cmd=RunPayrollCommand
+  seq(before=27,after=28) cmd=RunPayrollCommand
+  seq(before=25,after=26) cmd=AddEmployeeCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=21 topUndo=RunPayrollCommand redoSize=0 topRedo=-
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=19/2/2005 | end=26/2/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=19/2/2005 | end=26/2/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=19/2/2005 | end=26/2/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=19/2/2005 | end=26/2/2005 | grossRaw=0.000 | dedRaw=0.230769230769230780 | netUnrounded=-0.230769230769230780
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=19/2/2005 | end=26/2/2005 | grossRaw=0.000 | dedRaw=0.276923076923076936 | netUnrounded=-0.276923076923076936
+DEBUG_PAYDATE id=EMP-9 name=Deborah Secco schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-9 | CommissionedEmployee | period=0.46153846153846156 | start=12/2/2005 | end=26/2/2005 | grossRaw=600.000000000000028000 | dedRaw=0 | netUnrounded=600.000000000000028000
+DEBUG_PAYDATE id=EMP-10 name=Ana Paula Arosio schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-10 | CommissionedEmployee | period=0.46153846153846156 | start=12/2/2005 | end=26/2/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_PAYDATE id=EMP-11 name=Suzana Vieira schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-11 | CommissionedEmployee | period=0.46153846153846156 | start=12/2/2005 | end=26/2/2005 | grossRaw=692.307692307692340000 | dedRaw=0.461538461538461560 | netUnrounded=691.846153846153878440
+DEBUG_PAYDATE id=EMP-12 name=Maite Proenca schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-12 | CommissionedEmployee | period=0.46153846153846156 | start=12/2/2005 | end=26/2/2005 | grossRaw=738.461538461538496000 | dedRaw=0.461538461538461560 | netUnrounded=738.000000000000034440
+DEBUG_TOTAL id=EMP-1 netUnrounded=0.000 netRounded=0.00
+DEBUG_TOTAL id=EMP-2 netUnrounded=0.0000 netRounded=0.00
+DEBUG_TOTAL id=EMP-3 netUnrounded=0.0000 netRounded=0.00
+DEBUG_TOTAL id=EMP-4 netUnrounded=-0.230769230769230780 netRounded=-0.23
+DEBUG_TOTAL id=EMP-5 netUnrounded=-0.276923076923076936 netRounded=-0.28
+DEBUG_TOTAL id=EMP-9 netUnrounded=600.000000000000028000 netRounded=600.00
+DEBUG_TOTAL id=EMP-10 netUnrounded=646.153846153846184000 netRounded=646.15
+DEBUG_TOTAL id=EMP-11 netUnrounded=691.846153846153878440 netRounded=691.85
+DEBUG_TOTAL id=EMP-12 netUnrounded=738.000000000000034440 netRounded=738.00
+TRACE_EXEC_CMD execute RunPayrollCommand
+TRACE_SNAPSHOT seq=43 size=15
+DEBUG_PAYDATE id=EMP-1 name=Fernanda Montenegro schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-1 | HourlyEmployee | period=0.23076923076923078 | start=19/2/2005 | end=26/2/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_PAYDATE id=EMP-2 name=Paloma Duarte schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-2 | HourlyEmployee | period=0.23076923076923078 | start=19/2/2005 | end=26/2/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-3 name=Lavinia Vlasak schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=19/2/2005 | end=26/2/2005 | grossRaw=0.0000 | dedRaw=0 | netUnrounded=0.0000
+DEBUG_PAYDATE id=EMP-4 name=Claudia Abreu schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=0.23076923076923078 | start=19/2/2005 | end=26/2/2005 | grossRaw=0.000 | dedRaw=0.230769230769230780 | netUnrounded=-0.230769230769230780
+DEBUG_PAYDATE id=EMP-5 name=Claudia Raia schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.23076923076923078 | start=19/2/2005 | end=26/2/2005 | grossRaw=0.000 | dedRaw=0.276923076923076936 | netUnrounded=-0.276923076923076936
+DEBUG_PAYDATE id=EMP-9 name=Deborah Secco schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-9 | CommissionedEmployee | period=0.46153846153846156 | start=12/2/2005 | end=26/2/2005 | grossRaw=600.000000000000028000 | dedRaw=0 | netUnrounded=600.000000000000028000
+DEBUG_PAYDATE id=EMP-10 name=Ana Paula Arosio schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-10 | CommissionedEmployee | period=0.46153846153846156 | start=12/2/2005 | end=26/2/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_PAYDATE id=EMP-11 name=Suzana Vieira schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-11 | CommissionedEmployee | period=0.46153846153846156 | start=12/2/2005 | end=26/2/2005 | grossRaw=692.307692307692340000 | dedRaw=0.461538461538461560 | netUnrounded=691.846153846153878440
+DEBUG_PAYDATE id=EMP-12 name=Maite Proenca schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-12 | CommissionedEmployee | period=0.46153846153846156 | start=12/2/2005 | end=26/2/2005 | grossRaw=738.461538461538496000 | dedRaw=0.461538461538461560 | netUnrounded=738.000000000000034440
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Claudia Raia
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Ana Paula Arosio
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Claudia Abreu
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Deborah Secco
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Suzana Vieira
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Fernanda Montenegro
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Paloma Duarte
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Maite Proenca
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Lavinia Vlasak
+TRACE_SNAPSHOT seq=44 size=15
+TRACE_CMD_SEQ pushed seq=43 cmd=RunPayrollCommand
+STACK_DUMP undoSize=22 redoSize=0
+UNDO_STACK:
+  seq(before=43,after=44) cmd=RunPayrollCommand
+  seq(before=41,after=42) cmd=RunPayrollCommand
+  seq(before=39,after=40) cmd=RunPayrollCommand
+  seq(before=37,after=38) cmd=RunPayrollCommand
+  seq(before=35,after=36) cmd=RunPayrollCommand
+  seq(before=33,after=34) cmd=RunPayrollCommand
+  seq(before=31,after=32) cmd=RunPayrollCommand
+  seq(before=29,after=30) cmd=RunPayrollCommand
+  seq(before=27,after=28) cmd=RunPayrollCommand
+  seq(before=25,after=26) cmd=AddEmployeeCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=22 topUndo=RunPayrollCommand redoSize=0 topRedo=-
+DEBUG_PAYDATE id=EMP-6 name=Natalia do Valle schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=1.0 | start=1/2/2005 | end=1/3/2005 | grossRaw=1000.00 | dedRaw=0 | netUnrounded=1000.00
+DEBUG_PAYDATE id=EMP-7 name=Regina Duarte schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-7 | SalariedEmployee | period=1.0 | start=1/2/2005 | end=1/3/2005 | grossRaw=1100.00 | dedRaw=1.00 | netUnrounded=1099.00
+DEBUG_PAYDATE id=EMP-8 name=Flavia Alessandra schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-8 | SalariedEmployee | period=1.0 | start=1/2/2005 | end=1/3/2005 | grossRaw=1200.00 | dedRaw=1.00 | netUnrounded=1199.00
+DEBUG_TOTAL id=EMP-6 netUnrounded=1000.00 netRounded=1000.00
+DEBUG_TOTAL id=EMP-7 netUnrounded=1099.00 netRounded=1099.00
+DEBUG_TOTAL id=EMP-8 netUnrounded=1199.00 netRounded=1199.00
+TRACE_EXEC_CMD execute RunPayrollCommand
+TRACE_SNAPSHOT seq=45 size=15
+DEBUG_PAYDATE id=EMP-6 name=Natalia do Valle schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=1.0 | start=1/2/2005 | end=1/3/2005 | grossRaw=1000.00 | dedRaw=0 | netUnrounded=1000.00
+DEBUG_PAYDATE id=EMP-7 name=Regina Duarte schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-7 | SalariedEmployee | period=1.0 | start=1/2/2005 | end=1/3/2005 | grossRaw=1100.00 | dedRaw=1.00 | netUnrounded=1099.00
+DEBUG_PAYDATE id=EMP-8 name=Flavia Alessandra schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-8 | SalariedEmployee | period=1.0 | start=1/2/2005 | end=1/3/2005 | grossRaw=1200.00 | dedRaw=1.00 | netUnrounded=1199.00
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Regina Duarte
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Natalia do Valle
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Flavia Alessandra
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Regina Duarte
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Flavia Alessandra
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Regina Duarte
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Flavia Alessandra
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Natalia do Valle
+TRACE_SNAPSHOT seq=46 size=15
+TRACE_CMD_SEQ pushed seq=45 cmd=RunPayrollCommand
+STACK_DUMP undoSize=23 redoSize=0
+UNDO_STACK:
+  seq(before=45,after=46) cmd=RunPayrollCommand
+  seq(before=43,after=44) cmd=RunPayrollCommand
+  seq(before=41,after=42) cmd=RunPayrollCommand
+  seq(before=39,after=40) cmd=RunPayrollCommand
+  seq(before=37,after=38) cmd=RunPayrollCommand
+  seq(before=35,after=36) cmd=RunPayrollCommand
+  seq(before=33,after=34) cmd=RunPayrollCommand
+  seq(before=31,after=32) cmd=RunPayrollCommand
+  seq(before=29,after=30) cmd=RunPayrollCommand
+  seq(before=27,after=28) cmd=RunPayrollCommand
+  seq(before=25,after=26) cmd=AddEmployeeCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=23 topUndo=RunPayrollCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute RunPayrollCommand
+TRACE_SNAPSHOT seq=47 size=15
+DEBUG_PAYDATE id=EMP-6 name=Natalia do Valle schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=1.0 | start=1/2/2005 | end=1/3/2005 | grossRaw=1000.00 | dedRaw=0 | netUnrounded=1000.00
+DEBUG_PAYDATE id=EMP-7 name=Regina Duarte schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-7 | SalariedEmployee | period=1.0 | start=1/2/2005 | end=1/3/2005 | grossRaw=1100.00 | dedRaw=1.00 | netUnrounded=1099.00
+DEBUG_PAYDATE id=EMP-8 name=Flavia Alessandra schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-8 | SalariedEmployee | period=1.0 | start=1/2/2005 | end=1/3/2005 | grossRaw=1200.00 | dedRaw=1.00 | netUnrounded=1199.00
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Regina Duarte
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Natalia do Valle
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Flavia Alessandra
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Regina Duarte
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Flavia Alessandra
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Regina Duarte
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Flavia Alessandra
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Natalia do Valle
+TRACE_SNAPSHOT seq=48 size=15
+TRACE_CMD_SEQ pushed seq=47 cmd=RunPayrollCommand
+STACK_DUMP undoSize=24 redoSize=0
+UNDO_STACK:
+  seq(before=47,after=48) cmd=RunPayrollCommand
+  seq(before=45,after=46) cmd=RunPayrollCommand
+  seq(before=43,after=44) cmd=RunPayrollCommand
+  seq(before=41,after=42) cmd=RunPayrollCommand
+  seq(before=39,after=40) cmd=RunPayrollCommand
+  seq(before=37,after=38) cmd=RunPayrollCommand
+  seq(before=35,after=36) cmd=RunPayrollCommand
+  seq(before=33,after=34) cmd=RunPayrollCommand
+  seq(before=31,after=32) cmd=RunPayrollCommand
+  seq(before=29,after=30) cmd=RunPayrollCommand
+  seq(before=27,after=28) cmd=RunPayrollCommand
+  seq(before=25,after=26) cmd=AddEmployeeCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=AddEmployeeCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=AddEmployeeCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=24 topUndo=RunPayrollCommand redoSize=0 topRedo=-
+Test file tests/us7.txt: 21 errors:
+Line 158, file tests/us7.txt: Expected <748,53>, but was <668,02>
+Command producing error: <expect 748,53 totalFolha data=7/1/2005>
+Line 160, file tests/us7.txt: File diferences at line 1. Expected <Contracheque: Empregado 8adb43b3-ceba-43a5-ba8f-dfc20c8c9de3 | Bruto: R$1928.517 | Deducoes: R$146.0 | Liquido: R$1782.517>, but was <Contracheque: Empregado EMP-4 | Bruto: R$198,00 | Deducoes: R$0,23 | Liquido: R$197,77>
+Command producing error: <equalFiles file1=ok/folha-2005-01-07.txt file2=folha-2005-01-07.txt>
+Line 167, file tests/us7.txt: Expected <2803,04>, but was <2731,63>
+Command producing error: <expect 2803,04 totalFolha data=14/1/2005>
+Line 169, file tests/us7.txt: File diferences at line 1. Expected <Contracheque: Empregado 0ac48206-5526-4584-8ef7-103a28794e4d | Bruto: R$506.25 | Deducoes: R$0.0 | Liquido: R$506.25>, but was <Contracheque: Empregado EMP-10 | Bruto: R$684,97 | Deducoes: R$0,00 | Liquido: R$684,97>
+Command producing error: <equalFiles file1=ok/folha-2005-01-14.txt file2=folha-2005-01-14.txt>
+Line 176, file tests/us7.txt: Expected <0,00>, but was <-0,51>
+Command producing error: <expect 0,00 totalFolha data=21/1/2005>
+Line 178, file tests/us7.txt: File diferences at line 1. Expected <Contracheque: Empregado 8adb43b3-ceba-43a5-ba8f-dfc20c8c9de3 | Bruto: R$1928.517 | Deducoes: R$146.0 | Liquido: R$1782.517>, but was <Contracheque: Empregado EMP-4 | Bruto: R$0,00 | Deducoes: R$0,23 | Liquido: R$-0,23>
+Command producing error: <equalFiles file1=ok/folha-2005-01-21.txt file2=folha-2005-01-21.txt>
+Line 185, file tests/us7.txt: Expected <2676,91>, but was <2675,49>
+Command producing error: <expect 2676,91 totalFolha data=28/1/2005>
+Line 187, file tests/us7.txt: File diferences at line 1. Expected <Contracheque: Empregado 0ac48206-5526-4584-8ef7-103a28794e4d | Bruto: R$506.25 | Deducoes: R$0.0 | Liquido: R$506.25>, but was <Contracheque: Empregado EMP-10 | Bruto: R$646,15 | Deducoes: R$0,00 | Liquido: R$646,15>
+Command producing error: <equalFiles file1=ok/folha-2005-01-28.txt file2=folha-2005-01-28.txt>
+Line 190, file tests/us7.txt: Expected <3300,00>, but was <3228,00>
+Command producing error: <expect 3300,00 totalFolha data=31/1/2005>
+Line 192, file tests/us7.txt: File diferences at line 1. Expected <Contracheque: Empregado e2075385-fbd2-467c-bb6e-f6ca89b2074f | Bruto: R$1000.0 | Deducoes: R$0.0 | Liquido: R$1000.0>, but was <Contracheque: Empregado EMP-8 | Bruto: R$1200,00 | Deducoes: R$71,00 | Liquido: R$1129,00>
+Command producing error: <equalFiles file1=ok/folha-2005-01-31.txt file2=folha-2005-01-31.txt>
+Line 196, file tests/us7.txt: Expected <651,90>, but was <651,39>
+Command producing error: <expect 651,90 totalFolha data=4/2/2005>
+Line 198, file tests/us7.txt: File diferences at line 1. Expected <Contracheque: Empregado 8adb43b3-ceba-43a5-ba8f-dfc20c8c9de3 | Bruto: R$1928.517 | Deducoes: R$146.0 | Liquido: R$1782.517>, but was <Contracheque: Empregado EMP-4 | Bruto: R$165,00 | Deducoes: R$0,23 | Liquido: R$164,77>
+Command producing error: <equalFiles file1=ok/folha-2005-02-04.txt file2=folha-2005-02-04.txt>
+Line 205, file tests/us7.txt: Expected <2919,91>, but was <2918,50>
+Command producing error: <expect 2919,91 totalFolha data=11/2/2005>
+Line 207, file tests/us7.txt: File diferences at line 1. Expected <Contracheque: Empregado 9d350a64-6e51-46b4-8274-83735669ca01 | Bruto: R$437.0 | Deducoes: R$0.0 | Liquido: R$437.0>, but was <Contracheque: Empregado EMP-10 | Bruto: R$720,93 | Deducoes: R$0,00 | Liquido: R$720,93>
+Command producing error: <equalFiles file1=ok/folha-2005-02-11.txt file2=folha-2005-02-11.txt>
+Line 214, file tests/us7.txt: Expected <0,00>, but was <-0,51>
+Command producing error: <expect 0,00 totalFolha data=18/2/2005>
+Line 216, file tests/us7.txt: File diferences at line 1. Expected <Contracheque: Empregado 8adb43b3-ceba-43a5-ba8f-dfc20c8c9de3 | Bruto: R$1928.517 | Deducoes: R$146.0 | Liquido: R$1782.517>, but was <Contracheque: Empregado EMP-4 | Bruto: R$0,00 | Deducoes: R$0,23 | Liquido: R$-0,23>
+Command producing error: <equalFiles file1=ok/folha-2005-02-18.txt file2=folha-2005-02-18.txt>
+Line 223, file tests/us7.txt: Expected <2676,91>, but was <2675,49>
+Command producing error: <expect 2676,91 totalFolha data=25/2/2005>
+Line 225, file tests/us7.txt: File diferences at line 1. Expected <Contracheque: Empregado 0ac48206-5526-4584-8ef7-103a28794e4d | Bruto: R$506.25 | Deducoes: R$0.0 | Liquido: R$506.25>, but was <Contracheque: Empregado EMP-10 | Bruto: R$646,15 | Deducoes: R$0,00 | Liquido: R$646,15>
+Command producing error: <equalFiles file1=ok/folha-2005-02-25.txt file2=folha-2005-02-25.txt>
+Line 228, file tests/us7.txt: Expected <3300,00>, but was <3298,00>
+Command producing error: <expect 3300,00 totalFolha data=28/2/2005>
+Line 231, file tests/us7.txt: File diferences at line 1. Expected <Contracheque: Empregado e2075385-fbd2-467c-bb6e-f6ca89b2074f | Bruto: R$1000.0 | Deducoes: R$0.0 | Liquido: R$1000.0>, but was <Contracheque: Empregado EMP-8 | Bruto: R$1200,00 | Deducoes: R$1,00 | Liquido: R$1199,00>
+Command producing error: <equalFiles file1=ok/folha-2005-02-28.txt file2=folha-2005-02-28.txt>
+Line 233, file tests/us7.txt: File diferences at line 1. Expected <Contracheque: Empregado e2075385-fbd2-467c-bb6e-f6ca89b2074f | Bruto: R$1000.0 | Deducoes: R$0.0 | Liquido: R$1000.0>, but was <Contracheque: Empregado EMP-8 | Bruto: R$1200,00 | Deducoes: R$1,00 | Liquido: R$1199,00>
+Command producing error: <equalFiles file1=ok/folha-2005-02-28.txt file2=folha-2005-02-28.txt>
+
+Process exit code: 1 for group: tests/us7.txt
+
+=== Running group: tests/us8.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=2 size=3
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+STACK_DUMP undoSize=1 redoSize=0
+UNDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=1 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_ADD_EMP: EMP-1 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-1 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=2 redoSize=0
+UNDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_ADD_EMP: EMP-2 -> Gaiato Vendedor
+TRACE_ADD_EMP id=EMP-2 name=Gaiato Vendedor type=CommissionedEmployee
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=3 redoSize=0
+UNDO_STACK:
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute RemoveEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_REMOVE_EMP id=EMP-1 present=true
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=RemoveEmployeeCommand
+STACK_DUMP undoSize=4 redoSize=0
+UNDO_STACK:
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=4 topUndo=RemoveEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=9 size=4
+TRACE_ADD_EMP: EMP-3 -> Joaozinho da Silva
+TRACE_ADD_EMP id=EMP-3 name=Joaozinho da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=10 size=5
+TRACE_CMD_SEQ pushed seq=9 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=5 redoSize=0
+UNDO_STACK:
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=5 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+DEBUG_PAYDATE id=EMP-3 name=Joaozinho da Silva schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=1/1/2005 | end=8/1/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+DEBUG_TOTAL id=EMP-3 netUnrounded=0.000 netRounded=0.00
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=s123 -> MISSING (current count=5)
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_EXEC_CMD execute RunPayrollCommand
+TRACE_SNAPSHOT seq=11 size=5
+DEBUG_PAYDATE id=EMP-2 name=Gaiato Vendedor schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-2 | CommissionedEmployee | period=0.46153846153846156 | start=29/1/2005 | end=12/2/2005 | grossRaw=1061.538461538461588000 | dedRaw=13.846153846153846800 | netUnrounded=1047.692307692307741200
+DEBUG_PAYDATE id=EMP-3 name=Joaozinho da Silva schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-3 | HourlyEmployee | period=0.23076923076923078 | start=5/2/2005 | end=12/2/2005 | grossRaw=0.000 | dedRaw=0 | netUnrounded=0.000
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_SNAPSHOT seq=12 size=5
+TRACE_CMD_SEQ pushed seq=11 cmd=RunPayrollCommand
+STACK_DUMP undoSize=6 redoSize=0
+UNDO_STACK:
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=6 topUndo=RunPayrollCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=13 size=5
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=14 size=3
+TRACE_CMD_SEQ pushed seq=13 cmd=ClearSystemCommand
+STACK_DUMP undoSize=7 redoSize=0
+UNDO_STACK:
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=7 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=7 redoSize=0
+UNDO_STACK:
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_EXEC_CMD undo ClearSystemCommand
+TRACE_RESTORE seq=13 restoreSize=5
+TRACE_POST_RESTORE seq=13 snapKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-2, EMP-3] liveKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-2, EMP-3]
+TRACE_CMD_SEQ undo pushed-to-redo seq=13 cmd=ClearSystemCommand
+TRACE_STACKS after undo: undoSize=6 topUndo=RunPayrollCommand redoSize=1 topRedo=ClearSystemCommand
+TRACE_NUM_EMP count=2 ids=[EMP-2, EMP-3]
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Joaozinho da Silva
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=6 redoSize=1
+UNDO_STACK:
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_EXEC_CMD undo RunPayrollCommand
+TRACE_RESTORE seq=11 restoreSize=5
+TRACE_POST_RESTORE seq=11 snapKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-2, EMP-3] liveKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-2, EMP-3]
+TRACE_CMD_SEQ undo pushed-to-redo seq=11 cmd=RunPayrollCommand
+TRACE_STACKS after undo: undoSize=5 topUndo=AddEmployeeCommand redoSize=2 topRedo=RunPayrollCommand
+TRACE_NUM_EMP count=2 ids=[EMP-2, EMP-3]
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Joaozinho da Silva
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Joaozinho da Silva
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=5 redoSize=2
+UNDO_STACK:
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_EXEC_CMD undo AddEmployeeCommand
+TRACE_RESTORE seq=9 restoreSize=4
+TRACE_POST_RESTORE seq=9 snapKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-2] liveKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-2]
+TRACE_CMD_SEQ undo pushed-to-redo seq=9 cmd=AddEmployeeCommand
+TRACE_STACKS after undo: undoSize=4 topUndo=RemoveEmployeeCommand redoSize=3 topRedo=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-2]
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-3 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-3 -> MISSING (current count=4)
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=4 redoSize=3
+UNDO_STACK:
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_EXEC_CMD undo RemoveEmployeeCommand
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_POST_RESTORE seq=7 snapKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-1, EMP-2] liveKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-1, EMP-2]
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_STACKS after undo: undoSize=3 topUndo=AddEmployeeCommand redoSize=4 topRedo=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-1, EMP-2]
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-3 -> MISSING (current count=5)
+TRACE_GET_EMP id=EMP-3 -> MISSING (current count=5)
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=3 redoSize=4
+UNDO_STACK:
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_EXEC_CMD undo AddEmployeeCommand
+TRACE_RESTORE seq=5 restoreSize=4
+TRACE_POST_RESTORE seq=5 snapKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-1] liveKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-1]
+TRACE_CMD_SEQ undo pushed-to-redo seq=5 cmd=AddEmployeeCommand
+TRACE_STACKS after undo: undoSize=2 topUndo=AddEmployeeCommand redoSize=5 topRedo=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-1]
+TRACE_GET_EMP id=EMP-2 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-2 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-3 -> MISSING (current count=4)
+TRACE_GET_EMP id=EMP-3 -> MISSING (current count=4)
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=2 redoSize=5
+UNDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_EXEC_CMD undo AddEmployeeCommand
+TRACE_RESTORE seq=3 restoreSize=3
+TRACE_POST_RESTORE seq=3 snapKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5] liveKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5]
+TRACE_CMD_SEQ undo pushed-to-redo seq=3 cmd=AddEmployeeCommand
+TRACE_STACKS after undo: undoSize=1 topUndo=ClearSystemCommand redoSize=6 topRedo=AddEmployeeCommand
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_GET_EMP id=EMP-2 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-2 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-3 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-3 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-2 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=1 redoSize=6
+UNDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_EXEC_CMD undo ClearSystemCommand
+TRACE_RESTORE seq=1 restoreSize=3
+TRACE_POST_RESTORE seq=1 snapKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5] liveKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5]
+TRACE_CMD_SEQ undo pushed-to-redo seq=1 cmd=ClearSystemCommand
+TRACE_STACKS after undo: undoSize=0 topUndo=- redoSize=7 topRedo=ClearSystemCommand
+TRACE_GET_EMP id=EMP-2 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-2 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=0 redoSize=7
+UNDO_STACK:
+REDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_GET_EMP id=EMP-2 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-2 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=0 redoSize=7
+UNDO_STACK:
+REDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_GET_EMP id=EMP-2 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-3 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=0 redoSize=7
+UNDO_STACK:
+REDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_GET_EMP id=EMP-3 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=0 redoSize=7
+UNDO_STACK:
+REDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_GET_EMP id=EMP-1 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-2 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=0 redoSize=7
+UNDO_STACK:
+REDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_GET_EMP id=EMP-2 -> MISSING (current count=3)
+TRACE_GET_EMP id=EMP-1 -> MISSING (current count=3)
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=0 redoSize=7
+UNDO_STACK:
+REDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_GET_EMP id=EMP-1 -> MISSING (current count=3)
+TRACE_NUM_EMP count=0 ids=[]
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=0 redoSize=7
+UNDO_STACK:
+REDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=0 redoSize=7
+UNDO_STACK:
+REDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_EXEC_CMD redo called
+STACK_DUMP undoSize=0 redoSize=7
+UNDO_STACK:
+REDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_EXEC_CMD redo ClearSystemCommand
+TRACE_RESTORE seq=2 restoreSize=3
+TRACE_POST_RESTORE seq=2 snapKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5] liveKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5]
+TRACE_CMD_SEQ redo pushed-to-undo seq=1 cmd=ClearSystemCommand
+TRACE_STACKS after redo: undoSize=1 topUndo=ClearSystemCommand redoSize=6 topRedo=AddEmployeeCommand
+TRACE_EXEC_CMD redo called
+STACK_DUMP undoSize=1 redoSize=6
+UNDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_EXEC_CMD redo AddEmployeeCommand
+TRACE_RESTORE seq=4 restoreSize=4
+TRACE_POST_RESTORE seq=4 snapKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-1] liveKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-1]
+TRACE_CMD_SEQ redo pushed-to-undo seq=3 cmd=AddEmployeeCommand
+TRACE_STACKS after redo: undoSize=2 topUndo=AddEmployeeCommand redoSize=5 topRedo=AddEmployeeCommand
+TRACE_EXEC_CMD redo called
+STACK_DUMP undoSize=2 redoSize=5
+UNDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_EXEC_CMD redo AddEmployeeCommand
+TRACE_RESTORE seq=6 restoreSize=5
+TRACE_POST_RESTORE seq=6 snapKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-1, EMP-2] liveKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-1, EMP-2]
+TRACE_CMD_SEQ redo pushed-to-undo seq=5 cmd=AddEmployeeCommand
+TRACE_STACKS after redo: undoSize=3 topUndo=AddEmployeeCommand redoSize=4 topRedo=RemoveEmployeeCommand
+TRACE_NUM_EMP count=2 ids=[EMP-1, EMP-2]
+TRACE_EXEC_CMD redo called
+STACK_DUMP undoSize=3 redoSize=4
+UNDO_STACK:
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_EXEC_CMD redo RemoveEmployeeCommand
+TRACE_RESTORE seq=8 restoreSize=4
+TRACE_POST_RESTORE seq=8 snapKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-2] liveKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-2]
+TRACE_CMD_SEQ redo pushed-to-undo seq=7 cmd=RemoveEmployeeCommand
+TRACE_STACKS after redo: undoSize=4 topUndo=RemoveEmployeeCommand redoSize=3 topRedo=AddEmployeeCommand
+TRACE_NUM_EMP count=1 ids=[EMP-2]
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_EXEC_CMD undo called
+STACK_DUMP undoSize=4 redoSize=3
+UNDO_STACK:
+  seq(before=7,after=8) cmd=RemoveEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+  seq(before=9,after=10) cmd=AddEmployeeCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+
+TRACE_EXEC_CMD undo RemoveEmployeeCommand
+TRACE_RESTORE seq=7 restoreSize=5
+TRACE_POST_RESTORE seq=7 snapKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-1, EMP-2] liveKeys=[__SCHEDULE__::mensal $, __SCHEDULE__::semanal 5, __SCHEDULE__::semanal 2 5, EMP-1, EMP-2]
+TRACE_CMD_SEQ undo pushed-to-redo seq=7 cmd=RemoveEmployeeCommand
+TRACE_STACKS after undo: undoSize=3 topUndo=AddEmployeeCommand redoSize=4 topRedo=RemoveEmployeeCommand
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Gaiato Vendedor
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+Test file tests/us8.txt: 34 errors:
+Line 49, file tests/us8.txt: Expected <2>, but was <1>
+Command producing error: <expect 2 getNumeroDeEmpregados>
+Line 51, file tests/us8.txt: Unexpected error: Empregado nao eh sindicalizado.
+Command producing error: <expect 80,00 getTaxasServico emp=EMP-2 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 52, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 16 getHorasNormaisTrabalhadas emp=EMP-3 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 53, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 2 getHorasExtrasTrabalhadas emp=EMP-3 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 58, file tests/us8.txt: Unexpected error: Empregado nao eh sindicalizado.
+Command producing error: <expect 0,00 getTaxasServico emp=EMP-2 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 59, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 16 getHorasNormaisTrabalhadas emp=EMP-3 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 60, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 2 getHorasExtrasTrabalhadas emp=EMP-3 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 63, file tests/us8.txt: Expected <2>, but was <1>
+Command producing error: <expect 2 getNumeroDeEmpregados>
+Line 64, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0,00 getVendasRealizadas emp=EMP-2 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 65, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0,00 getTaxasServico emp=EMP-2 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 66, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 8 getHorasNormaisTrabalhadas emp=EMP-3 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 67, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0 getHorasExtrasTrabalhadas emp=EMP-3 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 70, file tests/us8.txt: Expected <2>, but was <0>
+Command producing error: <expect 2 getNumeroDeEmpregados>
+Line 71, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0,00 getVendasRealizadas emp=EMP-2 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 72, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0,00 getTaxasServico emp=EMP-2 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 73, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0 getHorasNormaisTrabalhadas emp=EMP-3 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 74, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect 0 getHorasExtrasTrabalhadas emp=EMP-3 dataInicial=1/1/2005 dataFinal=1/12/2005>
+Line 79, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect banco getAtributoEmpregado emp=EMP-2 atributo=metodoPagamento>
+Line 81, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect correios getAtributoEmpregado emp=EMP-2 atributo=metodoPagamento>
+Line 83, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect true getAtributoEmpregado emp=EMP-2 atributo=sindicalizado>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Line 85, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect false getAtributoEmpregado emp=EMP-2 atributo=sindicalizado>
+Line 87, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect correios getAtributoEmpregado emp=EMP-2 atributo=metodoPagamento>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Line 89, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect emMaos getAtributoEmpregado emp=EMP-2 atributo=metodoPagamento>
+Line 91, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect "Joaozinho da Silva" getAtributoEmpregado emp=EMP-3 atributo=nome>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Line 96, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect "Joao da Silva" getAtributoEmpregado emp=EMP-1 atributo=nome>
+Line 98, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect "Gaiato Vendedor" getAtributoEmpregado emp=EMP-2 atributo=nome>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Line 102, file tests/us8.txt: Unexpected error: Empregado nao existe.
+Command producing error: <expect "Joao da Silva" getAtributoEmpregado emp=EMP-1 atributo=nome>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+Nao ha comando a desfazer.
+Command producing error: <undo>
+
+Process exit code: 1 for group: tests/us8.txt
+
+=== Running group: tests/us9.txt,tests/us9_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=2 size=3
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+STACK_DUMP undoSize=1 redoSize=0
+UNDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=1 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_ADD_EMP: EMP-1 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-1 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=2 redoSize=0
+UNDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=5 size=4
+TRACE_ADD_EMP: EMP-2 -> Mariazinha
+TRACE_ADD_EMP id=EMP-2 name=Mariazinha type=SalariedEmployee
+TRACE_SNAPSHOT seq=6 size=5
+TRACE_CMD_SEQ pushed seq=5 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=3 redoSize=0
+UNDO_STACK:
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=3 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Mariazinha
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=5
+TRACE_ADD_EMP: EMP-3 -> Gaiato Vendedor
+TRACE_ADD_EMP id=EMP-3 name=Gaiato Vendedor type=CommissionedEmployee
+TRACE_SNAPSHOT seq=8 size=6
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=4 redoSize=0
+UNDO_STACK:
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-2 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-3 -> FOUND name=Gaiato Vendedor
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=9 size=6
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=10 size=3
+TRACE_CMD_SEQ pushed seq=9 cmd=ClearSystemCommand
+STACK_DUMP undoSize=5 redoSize=0
+UNDO_STACK:
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=5 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=3
+TRACE_ADD_EMP: EMP-4 -> Alfa Um Horista
+TRACE_ADD_EMP id=EMP-4 name=Alfa Um Horista type=HourlyEmployee
+TRACE_SNAPSHOT seq=12 size=4
+TRACE_CMD_SEQ pushed seq=11 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=6 redoSize=0
+UNDO_STACK:
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=6 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Alfa Um Horista
+DEBUG_PAYDATE id=EMP-4 name=Alfa Um Horista schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-4 | HourlyEmployee | period=1.0 | start=1/1/2005 | end=1/2/2005 | grossRaw=520.000 | dedRaw=0 | netUnrounded=520.000
+DEBUG_TOTAL id=EMP-4 netUnrounded=520.000 netRounded=520.00
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=13 size=4
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=14 size=3
+TRACE_CMD_SEQ pushed seq=13 cmd=ClearSystemCommand
+STACK_DUMP undoSize=7 redoSize=0
+UNDO_STACK:
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=7 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=15 size=3
+TRACE_ADD_EMP: EMP-5 -> Alfa Um Horista
+TRACE_ADD_EMP id=EMP-5 name=Alfa Um Horista type=HourlyEmployee
+TRACE_SNAPSHOT seq=16 size=4
+TRACE_CMD_SEQ pushed seq=15 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=8 redoSize=0
+UNDO_STACK:
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=8 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Alfa Um Horista
+DEBUG_PAYDATE id=EMP-5 name=Alfa Um Horista schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.46153846153846156 | start=1/1/2005 | end=15/1/2005 | grossRaw=520.000 | dedRaw=0 | netUnrounded=520.000
+DEBUG_TOTAL id=EMP-5 netUnrounded=520.000 netRounded=520.00
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Alfa Um Horista
+TRACE_GET_EMP id=EMP-5 -> FOUND name=Alfa Um Horista
+DEBUG_PAYDATE id=EMP-5 name=Alfa Um Horista schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-5 | HourlyEmployee | period=0.46153846153846156 | start=15/1/2005 | end=29/1/2005 | grossRaw=312.000 | dedRaw=0 | netUnrounded=312.000
+DEBUG_TOTAL id=EMP-5 netUnrounded=312.000 netRounded=312.00
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=17 size=4
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=18 size=3
+TRACE_CMD_SEQ pushed seq=17 cmd=ClearSystemCommand
+STACK_DUMP undoSize=9 redoSize=0
+UNDO_STACK:
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=9 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=19 size=3
+TRACE_ADD_EMP: EMP-6 -> Beta Dois Assalariado
+TRACE_ADD_EMP id=EMP-6 name=Beta Dois Assalariado type=SalariedEmployee
+TRACE_SNAPSHOT seq=20 size=4
+TRACE_CMD_SEQ pushed seq=19 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=10 redoSize=0
+UNDO_STACK:
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=10 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Beta Dois Assalariado
+DEBUG_PAYDATE id=EMP-6 name=Beta Dois Assalariado schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=0.23076923076923078 | start=1/1/2005 | end=8/1/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_TOTAL id=EMP-6 netUnrounded=646.153846153846184000 netRounded=646.15
+DEBUG_PAYDATE id=EMP-6 name=Beta Dois Assalariado schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=0.23076923076923078 | start=8/1/2005 | end=15/1/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_TOTAL id=EMP-6 netUnrounded=646.153846153846184000 netRounded=646.15
+DEBUG_PAYDATE id=EMP-6 name=Beta Dois Assalariado schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=0.23076923076923078 | start=15/1/2005 | end=22/1/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_TOTAL id=EMP-6 netUnrounded=646.153846153846184000 netRounded=646.15
+DEBUG_PAYDATE id=EMP-6 name=Beta Dois Assalariado schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=0.23076923076923078 | start=22/1/2005 | end=29/1/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_TOTAL id=EMP-6 netUnrounded=646.153846153846184000 netRounded=646.15
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=21 size=4
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=22 size=3
+TRACE_CMD_SEQ pushed seq=21 cmd=ClearSystemCommand
+STACK_DUMP undoSize=11 redoSize=0
+UNDO_STACK:
+  seq(before=21,after=22) cmd=ClearSystemCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=11 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=23 size=3
+TRACE_ADD_EMP: EMP-7 -> Beta Dois Assalariado
+TRACE_ADD_EMP id=EMP-7 name=Beta Dois Assalariado type=SalariedEmployee
+TRACE_SNAPSHOT seq=24 size=4
+TRACE_CMD_SEQ pushed seq=23 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=12 redoSize=0
+UNDO_STACK:
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=ClearSystemCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=12 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-7 -> FOUND name=Beta Dois Assalariado
+DEBUG_PAYDATE id=EMP-7 name=Beta Dois Assalariado schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-7 | SalariedEmployee | period=0.46153846153846156 | start=1/1/2005 | end=15/1/2005 | grossRaw=1292.307692307692368000 | dedRaw=0 | netUnrounded=1292.307692307692368000
+DEBUG_TOTAL id=EMP-7 netUnrounded=1292.307692307692368000 netRounded=1292.31
+DEBUG_PAYDATE id=EMP-7 name=Beta Dois Assalariado schedule=semanal 2 5 payDate=true period=0.46153846153846156
+DEBUG_PAYROLL EMP-7 | SalariedEmployee | period=0.46153846153846156 | start=15/1/2005 | end=29/1/2005 | grossRaw=1292.307692307692368000 | dedRaw=0 | netUnrounded=1292.307692307692368000
+DEBUG_TOTAL id=EMP-7 netUnrounded=1292.307692307692368000 netRounded=1292.31
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=25 size=4
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=26 size=3
+TRACE_CMD_SEQ pushed seq=25 cmd=ClearSystemCommand
+STACK_DUMP undoSize=13 redoSize=0
+UNDO_STACK:
+  seq(before=25,after=26) cmd=ClearSystemCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=ClearSystemCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=13 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=27 size=3
+TRACE_ADD_EMP: EMP-8 -> Gama Tres Comissionado
+TRACE_ADD_EMP id=EMP-8 name=Gama Tres Comissionado type=CommissionedEmployee
+TRACE_SNAPSHOT seq=28 size=4
+TRACE_CMD_SEQ pushed seq=27 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=14 redoSize=0
+UNDO_STACK:
+  seq(before=27,after=28) cmd=AddEmployeeCommand
+  seq(before=25,after=26) cmd=ClearSystemCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=ClearSystemCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=14 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Gama Tres Comissionado
+DEBUG_PAYDATE id=EMP-8 name=Gama Tres Comissionado schedule=mensal $ payDate=true period=1.0
+DEBUG_PAYROLL EMP-8 | CommissionedEmployee | period=1.0 | start=1/1/2005 | end=1/2/2005 | grossRaw=1366.000 | dedRaw=0 | netUnrounded=1366.000
+DEBUG_TOTAL id=EMP-8 netUnrounded=1366.000 netRounded=1366.00
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=29 size=4
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=30 size=3
+TRACE_CMD_SEQ pushed seq=29 cmd=ClearSystemCommand
+STACK_DUMP undoSize=15 redoSize=0
+UNDO_STACK:
+  seq(before=29,after=30) cmd=ClearSystemCommand
+  seq(before=27,after=28) cmd=AddEmployeeCommand
+  seq(before=25,after=26) cmd=ClearSystemCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=ClearSystemCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=15 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=31 size=3
+TRACE_ADD_EMP: EMP-9 -> Gama Tres Comissionado
+TRACE_ADD_EMP id=EMP-9 name=Gama Tres Comissionado type=CommissionedEmployee
+TRACE_SNAPSHOT seq=32 size=4
+TRACE_CMD_SEQ pushed seq=31 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=16 redoSize=0
+UNDO_STACK:
+  seq(before=31,after=32) cmd=AddEmployeeCommand
+  seq(before=29,after=30) cmd=ClearSystemCommand
+  seq(before=27,after=28) cmd=AddEmployeeCommand
+  seq(before=25,after=26) cmd=ClearSystemCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=ClearSystemCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=16 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Gama Tres Comissionado
+TRACE_GET_EMP id=EMP-9 -> FOUND name=Gama Tres Comissionado
+DEBUG_PAYDATE id=EMP-9 name=Gama Tres Comissionado schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-9 | CommissionedEmployee | period=0.23076923076923078 | start=1/1/2005 | end=8/1/2005 | grossRaw=679.153846153846184000 | dedRaw=0 | netUnrounded=679.153846153846184000
+DEBUG_TOTAL id=EMP-9 netUnrounded=679.153846153846184000 netRounded=679.15
+DEBUG_PAYDATE id=EMP-9 name=Gama Tres Comissionado schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-9 | CommissionedEmployee | period=0.23076923076923078 | start=8/1/2005 | end=15/1/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_TOTAL id=EMP-9 netUnrounded=646.153846153846184000 netRounded=646.15
+DEBUG_PAYDATE id=EMP-9 name=Gama Tres Comissionado schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-9 | CommissionedEmployee | period=0.23076923076923078 | start=15/1/2005 | end=22/1/2005 | grossRaw=668.153846153846184000 | dedRaw=0 | netUnrounded=668.153846153846184000
+DEBUG_TOTAL id=EMP-9 netUnrounded=668.153846153846184000 netRounded=668.15
+DEBUG_PAYDATE id=EMP-9 name=Gama Tres Comissionado schedule=semanal 5 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-9 | CommissionedEmployee | period=0.23076923076923078 | start=22/1/2005 | end=29/1/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_TOTAL id=EMP-9 netUnrounded=646.153846153846184000 netRounded=646.15
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=33 size=4
+TRACE_ADD_EMP: EMP-10 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-10 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=34 size=5
+TRACE_CMD_SEQ pushed seq=33 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=17 redoSize=0
+UNDO_STACK:
+  seq(before=33,after=34) cmd=AddEmployeeCommand
+  seq(before=31,after=32) cmd=AddEmployeeCommand
+  seq(before=29,after=30) cmd=ClearSystemCommand
+  seq(before=27,after=28) cmd=AddEmployeeCommand
+  seq(before=25,after=26) cmd=ClearSystemCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=ClearSystemCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=17 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=35 size=5
+TRACE_ADD_EMP: EMP-11 -> Mariazinha
+TRACE_ADD_EMP id=EMP-11 name=Mariazinha type=SalariedEmployee
+TRACE_SNAPSHOT seq=36 size=6
+TRACE_CMD_SEQ pushed seq=35 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=18 redoSize=0
+UNDO_STACK:
+  seq(before=35,after=36) cmd=AddEmployeeCommand
+  seq(before=33,after=34) cmd=AddEmployeeCommand
+  seq(before=31,after=32) cmd=AddEmployeeCommand
+  seq(before=29,after=30) cmd=ClearSystemCommand
+  seq(before=27,after=28) cmd=AddEmployeeCommand
+  seq(before=25,after=26) cmd=ClearSystemCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=ClearSystemCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=18 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=37 size=6
+TRACE_ADD_EMP: EMP-12 -> Gaiato Vendedor
+TRACE_ADD_EMP id=EMP-12 name=Gaiato Vendedor type=CommissionedEmployee
+TRACE_SNAPSHOT seq=38 size=7
+TRACE_CMD_SEQ pushed seq=37 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=19 redoSize=0
+UNDO_STACK:
+  seq(before=37,after=38) cmd=AddEmployeeCommand
+  seq(before=35,after=36) cmd=AddEmployeeCommand
+  seq(before=33,after=34) cmd=AddEmployeeCommand
+  seq(before=31,after=32) cmd=AddEmployeeCommand
+  seq(before=29,after=30) cmd=ClearSystemCommand
+  seq(before=27,after=28) cmd=AddEmployeeCommand
+  seq(before=25,after=26) cmd=ClearSystemCommand
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=ClearSystemCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=19 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-11 -> FOUND name=Mariazinha
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Gaiato Vendedor
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+Test file tests/us9.txt: 2 errors:
+Line 100, file tests/us9.txt: Expected <1292,30>, but was <1292,31>
+Command producing error: <expect 1292,30 totalFolha data=14/1/2005>
+Line 102, file tests/us9.txt: Expected <1292,30>, but was <1292,31>
+Command producing error: <expect 1292,30 totalFolha data=28/1/2005>
+
+Line 147, file tests/us9.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us9.txt,tests/us9_1.txt
+
+=== Running group: tests/us10.txt,tests/us10_1.txt ===
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=1 size=3
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=2 size=3
+TRACE_CMD_SEQ pushed seq=1 cmd=ClearSystemCommand
+STACK_DUMP undoSize=1 redoSize=0
+UNDO_STACK:
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=1 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> FOUND name=SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> FOUND name=SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> FOUND name=SCHEDULE
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=3 size=3
+TRACE_ADD_EMP: EMP-1 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-1 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=4 size=4
+TRACE_CMD_SEQ pushed seq=3 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=2 redoSize=0
+UNDO_STACK:
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=2 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=__SCHEDULE__::mensal 1 -> MISSING (current count=4)
+TRACE_ADD_EMP: __SCHEDULE__::mensal 1 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::mensal 1 -> FOUND name=SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 -> MISSING (current count=5)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 -> FOUND name=SCHEDULE
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_GET_EMP id=EMP-1 -> FOUND name=Joao da Silva
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=5 size=6
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=6 size=3
+TRACE_CMD_SEQ pushed seq=5 cmd=ClearSystemCommand
+STACK_DUMP undoSize=3 redoSize=0
+UNDO_STACK:
+  seq(before=5,after=6) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=3 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=7 size=3
+TRACE_ADD_EMP: EMP-4 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-4 name=Joao da Silva type=SalariedEmployee
+TRACE_SNAPSHOT seq=8 size=4
+TRACE_CMD_SEQ pushed seq=7 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=4 redoSize=0
+UNDO_STACK:
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=4 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=__SCHEDULE__::mensal 1 -> MISSING (current count=4)
+TRACE_ADD_EMP: __SCHEDULE__::mensal 1 -> SCHEDULE
+TRACE_GET_EMP id=EMP-4 -> FOUND name=Joao da Silva
+DEBUG_PAYDATE id=EMP-4 name=Joao da Silva schedule=mensal 1 payDate=true period=1.0
+DEBUG_PAYROLL EMP-4 | SalariedEmployee | period=1.0 | start=1/12/2004 | end=2/1/2005 | grossRaw=2800.00 | dedRaw=0 | netUnrounded=2800.00
+DEBUG_TOTAL id=EMP-4 netUnrounded=2800.00 netRounded=2800.00
+DEBUG_PAYDATE id=EMP-4 name=Joao da Silva schedule=mensal 1 payDate=true period=1.0
+DEBUG_PAYROLL EMP-4 | SalariedEmployee | period=1.0 | start=1/1/2005 | end=2/2/2005 | grossRaw=2800.00 | dedRaw=0 | netUnrounded=2800.00
+DEBUG_TOTAL id=EMP-4 netUnrounded=2800.00 netRounded=2800.00
+DEBUG_PAYDATE id=EMP-4 name=Joao da Silva schedule=mensal 1 payDate=true period=1.0
+DEBUG_PAYROLL EMP-4 | SalariedEmployee | period=1.0 | start=1/2/2005 | end=2/3/2005 | grossRaw=2800.00 | dedRaw=0 | netUnrounded=2800.00
+DEBUG_TOTAL id=EMP-4 netUnrounded=2800.00 netRounded=2800.00
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=9 size=5
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=10 size=3
+TRACE_CMD_SEQ pushed seq=9 cmd=ClearSystemCommand
+STACK_DUMP undoSize=5 redoSize=0
+UNDO_STACK:
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=5 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=11 size=3
+TRACE_ADD_EMP: EMP-6 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-6 name=Joao da Silva type=SalariedEmployee
+TRACE_SNAPSHOT seq=12 size=4
+TRACE_CMD_SEQ pushed seq=11 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=6 redoSize=0
+UNDO_STACK:
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=6 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 -> MISSING (current count=4)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 -> SCHEDULE
+TRACE_GET_EMP id=EMP-6 -> FOUND name=Joao da Silva
+DEBUG_PAYDATE id=EMP-6 name=Joao da Silva schedule=semanal 2 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=0.23076923076923078 | start=29/12/2004 | end=5/1/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_TOTAL id=EMP-6 netUnrounded=646.153846153846184000 netRounded=646.15
+DEBUG_PAYDATE id=EMP-6 name=Joao da Silva schedule=semanal 2 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=0.23076923076923078 | start=5/1/2005 | end=12/1/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_TOTAL id=EMP-6 netUnrounded=646.153846153846184000 netRounded=646.15
+DEBUG_PAYDATE id=EMP-6 name=Joao da Silva schedule=semanal 2 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=0.23076923076923078 | start=12/1/2005 | end=19/1/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_TOTAL id=EMP-6 netUnrounded=646.153846153846184000 netRounded=646.15
+DEBUG_PAYDATE id=EMP-6 name=Joao da Silva schedule=semanal 2 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=0.23076923076923078 | start=19/1/2005 | end=26/1/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_TOTAL id=EMP-6 netUnrounded=646.153846153846184000 netRounded=646.15
+DEBUG_PAYDATE id=EMP-6 name=Joao da Silva schedule=semanal 2 payDate=true period=0.23076923076923078
+DEBUG_PAYROLL EMP-6 | SalariedEmployee | period=0.23076923076923078 | start=26/1/2005 | end=2/2/2005 | grossRaw=646.153846153846184000 | dedRaw=0 | netUnrounded=646.153846153846184000
+DEBUG_TOTAL id=EMP-6 netUnrounded=646.153846153846184000 netRounded=646.15
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=13 size=5
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=14 size=3
+TRACE_CMD_SEQ pushed seq=13 cmd=ClearSystemCommand
+STACK_DUMP undoSize=7 redoSize=0
+UNDO_STACK:
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=7 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=15 size=3
+TRACE_ADD_EMP: EMP-8 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-8 name=Joao da Silva type=SalariedEmployee
+TRACE_SNAPSHOT seq=16 size=4
+TRACE_CMD_SEQ pushed seq=15 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=8 redoSize=0
+UNDO_STACK:
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=8 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=__SCHEDULE__::semanal 3 3 -> MISSING (current count=4)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 3 3 -> SCHEDULE
+TRACE_GET_EMP id=EMP-8 -> FOUND name=Joao da Silva
+DEBUG_PAYDATE id=EMP-8 name=Joao da Silva schedule=semanal 3 3 payDate=true period=0.6923076923076924
+DEBUG_PAYROLL EMP-8 | SalariedEmployee | period=0.6923076923076924 | start=30/12/2004 | end=20/1/2005 | grossRaw=1938.46153846153872000 | dedRaw=0 | netUnrounded=1938.46153846153872000
+DEBUG_TOTAL id=EMP-8 netUnrounded=1938.46153846153872000 netRounded=1938.46
+DEBUG_PAYDATE id=EMP-8 name=Joao da Silva schedule=semanal 3 3 payDate=true period=0.6923076923076924
+DEBUG_PAYROLL EMP-8 | SalariedEmployee | period=0.6923076923076924 | start=20/1/2005 | end=10/2/2005 | grossRaw=1938.46153846153872000 | dedRaw=0 | netUnrounded=1938.46153846153872000
+DEBUG_TOTAL id=EMP-8 netUnrounded=1938.46153846153872000 netRounded=1938.46
+DEBUG_PAYDATE id=EMP-8 name=Joao da Silva schedule=semanal 3 3 payDate=true period=0.6923076923076924
+DEBUG_PAYROLL EMP-8 | SalariedEmployee | period=0.6923076923076924 | start=5/5/2005 | end=26/5/2005 | grossRaw=1938.46153846153872000 | dedRaw=0 | netUnrounded=1938.46153846153872000
+DEBUG_TOTAL id=EMP-8 netUnrounded=1938.46153846153872000 netRounded=1938.46
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=17 size=5
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=18 size=3
+TRACE_CMD_SEQ pushed seq=17 cmd=ClearSystemCommand
+STACK_DUMP undoSize=9 redoSize=0
+UNDO_STACK:
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=9 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=19 size=3
+TRACE_ADD_EMP: EMP-10 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-10 name=Joao da Silva type=SalariedEmployee
+TRACE_SNAPSHOT seq=20 size=4
+TRACE_CMD_SEQ pushed seq=19 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=10 redoSize=0
+UNDO_STACK:
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=10 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=__SCHEDULE__::semanal 52 1 -> MISSING (current count=4)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 52 1 -> SCHEDULE
+TRACE_GET_EMP id=EMP-10 -> FOUND name=Joao da Silva
+DEBUG_PAYDATE id=EMP-10 name=Joao da Silva schedule=semanal 52 1 payDate=true period=12.0
+DEBUG_PAYROLL EMP-10 | SalariedEmployee | period=12.0 | start=28/12/2004 | end=27/12/2005 | grossRaw=33600.00 | dedRaw=0 | netUnrounded=33600.00
+DEBUG_TOTAL id=EMP-10 netUnrounded=33600.00 netRounded=33600.00
+TRACE_EXEC_CMD execute ClearSystemCommand
+TRACE_SNAPSHOT seq=21 size=5
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+TRACE_SNAPSHOT seq=22 size=3
+TRACE_CMD_SEQ pushed seq=21 cmd=ClearSystemCommand
+STACK_DUMP undoSize=11 redoSize=0
+UNDO_STACK:
+  seq(before=21,after=22) cmd=ClearSystemCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=11 topUndo=ClearSystemCommand redoSize=0 topRedo=-
+TRACE_EXEC_CMD execute AddEmployeeCommand
+TRACE_SNAPSHOT seq=23 size=3
+TRACE_ADD_EMP: EMP-12 -> Joao da Silva
+TRACE_ADD_EMP id=EMP-12 name=Joao da Silva type=HourlyEmployee
+TRACE_SNAPSHOT seq=24 size=4
+TRACE_CMD_SEQ pushed seq=23 cmd=AddEmployeeCommand
+STACK_DUMP undoSize=12 redoSize=0
+UNDO_STACK:
+  seq(before=23,after=24) cmd=AddEmployeeCommand
+  seq(before=21,after=22) cmd=ClearSystemCommand
+  seq(before=19,after=20) cmd=AddEmployeeCommand
+  seq(before=17,after=18) cmd=ClearSystemCommand
+  seq(before=15,after=16) cmd=AddEmployeeCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=AddEmployeeCommand
+  seq(before=9,after=10) cmd=ClearSystemCommand
+  seq(before=7,after=8) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=ClearSystemCommand
+  seq(before=3,after=4) cmd=AddEmployeeCommand
+  seq(before=1,after=2) cmd=ClearSystemCommand
+REDO_STACK:
+
+TRACE_STACKS after execute: undoSize=12 topUndo=AddEmployeeCommand redoSize=0 topRedo=-
+TRACE_GET_EMP id=__SCHEDULE__::mensal 1 -> MISSING (current count=4)
+TRACE_ADD_EMP: __SCHEDULE__::mensal 1 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 -> MISSING (current count=5)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 -> SCHEDULE
+TRACE_GET_EMP id=EMP-12 -> FOUND name=Joao da Silva
+TRACE_CLEAR_DATABASE: removing all employees (keeping schedule placeholders will be re-added)
+TRACE_GET_EMP id=__SCHEDULE__::mensal $ -> MISSING (current count=0)
+TRACE_ADD_EMP: __SCHEDULE__::mensal $ -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 5 -> MISSING (current count=1)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 5 -> SCHEDULE
+TRACE_GET_EMP id=__SCHEDULE__::semanal 2 5 -> MISSING (current count=2)
+TRACE_ADD_EMP: __SCHEDULE__::semanal 2 5 -> SCHEDULE
+Test file tests/us10.txt: 86 tests OK
+Line 120, file tests/us10.txt: Quit command was found.
+Terminating EasyAccept...
+Process exit code: 0 for group: tests/us10.txt,tests/us10_1.txt

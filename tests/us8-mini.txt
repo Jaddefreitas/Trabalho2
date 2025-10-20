@@ -1,0 +1,56 @@
+# Minimal replay of us8 to reproduce missing-employee after undos
+
+zerarSistema
+
+id0=criarEmpregado nome="Joao da Silva" endereco="Rua dos Jooes, 333 - Campina Grande" tipo=horista salario=23
+id2=criarEmpregado nome="Gaiato Vendedor" endereco="Rua dos Bufoes, 333 - Campina Grande" tipo=comissionado salario=2300 comissao=0,05
+removerEmpregado emp=${id0}
+id1=criarEmpregado nome="Joaozinho da Silva" endereco="Rua dos Jooes, 333 - Campina Grande" tipo=horista salario=23
+alteraEmpregado emp=${id2} atributo=metodoPagamento valor1=correios
+alteraEmpregado emp=${id2} atributo=sindicalizado valor=true idSindicato=s123 taxaSindical=30
+alteraEmpregado emp=${id2} atributo=metodoPagamento valor1=banco banco="Banco do Brasil" agencia=1591-1 contaCorrente=51000-0
+getAtributoEmpregado emp=${id2} atributo=banco
+getEmpregadoPorNome nome="Joaozinho da Silva" indice=1
+getHorasExtrasTrabalhadas emp=${id1} dataInicial=1/1/2005 dataFinal=1/12/2005
+getHorasNormaisTrabalhadas emp=${id1} dataInicial=1/1/2005 dataFinal=1/12/2005
+getTaxasServico emp=${id2} dataInicial=1/1/2005 dataFinal=1/12/2005
+getVendasRealizadas emp=${id2} dataInicial=1/1/2005 dataFinal=1/12/2005
+
+lancaCartao emp=${id1} data=1/1/2005 horas=8
+lancaCartao emp=${id1} data=2/1/2005 horas=10
+lancaTaxaServico membro=s123 data=1/1/2005 valor=80
+lancaVenda emp=${id2} data=1/1/2005 valor=800
+rodaFolha data=11/2/2005 saida=folha-2005-02-11.txt
+
+zerarSistema
+
+# begin minimal undos to reproduce the issue
+expect 0 getNumeroDeEmpregados
+undo
+expect 2 getNumeroDeEmpregados
+expect 800,00 getVendasRealizadas emp=${id2} dataInicial=1/1/2005 dataFinal=1/12/2005
+expect 80,00 getTaxasServico emp=${id2} dataInicial=1/1/2005 dataFinal=1/12/2005
+expect 16 getHorasNormaisTrabalhadas emp=${id1} dataInicial=1/1/2005 dataFinal=1/12/2005
+expect 2 getHorasExtrasTrabalhadas emp=${id1} dataInicial=1/1/2005 dataFinal=1/12/2005
+
+# undo rodaFolha
+undo
+expect 2 getNumeroDeEmpregados
+expect 800,00 getVendasRealizadas emp=${id2} dataInicial=1/1/2005 dataFinal=1/12/2005
+expect 80,00 getTaxasServico emp=${id2} dataInicial=1/1/2005 dataFinal=1/12/2005
+expect 16 getHorasNormaisTrabalhadas emp=${id1} dataInicial=1/1/2005 dataFinal=1/12/2005
+expect 2 getHorasExtrasTrabalhadas emp=${id1} dataInicial=1/1/2005 dataFinal=1/12/2005
+
+# undo lancaVenda (this should remove the sale)
+undo
+expect 2 getNumeroDeEmpregados
+expect 0,00 getVendasRealizadas emp=${id2} dataInicial=1/1/2005 dataFinal=1/12/2005
+expect 80,00 getTaxasServico emp=${id2} dataInicial=1/1/2005 dataFinal=1/12/2005
+expect 16 getHorasNormaisTrabalhadas emp=${id1} dataInicial=1/1/2005 dataFinal=1/12/2005
+expect 2 getHorasExtrasTrabalhadas emp=${id1} dataInicial=1/1/2005 dataFinal=1/12/2005
+
+# check attributes presence explicitly
+getAtributoEmpregado emp=${id2} atributo=nome
+getAtributoEmpregado emp=${id1} atributo=nome
+
+# stop

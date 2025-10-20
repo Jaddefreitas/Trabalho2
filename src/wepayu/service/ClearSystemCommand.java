@@ -1,7 +1,7 @@
 package wepayu.service;
 
-import wepayu.model.Employee;
 import wepayu.facade.PlaceholderCache;
+import wepayu.model.Employee;
 
 /**
  * Command that clears the system but is undoable by keeping a shallow backup of employees.
