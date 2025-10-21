@@ -1,6 +1,6 @@
 STACK_DUMP undoSize=3 redoSize=0
 UNDO_STACK:
-  seq(before=5,after=6) cmd=AddEmployeeCommand
+  seq(before=5,after=6) cmd=ClearSystemCommand
   seq(before=3,after=4) cmd=AddEmployeeCommand
   seq(before=1,after=2) cmd=ClearSystemCommand
 REDO_STACK:

@@ -1,6 +1,5 @@
-snapshot-seq=8 size=5
+snapshot-seq=8 size=4
 __SCHEDULE__::mensal $
 __SCHEDULE__::semanal 5
 __SCHEDULE__::semanal 2 5
-EMP-2
-EMP-3
+EMP-4

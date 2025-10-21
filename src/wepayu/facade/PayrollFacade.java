@@ -149,16 +149,16 @@ public class PayrollFacade {
 
     // Register a time card for an hourly employee
     public void lancaCartao(String id, String data, String horas) {
-        ensureSystemOpen();
-        if (id == null || id.isBlank() || data == null || horas == null) throw new InvalidDataException("Parametros invalidos.");
-        if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
-        double h;
-        try { h = Double.parseDouble(horas.replace(",",".")); } catch (Exception ex) { throw new InvalidDataException("Horas devem ser numericas."); }
-        if (h < 0) throw new InvalidDataException("Horas nao podem ser negativas.");
-        Employee e = PayrollDatabase.getEmployee(id);
-        if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
-        if (!(e instanceof HourlyEmployee)) throw new InvalidDataException("Empregado nao eh horista.");
-        ((HourlyEmployee)e).addTimeCard(new TimeCard(data, h));
+    ensureSystemOpen();
+    if (id == null || id.isBlank() || data == null || horas == null) throw new InvalidDataException("Parametros invalidos.");
+    if (!wepayu.util.DateUtils.isValidDate(data)) throw new InvalidDataException("Data invalida.");
+    double h;
+    try { h = Double.parseDouble(horas.replace(",",".")); } catch (Exception ex) { throw new InvalidDataException("Horas devem ser numericas."); }
+    if (h <= 0) throw new InvalidDataException("Horas nao podem ser negativas.");
+    Employee e = PayrollDatabase.getEmployee(id);
+    if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+    if (!(e instanceof HourlyEmployee)) throw new InvalidDataException("Empregado nao eh horista.");
+    ((HourlyEmployee)e).addTimeCard(new TimeCard(data, h));
     }
 
     // Register a sales receipt for a commissioned employee
@@ -672,7 +672,7 @@ public class PayrollFacade {
         if (nome == null) throw new InvalidDataException("Nome nao pode ser nulo.");
         int count = 0;
         for (Employee e : PayrollDatabase.getAllEmployees().values()) {
-            if (nome.equals(e.getName())) {
+            if (e.getName() != null && e.getName().contains(nome)) {
                 count++;
                 if (count == indice) return e.getId();
             }

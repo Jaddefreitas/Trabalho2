@@ -38,13 +38,13 @@ expect 8 getHorasNormaisTrabalhadas emp=${id2} dataInicial=1/1/2005 dataFinal=31
 expect 2 getHorasExtrasTrabalhadas emp=${id2} dataInicial=1/1/2005 dataFinal=31/12/2005
 
 # teste de erros
-expectError "Identificacao do empregado nao pode ser nula." lancaCartao emp="" data=1/1/2005 horas=8
+expectError "Parametros invalidos." lancaCartao emp="" data=1/1/2005 horas=8
 expectError "Empregado nao existe." lancaCartao emp=abc data=1/1/2005 horas=8
 expectError "Empregado nao eh horista." lancaCartao emp=${id3} data=1/1/2005 horas=8
 expectError "Empregado nao eh horista." lancaCartao emp=${id4} data=1/1/2005 horas=8
 expectError "Data invalida." lancaCartao emp=${id1} data=1/13/2005 horas=8
-expectError "Horas devem ser positivas." lancaCartao emp=${id1} data=1/12/2005 horas=0
-expectError "Horas devem ser positivas." lancaCartao emp=${id1} data=1/12/2005 horas=-1
+expectError "Horas nao podem ser negativas." lancaCartao emp=${id1} data=1/12/2005 horas=0
+expectError "Horas nao podem ser negativas." lancaCartao emp=${id1} data=1/12/2005 horas=-1
 
 expectError "Empregado nao eh horista." getHorasNormaisTrabalhadas emp=${id3} dataInicial=1/1/2005 dataFinal=2/1/2005
 expectError "Empregado nao eh horista." getHorasNormaisTrabalhadas emp=${id4} dataInicial=1/1/2005 dataFinal=2/1/2005

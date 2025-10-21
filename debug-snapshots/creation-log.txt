@@ -3921,3 +3921,956 @@
 1760987321839 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
 1760987321839 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
 1760987321840 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050654518 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050654527 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050654529 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050654558 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050654559 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050654559 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050654576 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050654585 | EMP-2 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050654592 | EMP-3 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050654596 | EMP-4 | Mariazinha | mensal $ | SalariedEmployee
+1761050654604 | EMP-5 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761050654615 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050654616 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050654617 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050654796 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050654805 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050654805 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050654831 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050654832 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050654833 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050654844 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050654853 | EMP-2 | Maria | semanal 5 | HourlyEmployee
+1761050654869 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050654870 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050654870 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050655030 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050655041 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050655042 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050655076 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050655079 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050655079 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050655090 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050655093 | EMP-2 | Mariazinha | semanal 5 | HourlyEmployee
+1761050655100 | EMP-3 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761050655105 | EMP-4 | Gorete | mensal $ | SalariedEmployee
+1761050655156 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050655157 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050655158 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050655370 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050655379 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050655380 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050655407 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050655407 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050655408 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050655420 | EMP-1 | Joao da Silva | semanal 2 5 | CommissionedEmployee
+1761050655424 | EMP-2 | Mariazinha | semanal 2 5 | CommissionedEmployee
+1761050655432 | EMP-3 | Gaiato Vendedor | semanal 5 | HourlyEmployee
+1761050655437 | EMP-4 | Gorete | mensal $ | SalariedEmployee
+1761050655468 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050655469 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050655470 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050655642 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050655653 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050655654 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050655689 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050655690 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050655691 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050655702 | EMP-1 | Joao da Silva | semanal 2 5 | CommissionedEmployee
+1761050655713 | EMP-2 | Mariazinha | mensal $ | SalariedEmployee
+1761050655717 | EMP-3 | Gaiato Vendedor | semanal 5 | HourlyEmployee
+1761050655721 | EMP-4 | Gorete | semanal 5 | HourlyEmployee
+1761050655754 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050655755 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050655756 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050655916 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050655924 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050655925 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050655951 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050655951 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050655952 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050655961 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050655981 | EMP-1 | Joaozinho da Silva | semanal 5 | SalariedEmployee
+1761050655990 | EMP-1 | Joaozinho da Silva | semanal 5 | CommissionedEmployee
+1761050655991 | EMP-1 | Joaozinho da Silva | semanal 5 | CommissionedEmployee
+1761050655995 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050656001 | EMP-1 | Joao da Silva | semanal 5 | CommissionedEmployee
+1761050656005 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050656006 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050656007 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050656166 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050656186 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050656187 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050656208 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050656215 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050656216 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050656228 | EMP-1 | Fernanda Montenegro | semanal 5 | HourlyEmployee
+1761050656236 | EMP-2 | Paloma Duarte | semanal 5 | HourlyEmployee
+1761050656255 | EMP-3 | Lavinia Vlasak | semanal 5 | HourlyEmployee
+1761050656261 | EMP-4 | Claudia Abreu | semanal 5 | HourlyEmployee
+1761050656271 | EMP-5 | Claudia Raia | semanal 5 | HourlyEmployee
+1761050656284 | EMP-6 | Natalia do Valle | mensal $ | SalariedEmployee
+1761050656289 | EMP-7 | Regina Duarte | mensal $ | SalariedEmployee
+1761050656293 | EMP-8 | Flavia Alessandra | mensal $ | SalariedEmployee
+1761050656304 | EMP-9 | Deborah Secco | semanal 2 5 | CommissionedEmployee
+1761050656307 | EMP-10 | Ana Paula Arosio | semanal 2 5 | CommissionedEmployee
+1761050656313 | EMP-11 | Suzana Vieira | semanal 2 5 | CommissionedEmployee
+1761050656318 | EMP-12 | Maite Proenca | semanal 2 5 | CommissionedEmployee
+1761050656748 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050656758 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050656759 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050656786 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050656787 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050656788 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050656798 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050656804 | EMP-2 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761050656813 | EMP-3 | Joaozinho da Silva | semanal 5 | HourlyEmployee
+1761050656906 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050656907 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050656908 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050656999 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657004 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657004 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657201 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657215 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657215 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657248 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657249 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657250 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657265 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050657272 | EMP-2 | Mariazinha | mensal $ | SalariedEmployee
+1761050657278 | EMP-3 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761050657288 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657289 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657289 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657293 | EMP-4 | Alfa Um Horista | semanal 5 | HourlyEmployee
+1761050657359 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657360 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657360 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657364 | EMP-5 | Alfa Um Horista | semanal 5 | HourlyEmployee
+1761050657386 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657388 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657389 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657404 | EMP-6 | Beta Dois Assalariado | mensal $ | SalariedEmployee
+1761050657436 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657437 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657438 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657442 | EMP-7 | Beta Dois Assalariado | mensal $ | SalariedEmployee
+1761050657465 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657466 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657467 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657471 | EMP-8 | Gama Tres Comissionado | semanal 2 5 | CommissionedEmployee
+1761050657507 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657507 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657519 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657524 | EMP-9 | Gama Tres Comissionado | semanal 2 5 | CommissionedEmployee
+1761050657541 | EMP-10 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050657546 | EMP-11 | Mariazinha | mensal $ | SalariedEmployee
+1761050657549 | EMP-12 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761050657555 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657555 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657556 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657803 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657813 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657814 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657841 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657841 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657842 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657859 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050657865 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761050657876 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761050657881 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657882 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657882 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657884 | EMP-4 | Joao da Silva | mensal $ | SalariedEmployee
+1761050657888 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761050657927 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657928 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657929 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657931 | EMP-6 | Joao da Silva | mensal $ | SalariedEmployee
+1761050657935 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761050657953 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050657954 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050657955 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050657958 | EMP-8 | Joao da Silva | mensal $ | SalariedEmployee
+1761050657960 | __SCHEDULE__::semanal 3 3 | SCHEDULE | semanal 3 3 | SalariedEmployee
+1761050658016 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050658017 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050658018 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050658023 | EMP-10 | Joao da Silva | mensal $ | SalariedEmployee
+1761050658026 | __SCHEDULE__::semanal 52 1 | SCHEDULE | semanal 52 1 | SalariedEmployee
+1761050658059 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050658060 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050658061 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050658064 | EMP-12 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050658067 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761050658068 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761050658070 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050658070 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050658072 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050860460 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050860467 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050860468 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050860481 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050860481 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050860482 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050860493 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050860498 | EMP-2 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761050860501 | EMP-3 | Joaozinho da Silva | semanal 5 | HourlyEmployee
+1761050860547 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050860547 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050860547 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050860583 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050860583 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050860583 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050967463 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050967463 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050967463 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050967494 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050967494 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050967494 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050967494 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761050967494 | EMP-2 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761050967510 | EMP-3 | Joaozinho da Silva | semanal 5 | HourlyEmployee
+1761050967548 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050967548 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050967548 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761050967588 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761050967588 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761050967588 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051060031 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051060039 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051060039 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051060048 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051060048 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051060048 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051060064 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051060079 | EMP-2 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051060079 | EMP-3 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051060079 | EMP-4 | Mariazinha | mensal $ | SalariedEmployee
+1761051060079 | EMP-5 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761051060095 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051060095 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051060095 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051064215 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051064219 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051064219 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051067787 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051067787 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051067787 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051067818 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051067818 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051067818 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051067818 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051067818 | EMP-2 | Maria | semanal 5 | HourlyEmployee
+1761051067834 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051067834 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051067834 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051071406 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051071421 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051071421 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051074996 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051074996 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051074996 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051075012 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051075012 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051075012 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051075029 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051075029 | EMP-2 | Mariazinha | semanal 5 | HourlyEmployee
+1761051075029 | EMP-3 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761051075029 | EMP-4 | Gorete | mensal $ | SalariedEmployee
+1761051075046 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051075061 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051075062 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051083372 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051083388 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051083388 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051086491 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051086508 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051086508 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051086524 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051086524 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051086524 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051086524 | EMP-1 | Joao da Silva | semanal 2 5 | CommissionedEmployee
+1761051086541 | EMP-2 | Mariazinha | semanal 2 5 | CommissionedEmployee
+1761051086541 | EMP-3 | Gaiato Vendedor | semanal 5 | HourlyEmployee
+1761051086541 | EMP-4 | Gorete | mensal $ | SalariedEmployee
+1761051086558 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051086558 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051086558 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051089561 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051089561 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051089561 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051093064 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051093079 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051093080 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051093097 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051093097 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051093097 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051093097 | EMP-1 | Joao da Silva | semanal 2 5 | CommissionedEmployee
+1761051093097 | EMP-2 | Mariazinha | mensal $ | SalariedEmployee
+1761051093114 | EMP-3 | Gaiato Vendedor | semanal 5 | HourlyEmployee
+1761051093114 | EMP-4 | Gorete | semanal 5 | HourlyEmployee
+1761051093131 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051093131 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051093131 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051096503 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051096510 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051096510 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051103541 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051103544 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051103544 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051103559 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051103559 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051103559 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051103575 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051103575 | EMP-1 | Joaozinho da Silva | semanal 5 | SalariedEmployee
+1761051103592 | EMP-1 | Joaozinho da Silva | semanal 5 | CommissionedEmployee
+1761051103592 | EMP-1 | Joaozinho da Silva | semanal 5 | CommissionedEmployee
+1761051103592 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051103592 | EMP-1 | Joao da Silva | semanal 5 | CommissionedEmployee
+1761051103592 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051103592 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051103592 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051107265 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051107265 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051107265 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051110251 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051110265 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051110265 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051110282 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051110282 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051110282 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051110298 | EMP-1 | Fernanda Montenegro | semanal 5 | HourlyEmployee
+1761051110298 | EMP-2 | Paloma Duarte | semanal 5 | HourlyEmployee
+1761051110314 | EMP-3 | Lavinia Vlasak | semanal 5 | HourlyEmployee
+1761051110315 | EMP-4 | Claudia Abreu | semanal 5 | HourlyEmployee
+1761051110315 | EMP-5 | Claudia Raia | semanal 5 | HourlyEmployee
+1761051110315 | EMP-6 | Natalia do Valle | mensal $ | SalariedEmployee
+1761051110332 | EMP-7 | Regina Duarte | mensal $ | SalariedEmployee
+1761051110332 | EMP-8 | Flavia Alessandra | mensal $ | SalariedEmployee
+1761051110332 | EMP-9 | Deborah Secco | semanal 2 5 | CommissionedEmployee
+1761051110332 | EMP-10 | Ana Paula Arosio | semanal 2 5 | CommissionedEmployee
+1761051110332 | EMP-11 | Suzana Vieira | semanal 2 5 | CommissionedEmployee
+1761051110348 | EMP-12 | Maite Proenca | semanal 2 5 | CommissionedEmployee
+1761051113271 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051113286 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051113286 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051113301 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051113301 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051113301 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051113317 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051113318 | EMP-2 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761051113318 | EMP-3 | Joaozinho da Silva | semanal 5 | HourlyEmployee
+1761051113368 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051113368 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051113368 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051113402 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051113402 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051113402 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051116405 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051116405 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051116405 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051116421 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051116421 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051116421 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051116438 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051116438 | EMP-2 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761051116438 | EMP-3 | Joaozinho da Silva | semanal 5 | HourlyEmployee
+1761051116488 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051116488 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051116488 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051125190 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051125197 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051125198 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051125217 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051125217 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051125218 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051125225 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051125228 | EMP-2 | Mariazinha | mensal $ | SalariedEmployee
+1761051125232 | EMP-3 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761051125238 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051125238 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051125239 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051125241 | EMP-4 | Alfa Um Horista | semanal 5 | HourlyEmployee
+1761051125266 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051125266 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051125267 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051125269 | EMP-5 | Alfa Um Horista | semanal 5 | HourlyEmployee
+1761051125278 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051125278 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051125278 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051125280 | EMP-6 | Beta Dois Assalariado | mensal $ | SalariedEmployee
+1761051125287 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051125288 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051125288 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051125290 | EMP-7 | Beta Dois Assalariado | mensal $ | SalariedEmployee
+1761051125297 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051125298 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051125298 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051125299 | EMP-8 | Gama Tres Comissionado | semanal 2 5 | CommissionedEmployee
+1761051125306 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051125307 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051125307 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051125309 | EMP-9 | Gama Tres Comissionado | semanal 2 5 | CommissionedEmployee
+1761051125316 | EMP-10 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051125319 | EMP-11 | Mariazinha | mensal $ | SalariedEmployee
+1761051125320 | EMP-12 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761051125322 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051125322 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051125323 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051128220 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051128234 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051128234 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051131239 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051131254 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051131254 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051131270 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051131270 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051131270 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051131287 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051131287 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761051131287 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761051131287 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051131287 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051131287 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051131287 | EMP-4 | Joao da Silva | mensal $ | SalariedEmployee
+1761051131287 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761051131320 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051131320 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051131320 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051131320 | EMP-6 | Joao da Silva | mensal $ | SalariedEmployee
+1761051131320 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761051131320 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051131320 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051131320 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051131337 | EMP-8 | Joao da Silva | mensal $ | SalariedEmployee
+1761051131337 | __SCHEDULE__::semanal 3 3 | SCHEDULE | semanal 3 3 | SalariedEmployee
+1761051131337 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051131337 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051131337 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051131337 | EMP-10 | Joao da Silva | mensal $ | SalariedEmployee
+1761051131337 | __SCHEDULE__::semanal 52 1 | SCHEDULE | semanal 52 1 | SalariedEmployee
+1761051131354 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051131354 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051131354 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051131354 | EMP-12 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051131354 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761051131354 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761051131354 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051131354 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051131354 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051134257 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051134273 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051134274 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051134286 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761051134287 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761051328541 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051328548 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051328548 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051417780 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051417780 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051417780 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051417814 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051417814 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051417814 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051417814 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051417814 | EMP-2 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051417814 | EMP-3 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051417814 | EMP-4 | Mariazinha | mensal $ | SalariedEmployee
+1761051417830 | EMP-5 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761051727381 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051727398 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051727398 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051898809 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051898822 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051898822 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051898839 | EMP-1 | Maria | semanal 5 | HourlyEmployee
+1761051992852 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051992853 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051992853 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051992867 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051992867 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051992867 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051992891 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051992895 | EMP-2 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051992899 | EMP-3 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051992901 | EMP-4 | Mariazinha | mensal $ | SalariedEmployee
+1761051992905 | EMP-5 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761051992910 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051992910 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051992911 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051996793 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051996793 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051996793 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051996822 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761051996822 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761051996822 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761051996822 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051996822 | EMP-2 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051996822 | EMP-3 | Joao da Silva | semanal 5 | HourlyEmployee
+1761051996838 | EMP-4 | Mariazinha | mensal $ | SalariedEmployee
+1761051996838 | EMP-5 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052000562 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052000563 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052000563 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052000578 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052000578 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052000578 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052000593 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052000593 | EMP-2 | Maria | semanal 5 | HourlyEmployee
+1761052000609 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052000609 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052000609 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052004050 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052004050 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052004050 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052004082 | EMP-1 | Maria | semanal 5 | HourlyEmployee
+1761052007435 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052007435 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052007435 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052007451 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052007451 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052007451 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052007467 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052007467 | EMP-2 | Mariazinha | semanal 5 | HourlyEmployee
+1761052007467 | EMP-3 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052007467 | EMP-4 | Gorete | mensal $ | SalariedEmployee
+1761052007501 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052007501 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052007501 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052011324 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052011339 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052011339 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052014384 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052014391 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052014391 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052014410 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052014411 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052014411 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052014418 | EMP-1 | Joao da Silva | semanal 2 5 | CommissionedEmployee
+1761052014420 | EMP-2 | Mariazinha | semanal 2 5 | CommissionedEmployee
+1761052014423 | EMP-3 | Gaiato Vendedor | semanal 5 | HourlyEmployee
+1761052014426 | EMP-4 | Gorete | mensal $ | SalariedEmployee
+1761052014442 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052014443 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052014443 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052017345 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052017345 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052017345 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052020215 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052020231 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052020231 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052020265 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052020265 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052020265 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052020281 | EMP-1 | Joao da Silva | semanal 2 5 | CommissionedEmployee
+1761052020281 | EMP-2 | Mariazinha | mensal $ | SalariedEmployee
+1761052020281 | EMP-3 | Gaiato Vendedor | semanal 5 | HourlyEmployee
+1761052020296 | EMP-4 | Gorete | semanal 5 | HourlyEmployee
+1761052020314 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052020314 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052020314 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052024618 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052024618 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052024618 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052036266 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052036266 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052036266 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052036281 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052036281 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052036281 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052036297 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052036297 | EMP-1 | Joaozinho da Silva | semanal 5 | SalariedEmployee
+1761052036314 | EMP-1 | Joaozinho da Silva | semanal 5 | CommissionedEmployee
+1761052036314 | EMP-1 | Joaozinho da Silva | semanal 5 | CommissionedEmployee
+1761052036314 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052036314 | EMP-1 | Joao da Silva | semanal 5 | CommissionedEmployee
+1761052036314 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052036314 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052036314 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052039350 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052039358 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052039358 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052042470 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052042470 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052042470 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052042503 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052042503 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052042503 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052042520 | EMP-1 | Fernanda Montenegro | semanal 5 | HourlyEmployee
+1761052042520 | EMP-2 | Paloma Duarte | semanal 5 | HourlyEmployee
+1761052042520 | EMP-3 | Lavinia Vlasak | semanal 5 | HourlyEmployee
+1761052042537 | EMP-4 | Claudia Abreu | semanal 5 | HourlyEmployee
+1761052042537 | EMP-5 | Claudia Raia | semanal 5 | HourlyEmployee
+1761052042537 | EMP-6 | Natalia do Valle | mensal $ | SalariedEmployee
+1761052042552 | EMP-7 | Regina Duarte | mensal $ | SalariedEmployee
+1761052042553 | EMP-8 | Flavia Alessandra | mensal $ | SalariedEmployee
+1761052042553 | EMP-9 | Deborah Secco | semanal 2 5 | CommissionedEmployee
+1761052042553 | EMP-10 | Ana Paula Arosio | semanal 2 5 | CommissionedEmployee
+1761052042553 | EMP-11 | Suzana Vieira | semanal 2 5 | CommissionedEmployee
+1761052042569 | EMP-12 | Maite Proenca | semanal 2 5 | CommissionedEmployee
+1761052045793 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052045807 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052045807 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052045824 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052045824 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052045824 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052045839 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052045840 | EMP-2 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052045840 | EMP-3 | Joaozinho da Silva | semanal 5 | HourlyEmployee
+1761052045890 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052045890 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052045890 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052045924 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052045924 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052045924 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052048934 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052048941 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052048941 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052048963 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052048963 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052048964 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052048971 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052048975 | EMP-2 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052048979 | EMP-3 | Joaozinho da Silva | semanal 5 | HourlyEmployee
+1761052049022 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052049023 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052049023 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052052698 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052052698 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052052698 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052052731 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052052731 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052052731 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052052731 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052052731 | EMP-2 | Mariazinha | mensal $ | SalariedEmployee
+1761052052748 | EMP-3 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052052748 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052052748 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052052748 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052052748 | EMP-4 | Alfa Um Horista | semanal 5 | HourlyEmployee
+1761052052781 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052052781 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052052781 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052052781 | EMP-5 | Alfa Um Horista | semanal 5 | HourlyEmployee
+1761052052798 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052052798 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052052798 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052052798 | EMP-6 | Beta Dois Assalariado | mensal $ | SalariedEmployee
+1761052052813 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052052813 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052052814 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052052814 | EMP-7 | Beta Dois Assalariado | mensal $ | SalariedEmployee
+1761052052814 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052052814 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052052814 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052052829 | EMP-8 | Gama Tres Comissionado | semanal 2 5 | CommissionedEmployee
+1761052052832 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052052832 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052052832 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052052832 | EMP-9 | Gama Tres Comissionado | semanal 2 5 | CommissionedEmployee
+1761052052848 | EMP-10 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052052848 | EMP-11 | Mariazinha | mensal $ | SalariedEmployee
+1761052052848 | EMP-12 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052052848 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052052848 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052052848 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052055968 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052055968 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052055968 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052059134 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052059143 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052059143 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052059155 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052059155 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052059155 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052059172 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052059172 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761052059172 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761052059189 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052059190 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052059190 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052059192 | EMP-4 | Joao da Silva | mensal $ | SalariedEmployee
+1761052059194 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761052059222 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052059223 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052059224 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052059224 | EMP-6 | Joao da Silva | mensal $ | SalariedEmployee
+1761052059224 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761052059239 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052059239 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052059239 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052059239 | EMP-8 | Joao da Silva | mensal $ | SalariedEmployee
+1761052059239 | __SCHEDULE__::semanal 3 3 | SCHEDULE | semanal 3 3 | SalariedEmployee
+1761052059254 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052059256 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052059256 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052059256 | EMP-10 | Joao da Silva | mensal $ | SalariedEmployee
+1761052059256 | __SCHEDULE__::semanal 52 1 | SCHEDULE | semanal 52 1 | SalariedEmployee
+1761052059271 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052059272 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052059272 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052059273 | EMP-12 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052059273 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761052059273 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761052059273 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052059273 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052059273 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052062191 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052062191 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052062191 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052062207 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761052062207 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761052261715 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052261723 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052261724 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052261743 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052261744 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052261744 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052261753 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052261756 | EMP-2 | Mariazinha | semanal 5 | HourlyEmployee
+1761052261759 | EMP-3 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052261761 | EMP-4 | Gorete | mensal $ | SalariedEmployee
+1761052261784 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052261785 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052261785 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052420763 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052420772 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052420773 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052420813 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052420814 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052420814 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052420827 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052420832 | EMP-2 | Mariazinha | semanal 5 | HourlyEmployee
+1761052420838 | EMP-3 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052420841 | EMP-4 | Gorete | mensal $ | SalariedEmployee
+1761052420880 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052420881 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052420881 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052545211 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052545211 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052545211 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052545242 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052545242 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052545242 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052545258 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052545258 | EMP-2 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052545258 | EMP-3 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052545258 | EMP-4 | Mariazinha | mensal $ | SalariedEmployee
+1761052545276 | EMP-5 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052545282 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052545282 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052545283 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052557024 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052557024 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052557024 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052557056 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052557056 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052557056 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052557056 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052557072 | EMP-2 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052557072 | EMP-3 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052557072 | EMP-4 | Mariazinha | mensal $ | SalariedEmployee
+1761052557072 | EMP-5 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052573882 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052573882 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052573882 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052573900 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052573900 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052573914 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052573916 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052573916 | EMP-2 | Maria | semanal 5 | HourlyEmployee
+1761052573932 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052573932 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052573932 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052577068 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052577068 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052577068 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052577101 | EMP-1 | Maria | semanal 5 | HourlyEmployee
+1761052580537 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052580543 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052580543 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052580555 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052580555 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052580570 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052580573 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052580573 | EMP-2 | Mariazinha | semanal 5 | HourlyEmployee
+1761052580573 | EMP-3 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052580589 | EMP-4 | Gorete | mensal $ | SalariedEmployee
+1761052580622 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052580622 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052580622 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052583961 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052583961 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052583974 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052587178 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052587178 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052587178 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052587209 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052587209 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052587209 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052587209 | EMP-1 | Joao da Silva | semanal 2 5 | CommissionedEmployee
+1761052587225 | EMP-2 | Mariazinha | semanal 2 5 | CommissionedEmployee
+1761052587225 | EMP-3 | Gaiato Vendedor | semanal 5 | HourlyEmployee
+1761052587225 | EMP-4 | Gorete | mensal $ | SalariedEmployee
+1761052587256 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052587256 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052587256 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052590184 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052590197 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052590198 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052593037 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052593037 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052593037 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052593067 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052593067 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052593067 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052593067 | EMP-1 | Joao da Silva | semanal 2 5 | CommissionedEmployee
+1761052593067 | EMP-2 | Mariazinha | mensal $ | SalariedEmployee
+1761052593083 | EMP-3 | Gaiato Vendedor | semanal 5 | HourlyEmployee
+1761052593084 | EMP-4 | Gorete | semanal 5 | HourlyEmployee
+1761052593101 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052593101 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052593101 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052595906 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052595906 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052595906 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052598777 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052598791 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052598791 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052598807 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052598807 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052598807 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052598823 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052598823 | EMP-1 | Joaozinho da Silva | semanal 5 | SalariedEmployee
+1761052598840 | EMP-1 | Joaozinho da Silva | semanal 5 | CommissionedEmployee
+1761052598840 | EMP-1 | Joaozinho da Silva | semanal 5 | CommissionedEmployee
+1761052598840 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052598840 | EMP-1 | Joao da Silva | semanal 5 | CommissionedEmployee
+1761052598840 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052598840 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052598840 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052601679 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052601679 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052601679 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052604515 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052604515 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052604515 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052604530 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052604530 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052604545 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052604546 | EMP-1 | Fernanda Montenegro | semanal 5 | HourlyEmployee
+1761052604546 | EMP-2 | Paloma Duarte | semanal 5 | HourlyEmployee
+1761052604562 | EMP-3 | Lavinia Vlasak | semanal 5 | HourlyEmployee
+1761052604562 | EMP-4 | Claudia Abreu | semanal 5 | HourlyEmployee
+1761052604562 | EMP-5 | Claudia Raia | semanal 5 | HourlyEmployee
+1761052604579 | EMP-6 | Natalia do Valle | mensal $ | SalariedEmployee
+1761052604579 | EMP-7 | Regina Duarte | mensal $ | SalariedEmployee
+1761052604579 | EMP-8 | Flavia Alessandra | mensal $ | SalariedEmployee
+1761052604579 | EMP-9 | Deborah Secco | semanal 2 5 | CommissionedEmployee
+1761052604579 | EMP-10 | Ana Paula Arosio | semanal 2 5 | CommissionedEmployee
+1761052604596 | EMP-11 | Suzana Vieira | semanal 2 5 | CommissionedEmployee
+1761052604596 | EMP-12 | Maite Proenca | semanal 2 5 | CommissionedEmployee
+1761052607595 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052607600 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052607600 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052607616 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052607616 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052607616 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052607631 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052607632 | EMP-2 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052607632 | EMP-3 | Joaozinho da Silva | semanal 5 | HourlyEmployee
+1761052607682 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052607682 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052607682 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052607716 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052607716 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052607716 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052610521 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052610521 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052610521 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052610536 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052610536 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052610536 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052610552 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052610552 | EMP-2 | Mariazinha | mensal $ | SalariedEmployee
+1761052610552 | EMP-3 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052610568 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052610568 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052610568 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052610568 | EMP-4 | Alfa Um Horista | semanal 5 | HourlyEmployee
+1761052610585 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052610585 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052610585 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052610585 | EMP-5 | Alfa Um Horista | semanal 5 | HourlyEmployee
+1761052610602 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052610602 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052610602 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052610602 | EMP-6 | Beta Dois Assalariado | mensal $ | SalariedEmployee
+1761052610619 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052610619 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052610619 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052610619 | EMP-7 | Beta Dois Assalariado | mensal $ | SalariedEmployee
+1761052610619 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052610619 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052610619 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052610619 | EMP-8 | Gama Tres Comissionado | semanal 2 5 | CommissionedEmployee
+1761052610635 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052610635 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052610635 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052610635 | EMP-9 | Gama Tres Comissionado | semanal 2 5 | CommissionedEmployee
+1761052610635 | EMP-10 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052610635 | EMP-11 | Mariazinha | mensal $ | SalariedEmployee
+1761052610650 | EMP-12 | Gaiato Vendedor | semanal 2 5 | CommissionedEmployee
+1761052610652 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052610652 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052610652 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052613538 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052613555 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052613555 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052616392 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052616395 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052616395 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052616408 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052616408 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052616408 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052616425 | EMP-1 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052616425 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761052616425 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761052616425 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052616425 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052616425 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052616441 | EMP-4 | Joao da Silva | mensal $ | SalariedEmployee
+1761052616441 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761052616458 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052616458 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052616458 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052616458 | EMP-6 | Joao da Silva | mensal $ | SalariedEmployee
+1761052616458 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761052616474 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052616474 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052616474 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052616474 | EMP-8 | Joao da Silva | mensal $ | SalariedEmployee
+1761052616474 | __SCHEDULE__::semanal 3 3 | SCHEDULE | semanal 3 3 | SalariedEmployee
+1761052616491 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052616491 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052616491 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052616491 | EMP-10 | Joao da Silva | mensal $ | SalariedEmployee
+1761052616491 | __SCHEDULE__::semanal 52 1 | SCHEDULE | semanal 52 1 | SalariedEmployee
+1761052616507 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052616508 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052616508 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052616508 | EMP-12 | Joao da Silva | semanal 5 | HourlyEmployee
+1761052616508 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee
+1761052616508 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761052616508 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052616508 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052616508 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052619364 | __SCHEDULE__::mensal $ | SCHEDULE | mensal $ | SalariedEmployee
+1761052619364 | __SCHEDULE__::semanal 5 | SCHEDULE | semanal 5 | SalariedEmployee
+1761052619364 | __SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5 | SalariedEmployee
+1761052619378 | __SCHEDULE__::semanal 2 | SCHEDULE | semanal 2 | SalariedEmployee
+1761052619378 | __SCHEDULE__::mensal 1 | SCHEDULE | mensal 1 | SalariedEmployee

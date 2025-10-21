@@ -1,4 +1,4 @@
-STACK_DUMP undoSize=5 redoSize=1
+STACK_DUMP undoSize=5 redoSize=2
 UNDO_STACK:
   seq(before=9,after=10) cmd=AddEmployeeCommand
   seq(before=7,after=8) cmd=RemoveEmployeeCommand
@@ -6,4 +6,5 @@ UNDO_STACK:
   seq(before=3,after=4) cmd=AddEmployeeCommand
   seq(before=1,after=2) cmd=ClearSystemCommand
 REDO_STACK:
-  seq(before=11,after=12) cmd=ClearSystemCommand
+  seq(before=11,after=12) cmd=RunPayrollCommand
+  seq(before=13,after=14) cmd=ClearSystemCommand

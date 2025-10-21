@@ -1,0 +1,8 @@
+missing-id=abc
+timestamp=1761051992883
+mapIdentityHash=1305193908
+mapSize=3
+keys:
+__SCHEDULE__::mensal $
+__SCHEDULE__::semanal 5
+__SCHEDULE__::semanal 2 5

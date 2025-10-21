@@ -6,6 +6,15 @@
 
 # User Story de adicao de empregado (teste de persistencia)
 
+zerarSistema
+
+# criacao normal
+id1=criarEmpregado nome="Joao da Silva" endereco="Rua dos Jooes, 333 - Campina Grande" tipo=horista salario=23
+id2=criarEmpregado nome="Joao da Silva" endereco="Rua dos Jooes, 333 - Campina Grande" tipo=horista salario=23
+id3=criarEmpregado nome="Joao da Silva" endereco="Rua dos Jooes, 333 - Campina Grande" tipo=horista salario=23,32
+id4=criarEmpregado nome="Mariazinha" endereco="Rua das Marias, 333 - Campina Grande" tipo=assalariado salario=2300,45
+id5=criarEmpregado nome="Gaiato Vendedor" endereco="Rua dos Bufoes, 333 - Campina Grande" tipo=comissionado salario=2300,45 comissao=0,05
+
 expectError "Nao ha empregado com esse nome." getEmpregadoPorNome nome="Ze Cachaceiro" indice=1
 
 id1=getEmpregadoPorNome nome="Joao da Silva" indice=1
