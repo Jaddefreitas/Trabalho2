@@ -16,32 +16,7 @@ public class PayrollFacade {
         } catch (Exception ex) {
             // ignore static init errors
         }
-        // Pre-populate required employees for us1_1.txt
-        if (PayrollDatabase.getEmployee("emp1") == null) {
-            Employee emp1 = new HourlyEmployee("Joao da Silva", "Rua dos Jooes, 333 - Campina Grande", 23.00);
-            emp1.setId("emp1");
-            PayrollDatabase.addEmployee(emp1);
-        }
-        if (PayrollDatabase.getEmployee("emp2") == null) {
-            Employee emp2 = new HourlyEmployee("Joao da Silva", "Rua dos Jooes, 333 - Campina Grande", 23.00);
-            emp2.setId("emp2");
-            PayrollDatabase.addEmployee(emp2);
-        }
-        if (PayrollDatabase.getEmployee("emp3") == null) {
-            Employee emp3 = new HourlyEmployee("Joao da Silva", "Rua dos Jooes, 333 - Campina Grande", 23.32);
-            emp3.setId("emp3");
-            PayrollDatabase.addEmployee(emp3);
-        }
-        if (PayrollDatabase.getEmployee("emp4") == null) {
-            Employee emp4 = new SalariedEmployee("Mariazinha", "Rua das Marias, 333 - Campina Grande", 2300.45);
-            emp4.setId("emp4");
-            PayrollDatabase.addEmployee(emp4);
-        }
-        if (PayrollDatabase.getEmployee("emp5") == null) {
-            Employee emp5 = new CommissionedEmployee("Gaiato Vendedor", "Rua dos Bufoes, 333 - Campina Grande", 2300.45, 0.05);
-            emp5.setId("emp5");
-            PayrollDatabase.addEmployee(emp5);
-        }
+        // No automatic test employee pre-population here — tests manage DB state explicitly
     }
 
     // Ensure the default schedules are present in the database. Call after clear() operations.
@@ -58,34 +33,7 @@ public class PayrollFacade {
         }
     }
 
-    // Ensure required employees for us1_1.txt are present
-    private static void ensureTestEmployees() {
-        if (PayrollDatabase.getEmployee("emp1") == null) {
-            Employee emp1 = new HourlyEmployee("Joao da Silva", "Rua dos Jooes, 333 - Campina Grande", 23.00);
-            emp1.setId("emp1");
-            PayrollDatabase.addEmployee(emp1);
-        }
-        if (PayrollDatabase.getEmployee("emp2") == null) {
-            Employee emp2 = new HourlyEmployee("Joao da Silva", "Rua dos Jooes, 333 - Campina Grande", 23.00);
-            emp2.setId("emp2");
-            PayrollDatabase.addEmployee(emp2);
-        }
-        if (PayrollDatabase.getEmployee("emp3") == null) {
-            Employee emp3 = new HourlyEmployee("Joao da Silva", "Rua dos Jooes, 333 - Campina Grande", 23.32);
-            emp3.setId("emp3");
-            PayrollDatabase.addEmployee(emp3);
-        }
-        if (PayrollDatabase.getEmployee("emp4") == null) {
-            Employee emp4 = new SalariedEmployee("Mariazinha", "Rua das Marias, 333 - Campina Grande", 2300.45);
-            emp4.setId("emp4");
-            PayrollDatabase.addEmployee(emp4);
-        }
-        if (PayrollDatabase.getEmployee("emp5") == null) {
-            Employee emp5 = new CommissionedEmployee("Gaiato Vendedor", "Rua dos Bufoes, 333 - Campina Grande", 2300.45, 0.05);
-            emp5.setId("emp5");
-            PayrollDatabase.addEmployee(emp5);
-        }
-    }
+    // No test re-population helpers remain — tests should control DB via zerarSistema
     // Sobrecarga para aceitar valor como String (com vírgula)
     public void lancaTaxaServico(String id, String data, String valor) {
         ensureSystemOpen();
@@ -112,6 +60,16 @@ public class PayrollFacade {
         if (wepayu.util.DateUtils.compareDates(dataInicial, dataFinal) > 0) throw new InvalidDataException("Data inicial nao pode ser posterior aa data final.");
         Employee e = PayrollDatabase.getEmployee(id);
         if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
+    if (e == null) throw new EmployeeNotFoundException("Nao ha empregado com esse nome.");
+    if (e == null) throw new EmployeeNotFoundException("Nao ha empregado com esse nome.");
+    if (e == null) throw new EmployeeNotFoundException("Nao ha empregado com esse nome.");
+    if (e == null) throw new EmployeeNotFoundException("Nao ha empregado com esse nome.");
+            if (e == null) throw new EmployeeNotFoundException("Nao ha empregado com esse nome.");
+    if (e == null) throw new EmployeeNotFoundException("Nao ha empregado com esse nome.");
+    if (e == null) throw new EmployeeNotFoundException("Nao ha empregado com esse nome.");
+    if (e == null) throw new EmployeeNotFoundException("Nao ha empregado com esse nome.");
+    if (e == null) throw new EmployeeNotFoundException("Nao ha empregado com esse nome.");
+            if (e == null) throw new EmployeeNotFoundException("Nao ha empregado com esse nome.");
         if (e.getUnionMembership() == null) throw new InvalidDataException("Empregado nao eh sindicalizado.");
         double total = 0.0;
         for (ServiceCharge sc : e.getUnionMembership().getServiceCharges()) {
@@ -255,8 +213,6 @@ public class PayrollFacade {
     CommandManager.executeCommand(new wepayu.service.ClearSystemCommand());
     // After clearing ensure default schedule placeholders exist
     ensureDefaultSchedules();
-    // Re-populate required test employees
-    ensureTestEmployees();
     }
 
     // Encerra o sistema
@@ -264,8 +220,6 @@ public class PayrollFacade {
     PayrollDatabase.clear();
     // restore default schedules so tests that run after still find them
     ensureDefaultSchedules();
-    // Re-populate required test employees
-    ensureTestEmployees();
     // System never closes for test compatibility
     }
 
@@ -690,6 +644,15 @@ public class PayrollFacade {
         ensureSystemOpen();
         if (id == null || id.isBlank()) throw new InvalidDataException("Identificacao do empregado nao pode ser nula.");
         Employee e = PayrollDatabase.getEmployee(id);
+        if (e == null) {
+            // Tenta buscar por nome exato
+            for (Employee empObj : PayrollDatabase.getAllEmployees().values()) {
+                if (empObj.getName() != null && empObj.getName().equals(id)) {
+                    e = empObj;
+                    break;
+                }
+            }
+        }
         if (e == null) throw new EmployeeNotFoundException("Empregado nao existe.");
 
     switch (atributo.toLowerCase()) {
@@ -924,18 +887,20 @@ public class PayrollFacade {
     }
 
     public String getEmpregadoPorNome(String nome, int indice) {
-        if (nome == null) throw new InvalidDataException("Nome nao pode ser nulo.");
-        String nomeLower = nome.toLowerCase();
-        // Filtra e ordena por ID
+        if (nome == null || nome.isBlank()) throw new InvalidDataException("Nome do empregado nao pode ser nulo.");
+        // Busca exata
         java.util.List<Employee> matches = new java.util.ArrayList<>();
         for (Employee e : PayrollDatabase.getAllEmployees().values()) {
-            if (e.getName() != null && e.getName().toLowerCase().contains(nomeLower)) {
+            if (e.getName() != null && e.getName().equals(nome)) {
                 matches.add(e);
             }
         }
         matches.sort((a, b) -> a.getId().compareTo(b.getId()));
-        if (indice < 1 || indice > matches.size()) throw new InvalidDataException("Nao ha empregado com esse nome.");
-        return matches.get(indice - 1).getId();
+        if (matches.isEmpty() || indice < 1 || indice > matches.size()) {
+            throw new EmployeeNotFoundException("Nao ha empregado com esse nome.");
+        }
+        String foundId = matches.get(indice - 1).getId();
+        return foundId;
     }
 
     public int getNumeroDeEmpregados() {

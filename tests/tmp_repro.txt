@@ -1,0 +1,5 @@
+zerarSistema
+id1=criarEmpregado nome="Maria" endereco="Rua dos Jooes, 333 - Campina Grande" tipo=horista salario=23
+expectError "Nao ha empregado com esse nome." getEmpregadoPorNome nome="Joao da Silva" indice=1
+id2=getEmpregadoPorNome nome="Maria" indice=1
+expect "Maria" getAtributoEmpregado emp=${id2} atributo=nome
