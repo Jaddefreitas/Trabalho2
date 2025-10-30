@@ -1,6 +1,0 @@
-Snapshot for date: 11/2/2005
-__SCHEDULE__::mensal $ | SCHEDULE | mensal $
-__SCHEDULE__::semanal 5 | SCHEDULE | semanal 5
-__SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5
-EMP-2 | Gaiato Vendedor | semanal 2 5
-EMP-3 | Joaozinho da Silva | semanal 5

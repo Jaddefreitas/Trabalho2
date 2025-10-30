@@ -1,1 +1,0 @@
-﻿expectError "Nao ha empregado com esse nome." getEmpregadoPorNome nome="Joao da Silva" indice=1

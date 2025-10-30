@@ -1,6 +1,0 @@
-Snapshot for date: 11/2/2005
-__SCHEDULE__::mensal $ | SCHEDULE | mensal $
-13eaa0fa-5514-4f90-b62f-706cbf423487 | Gaiato Vendedor | 
-d2d88c0e-656a-4066-b1b6-546627d70b83 | Joaozinho da Silva | 
-__SCHEDULE__::semanal 2 5 | SCHEDULE | semanal 2 5
-__SCHEDULE__::semanal 5 | SCHEDULE | semanal 5
